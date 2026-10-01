@@ -4,6 +4,8 @@
 
 ## Summary
 
+> **Applied (2026-09-30):** suggestions 1 and 2. The Boat now costs 80 and is listed first in the Workshop. The "Current data" tables below are the *before* numbers.
+
 - **The boat comes far too late for a typical player.** A player who always buys the cheapest affordable upgrade gets the boat at **minute 37 (52 catches)**. The §5.2 target is **5–8 minutes (10–12 catches)** so that every tester sees zone 2. Only a player who deliberately saves for the boat hits the target (minute 9, 12 catches).
 - **Recommended fix: Boat 150 → 80 coins.** Cheapest-first players then reach the river at **minute 12 (14 catches)**, and boat-first players at **minute 5.5 (6 catches)**. More players also finish every upgrade within the hour (47 % instead of 22 %), because the river pays better and brings 4 new discoveries plus a completion bonus.
 - **The overall pace is on target.** At 70 % accuracy the median player earns about **1,240–1,340 coins an hour**, against 1,350–1,420 for every upgrade, so "all upgrades ≈ one hour" (§5.2) holds.

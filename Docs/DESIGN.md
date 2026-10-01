@@ -173,11 +173,11 @@ sell_price = base_price[rarity] × (size_cm / avg_size_cm), rounded, minimum 1
 | **Hold** | Трюм | Slots 6 → 8 → 11 → 15 | 40 | 100 | 200 | ✅ |
 | **Rod** | Вудка | Timer +10 / +20 / +30 s; reel green zone +15% / +30% / +50% | 50 | 120 | 250 | ✅ |
 | **Bait** | Наживка | Rare & Legendary weight ×1.5 / ×2 / ×3 | 60 | 150 | 300 | ✅ |
-| **Boat** | Човен | Unlocks **Misty River** | 150 | — | — | ✅ |
+| **Boat** | Човен | Unlocks **Misty River** | 80 | — | — | ✅ |
 | **Strong line** | Міцна волосінь | 1 / 2 / 3 "second chances" per trip (new problem, same tier, fish stays on) | 80 | 180 | 320 | Stretch |
 | **Lantern** | Ліхтар | Unlocks **Deep Bay** | 300 | — | — | Stretch |
 
-**Balance target:** buying all MVP upgrades costs about **1,420 coins**, which is about 100–110 catches or **roughly one hour of play**. The boat (150) should arrive after about 10–12 catches, in the first 5–8 minutes, so every tester sees zone 2.
+**Balance target:** buying all MVP upgrades costs about **1,350 coins**, which is **roughly one hour of play**. The boat (80) should arrive after about 10–15 catches, in the first 5–12 minutes, so every tester sees zone 2. The Workshop lists the boat first. *(Boat lowered from 150 after the economy simulation; see `Docs/ECONOMY_REPORT.md`.)*
 
 Each purchase shows a short "before → after" line (for example `Timer: 45 s → 55 s`). Upgrade level is shown on the rig icon in the HUD.
 
@@ -412,7 +412,7 @@ DOCK
 │  Трюм     Lv1 → Lv2   6 → 8 slots          [ 100 🪙 ]         │
 │  Вудка    Lv0 → Lv1   Timer 45 s → 55 s    [  50 🪙 ]         │
 │  Наживка  Lv0 → Lv1   Rare ×1 → ×1.5       [  60 🪙 ]         │
-│  Човен    Unlocks Misty River               [ 150 🪙 ]         │
+│  Човен    Unlocks Misty River               [  80 🪙 ]         │
 └──────────────────────────────────────────────────────────────┘
 
 ENCYCLOPEDIA DETAIL

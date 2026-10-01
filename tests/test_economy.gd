@@ -52,12 +52,14 @@ func test_buy_upgrades() -> void:
 func test_disabled_upgrades_cannot_be_bought() -> void:
 	GameState.coins = 10000
 	check(not Economy.buy("line") and not Economy.buy("lantern"), "stretch upgrades are off")
-	check(GameData.upgrades().map(func(u): return u.id) == ["hold", "rod", "bait", "boat"], "workshop lists MVP upgrades")
+	check(GameData.upgrades().map(func(u): return u.id) == ["boat", "hold", "rod", "bait"], "workshop lists MVP upgrades, boat first")
 
 
 func test_boat_unlocks_river() -> void:
 	check(GameData.is_zone_unlocked("lake") and not GameData.is_zone_unlocked("river"), "river starts locked")
-	GameState.coins = 150
+	GameState.coins = 79
+	check(not Economy.buy("boat"), "boat costs 80")
+	GameState.coins = 80
 	check(Economy.buy("boat"), "buy the boat")
 	check(GameData.is_zone_unlocked("river"), "boat unlocks the river")
 	check(not GameData.is_zone_unlocked("bay"), "bay stays off (stretch)")
@@ -71,7 +73,7 @@ func test_all_upgrades_cost() -> void:
 			total += Economy.next_cost(u.id)
 			GameState.coins = Economy.next_cost(u.id)
 			Economy.buy(u.id)
-	check(total == 1420, "all MVP upgrades cost %d, design says 1420" % total)
+	check(total == 1350, "all MVP upgrades cost %d, design says 1350" % total)
 
 
 # --- Upgrade effect text (§5.2 "before → after") --------------------------------

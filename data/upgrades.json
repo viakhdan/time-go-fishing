@@ -1,4 +1,9 @@
 [
+  { "id": "boat", "icon": "res://art/ui/icons/boat.svg", "name_key": "UPG_BOAT", "desc_key": "UPG_BOAT_DESC", "enabled": true,
+    "base": {},
+    "levels": [
+      { "cost": 80 }
+    ] },
   { "id": "hold", "icon": "res://art/ui/icons/hold.svg", "name_key": "UPG_HOLD", "desc_key": "UPG_HOLD_DESC", "enabled": true,
     "base": { "slots": 6 },
     "levels": [
@@ -19,11 +24,6 @@
       { "cost": 60,  "rare_weight_multiplier": 1.5 },
       { "cost": 150, "rare_weight_multiplier": 2.0 },
       { "cost": 300, "rare_weight_multiplier": 3.0 }
-    ] },
-  { "id": "boat", "icon": "res://art/ui/icons/boat.svg", "name_key": "UPG_BOAT", "desc_key": "UPG_BOAT_DESC", "enabled": true,
-    "base": {},
-    "levels": [
-      { "cost": 150 }
     ] },
   { "id": "line", "icon": "res://art/ui/icons/line.svg", "name_key": "UPG_LINE", "desc_key": "UPG_LINE_DESC", "enabled": false,
     "base": { "second_chances": 0 },
