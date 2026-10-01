@@ -1,0 +1,123 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/ProblemPanel.gd" id="1_panel"]
+
+[node name="ProblemPanel" type="PanelContainer"]
+custom_minimum_size = Vector2(1100, 0)
+script = ExtResource("1_panel")
+
+[node name="Margin" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 32
+
+[node name="Content" type="VBoxContainer" parent="Margin"]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Header" type="HBoxContainer" parent="Margin/Content"]
+layout_mode = 2
+
+[node name="RarityLabel" type="Label" parent="Margin/Content/Header"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 30
+auto_translate_mode = 2
+
+[node name="TimerLabel" type="Label" parent="Margin/Content/Header"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+auto_translate_mode = 2
+
+[node name="NoticeLabel" type="Label" parent="Margin/Content"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.953, 0.824, 0.478, 1)
+autowrap_mode = 3
+auto_translate_mode = 2
+
+[node name="QuestionLabel" type="Label" parent="Margin/Content"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+autowrap_mode = 3
+auto_translate_mode = 2
+
+[node name="Answers" type="GridContainer" parent="Margin/Content"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 20
+columns = 2
+
+[node name="Answer0" type="Button" parent="Margin/Content/Answers"]
+custom_minimum_size = Vector2(0, 88)
+layout_mode = 2
+theme_type_variation = &"AnswerButton"
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 40
+auto_translate_mode = 2
+
+[node name="Answer1" type="Button" parent="Margin/Content/Answers"]
+custom_minimum_size = Vector2(0, 88)
+layout_mode = 2
+theme_type_variation = &"AnswerButton"
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 40
+auto_translate_mode = 2
+
+[node name="Answer2" type="Button" parent="Margin/Content/Answers"]
+custom_minimum_size = Vector2(0, 88)
+layout_mode = 2
+theme_type_variation = &"AnswerButton"
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 40
+auto_translate_mode = 2
+
+[node name="Answer3" type="Button" parent="Margin/Content/Answers"]
+custom_minimum_size = Vector2(0, 88)
+layout_mode = 2
+theme_type_variation = &"AnswerButton"
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 40
+auto_translate_mode = 2
+
+[node name="Feedback" type="VBoxContainer" parent="Margin/Content"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="ResultLabel" type="Label" parent="Margin/Content/Feedback"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.847, 0.263, 0.235, 1)
+theme_override_font_sizes/font_size = 36
+auto_translate_mode = 2
+
+[node name="AnswerLabel" type="Label" parent="Margin/Content/Feedback"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+autowrap_mode = 3
+auto_translate_mode = 2
+
+[node name="SolutionLabel" type="Label" parent="Margin/Content/Feedback"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+autowrap_mode = 3
+auto_translate_mode = 2
+
+[node name="ContinueButton" type="Button" parent="Margin/Content/Feedback"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(320, 72)
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 32
+text = "UI_CONTINUE"

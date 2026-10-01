@@ -21,7 +21,9 @@ config/features=PackedStringArray("4.7", "GL Compatibility")
 
 [autoload]
 
+GameData="*res://scripts/GameData.gd"
 GameState="*res://scripts/GameState.gd"
+ProblemBank="*res://scripts/ProblemBank.gd"
 
 [display]
 

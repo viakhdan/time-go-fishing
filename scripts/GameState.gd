@@ -7,9 +7,11 @@ signal hold_changed
 signal upgrades_changed
 signal locale_changed(locale: String)
 
-const SAVE_PATH := "user://save.json"
 const SAVE_VERSION := 2
 const LOCALES: Array[String] = ["uk", "en"]
+
+## Tests point this elsewhere so they never touch the player's save.
+var save_path := "user://save.json"
 
 var locale := "uk"
 var coins := 0
@@ -20,6 +22,11 @@ var upgrades := _default_upgrades()
 var encyclopedia := {}
 var zone_complete_rewarded: Array[String] = []
 var trophy = null
+## Strong-line second chances left this trip (§5.2). Refilled by start_trip().
+var trip_second_chances := 0
+
+## Zone the player is fishing in. Not saved: a restart begins at the menu.
+var current_zone := "lake"
 
 
 func _ready() -> void:
@@ -40,6 +47,56 @@ func upgrade_level(id: String) -> int:
 	return upgrades.get(id, 0)
 
 
+func hold_capacity() -> int:
+	return int(GameData.upgrade_effect("hold", "slots"))
+
+
+func is_hold_full() -> bool:
+	return hold.size() >= hold_capacity()
+
+
+func add_coins(amount: int) -> void:
+	coins += amount
+	coins_changed.emit(coins)
+
+
+## Called when a trip starts at the dock.
+func start_trip() -> void:
+	trip_second_chances = int(GameData.upgrade_effect("line", "second_chances"))
+	save_game()
+
+
+## Stores a caught fish in the hold and updates the encyclopedia, discovery
+## bonus and zone completion reward (§3.1, §8.2). Saves.
+func record_catch(species: String, size_cm: int, value: int) -> Dictionary:
+	hold.append({"species": species, "size_cm": size_cm, "value": value})
+
+	var is_new := species not in encyclopedia
+	var entry: Dictionary = encyclopedia.get_or_add(species, {"count": 0, "best_cm": 0, "best_value": 0})
+	var new_record: bool = not is_new and size_cm > entry.best_cm
+	entry.count += 1
+	entry.best_cm = maxi(entry.best_cm, size_cm)
+	entry.best_value = maxi(entry.best_value, value)
+
+	var discovery := GameData.discovery_bonus if is_new else 0
+	var zone_bonus := 0
+	var zone_id: String = GameData.fish(species).zone
+	if is_new and zone_id not in zone_complete_rewarded \
+			and GameData.zone(zone_id).fish.all(func(id): return id in encyclopedia):
+		zone_complete_rewarded.append(zone_id)
+		zone_bonus = GameData.zone_complete_bonus
+
+	hold_changed.emit()
+	if discovery + zone_bonus > 0:
+		add_coins(discovery + zone_bonus)
+	save_game()
+	return {
+		"species": species, "size_cm": size_cm, "value": value,
+		"is_new": is_new, "new_record": new_record,
+		"discovery_bonus": discovery, "zone_complete_bonus": zone_bonus,
+	}
+
+
 func reset() -> void:
 	coins = 0
 	hold.clear()
@@ -47,6 +104,7 @@ func reset() -> void:
 	encyclopedia.clear()
 	zone_complete_rewarded.clear()
 	trophy = null
+	trip_second_chances = 0
 	save_game()
 	coins_changed.emit(coins)
 	hold_changed.emit()
@@ -63,8 +121,9 @@ func save_game() -> void:
 		"encyclopedia": encyclopedia,
 		"zone_complete_rewarded": zone_complete_rewarded,
 		"trophy": trophy,
+		"trip_second_chances": trip_second_chances,
 	}
-	var file := FileAccess.open(SAVE_PATH, FileAccess.WRITE)
+	var file := FileAccess.open(save_path, FileAccess.WRITE)
 	if file == null:
 		push_error("Could not write save: %s" % error_string(FileAccess.get_open_error()))
 		return
@@ -72,9 +131,9 @@ func save_game() -> void:
 
 
 func load_game() -> void:
-	if not FileAccess.file_exists(SAVE_PATH):
+	if not FileAccess.file_exists(save_path):
 		return
-	var data = JSON.parse_string(FileAccess.get_file_as_string(SAVE_PATH))
+	var data = JSON.parse_string(FileAccess.get_file_as_string(save_path))
 	if typeof(data) != TYPE_DICTIONARY:
 		push_warning("Save file is corrupt, starting fresh.")
 		return
@@ -100,6 +159,7 @@ func load_game() -> void:
 		}
 	zone_complete_rewarded.assign(data.get("zone_complete_rewarded", []))
 	trophy = data.get("trophy")
+	trip_second_chances = int(data.get("trip_second_chances", 0))
 
 
 static func _default_upgrades() -> Dictionary:

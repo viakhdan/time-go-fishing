@@ -5,6 +5,7 @@ UI_PLAY,Грати,Play
 UI_ENCYCLOPEDIA,Енциклопедія,Encyclopedia
 UI_LANGUAGE,Мова,Language
 UI_BACK,Назад,Back
+UI_CONTINUE,Далі,Continue
 UI_MAP,Мапа,Map
 UI_DOCK,Причал,Dock
 UI_CAST,Закинути,Cast

@@ -2,6 +2,13 @@
   "size_range": [0.6, 1.4],
   "discovery_bonus": 10,
   "zone_complete_bonus": 50,
+  "fishing": {
+    "bite_wait_s": [2.0, 5.0],
+    "bite_delay_s": 1.0,
+    "reel_zone": 0.2,
+    "reel_speed": 0.8,
+    "reel_attempts": 2
+  },
   "rarities": {
     "common":    { "name_key": "RARITY_COMMON",    "weight": 60, "tier": 1, "timer_s": 0,  "base_price": 5,   "color": "#96989b" },
     "uncommon":  { "name_key": "RARITY_UNCOMMON",  "weight": 28, "tier": 2, "timer_s": 0,  "base_price": 15,  "color": "#68c07d" },
