@@ -1,0 +1,40 @@
+[
+  { "id": "hold", "name_key": "UPG_HOLD", "desc_key": "UPG_HOLD_DESC", "enabled": true,
+    "base": { "slots": 6 },
+    "levels": [
+      { "cost": 40,  "slots": 8 },
+      { "cost": 100, "slots": 11 },
+      { "cost": 200, "slots": 15 }
+    ] },
+  { "id": "rod", "name_key": "UPG_ROD", "desc_key": "UPG_ROD_DESC", "enabled": true,
+    "base": { "timer_bonus_s": 0, "reel_zone_bonus": 0.0 },
+    "levels": [
+      { "cost": 50,  "timer_bonus_s": 10, "reel_zone_bonus": 0.15 },
+      { "cost": 120, "timer_bonus_s": 20, "reel_zone_bonus": 0.30 },
+      { "cost": 250, "timer_bonus_s": 30, "reel_zone_bonus": 0.50 }
+    ] },
+  { "id": "bait", "name_key": "UPG_BAIT", "desc_key": "UPG_BAIT_DESC", "enabled": true,
+    "base": { "rare_weight_multiplier": 1.0 },
+    "levels": [
+      { "cost": 60,  "rare_weight_multiplier": 1.5 },
+      { "cost": 150, "rare_weight_multiplier": 2.0 },
+      { "cost": 300, "rare_weight_multiplier": 3.0 }
+    ] },
+  { "id": "boat", "name_key": "UPG_BOAT", "desc_key": "UPG_BOAT_DESC", "enabled": true,
+    "base": {},
+    "levels": [
+      { "cost": 150 }
+    ] },
+  { "id": "line", "name_key": "UPG_LINE", "desc_key": "UPG_LINE_DESC", "enabled": false,
+    "base": { "second_chances": 0 },
+    "levels": [
+      { "cost": 80,  "second_chances": 1 },
+      { "cost": 180, "second_chances": 2 },
+      { "cost": 320, "second_chances": 3 }
+    ] },
+  { "id": "lantern", "name_key": "UPG_LANTERN", "desc_key": "UPG_LANTERN_DESC", "enabled": false,
+    "base": {},
+    "levels": [
+      { "cost": 300 }
+    ] }
+]

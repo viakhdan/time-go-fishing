@@ -12,4 +12,5 @@ Educational math fishing game for Ukrainian 7th graders. Godot 4.7, GDScript, GL
 - `Inspo/` is gitignored (copyrighted Dredge reference art); it exists only locally.
 - Fonts: `art/ui/theme.tres` is the project theme. PT Sans (body) / Oswald (buttons, `TitleLabel`) / PT Serif (`SerifLabel`), with Noto Sans + Noto Sans Math fallbacks for superscripts ⁴–⁹ and → √ ≤ ≥ ≠. No font has 🪙, so use a coin icon instead of the emoji.
 - Problem pools: `data/problems/<topic>.json`, a JSON array. Each problem has a dev-only `check` field (the math as shown, used by the validator; never shown to players). Run `python tools/validate_problems.py` after any edit; it must print OK. Player-facing math uses − · and superscripts, never ASCII - * ^.
+- Game data: `data/fish.json` (rarity table, bonuses, fish), `data/zones.json` (unlock = upgrade + level), `data/upgrades.json` (`base` = level-0 effect, `levels[i]` = level i+1). Stretch content has `"enabled": false`. Run `python tools/validate_data.py` after editing data or strings.
 - Python tools in `tools/` (Python 3.13; deps in `tools/requirements.txt`).

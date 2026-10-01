@@ -1,0 +1,14 @@
+[
+  { "id": "lake", "name_key": "ZONE_LAKE", "topic": "powers_like_terms", "enabled": true,
+    "background": "res://art/backgrounds/lake.png",
+    "unlock": null,
+    "fish": ["zero_perch", "square_carp", "mirror_bream", "power_pike"] },
+  { "id": "river", "name_key": "ZONE_RIVER", "topic": "linear_equations", "enabled": true,
+    "background": "res://art/backgrounds/river.png",
+    "unlock": { "upgrade": "boat", "level": 1 },
+    "fish": ["fog_catfish", "x_eel", "balanced_sturgeon", "great_null"] },
+  { "id": "bay", "name_key": "ZONE_BAY", "topic": "angles_triangles", "enabled": false,
+    "background": "res://art/backgrounds/bay.png",
+    "unlock": { "upgrade": "lantern", "level": 1 },
+    "fish": ["anglejaw", "triangle_ray"] }
+]
