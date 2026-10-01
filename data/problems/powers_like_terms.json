@@ -1,0 +1,1358 @@
+[
+  {
+    "id": "pow_t1_001",
+    "topic": "powers_like_terms",
+    "tier": 1,
+    "question": {
+      "uk": "Обчисліть: 2³",
+      "en": "Calculate: 2³"
+    },
+    "options": [
+      "6",
+      "5",
+      "8",
+      "9"
+    ],
+    "answer_index": 2,
+    "solution": {
+      "uk": "2³ = 2 · 2 · 2 = 8",
+      "en": "2³ = 2 · 2 · 2 = 8"
+    },
+    "distractor_notes": [
+      "multiplied base by exponent: 2 · 3",
+      "added base and exponent: 2 + 3",
+      "",
+      "swapped base and exponent: 3²"
+    ],
+    "check": {
+      "kind": "evaluate",
+      "expr": "2³"
+    }
+  },
+  {
+    "id": "pow_t1_002",
+    "topic": "powers_like_terms",
+    "tier": 1,
+    "question": {
+      "uk": "Обчисліть: 3²",
+      "en": "Calculate: 3²"
+    },
+    "options": [
+      "6",
+      "5",
+      "8",
+      "9"
+    ],
+    "answer_index": 3,
+    "solution": {
+      "uk": "3² = 3 · 3 = 9",
+      "en": "3² = 3 · 3 = 9"
+    },
+    "distractor_notes": [
+      "multiplied base by exponent: 3 · 2",
+      "added base and exponent: 3 + 2",
+      "swapped base and exponent: 2³",
+      ""
+    ],
+    "check": {
+      "kind": "evaluate",
+      "expr": "3²"
+    }
+  },
+  {
+    "id": "pow_t1_003",
+    "topic": "powers_like_terms",
+    "tier": 1,
+    "question": {
+      "uk": "Обчисліть: 5²",
+      "en": "Calculate: 5²"
+    },
+    "options": [
+      "10",
+      "25",
+      "7",
+      "32"
+    ],
+    "answer_index": 1,
+    "solution": {
+      "uk": "5² = 5 · 5 = 25",
+      "en": "5² = 5 · 5 = 25"
+    },
+    "distractor_notes": [
+      "multiplied base by exponent: 5 · 2",
+      "",
+      "added base and exponent: 5 + 2",
+      "swapped base and exponent: 2⁵"
+    ],
+    "check": {
+      "kind": "evaluate",
+      "expr": "5²"
+    }
+  },
+  {
+    "id": "pow_t1_004",
+    "topic": "powers_like_terms",
+    "tier": 1,
+    "question": {
+      "uk": "Обчисліть: 4³",
+      "en": "Calculate: 4³"
+    },
+    "options": [
+      "12",
+      "16",
+      "81",
+      "64"
+    ],
+    "answer_index": 3,
+    "solution": {
+      "uk": "4³ = 4 · 4 · 4 = 64",
+      "en": "4³ = 4 · 4 · 4 = 64"
+    },
+    "distractor_notes": [
+      "multiplied base by exponent: 4 · 3",
+      "stopped one factor early: 4 · 4",
+      "swapped base and exponent: 3⁴",
+      ""
+    ],
+    "check": {
+      "kind": "evaluate",
+      "expr": "4³"
+    }
+  },
+  {
+    "id": "pow_t1_005",
+    "topic": "powers_like_terms",
+    "tier": 1,
+    "question": {
+      "uk": "Обчисліть: 3³",
+      "en": "Calculate: 3³"
+    },
+    "options": [
+      "9",
+      "6",
+      "27",
+      "81"
+    ],
+    "answer_index": 2,
+    "solution": {
+      "uk": "3³ = 3 · 3 · 3 = 27",
+      "en": "3³ = 3 · 3 · 3 = 27"
+    },
+    "distractor_notes": [
+      "multiplied base by exponent: 3 · 3",
+      "added: 3 + 3",
+      "",
+      "used four factors instead of three"
+    ],
+    "check": {
+      "kind": "evaluate",
+      "expr": "3³"
+    }
+  },
+  {
+    "id": "pow_t1_006",
+    "topic": "powers_like_terms",
+    "tier": 1,
+    "question": {
+      "uk": "Обчисліть: 10³",
+      "en": "Calculate: 10³"
+    },
+    "options": [
+      "30",
+      "13",
+      "1000",
+      "100"
+    ],
+    "answer_index": 2,
+    "solution": {
+      "uk": "10³ = 10 · 10 · 10 = 1000",
+      "en": "10³ = 10 · 10 · 10 = 1000"
+    },
+    "distractor_notes": [
+      "multiplied base by exponent",
+      "added base and exponent",
+      "",
+      "wrote one zero too few"
+    ],
+    "check": {
+      "kind": "evaluate",
+      "expr": "10³"
+    }
+  },
+  {
+    "id": "pow_t1_007",
+    "topic": "powers_like_terms",
+    "tier": 1,
+    "question": {
+      "uk": "Обчисліть: (−3)²",
+      "en": "Calculate: (−3)²"
+    },
+    "options": [
+      "−9",
+      "−6",
+      "9",
+      "6"
+    ],
+    "answer_index": 2,
+    "solution": {
+      "uk": "(−3)² = (−3) · (−3) = 9",
+      "en": "(−3)² = (−3) · (−3) = 9"
+    },
+    "distractor_notes": [
+      "kept the minus: an even power of a negative number is positive",
+      "multiplied base by exponent",
+      "",
+      "multiplied base by exponent and dropped the sign"
+    ],
+    "check": {
+      "kind": "evaluate",
+      "expr": "(−3)²"
+    }
+  },
+  {
+    "id": "pow_t1_008",
+    "topic": "powers_like_terms",
+    "tier": 1,
+    "question": {
+      "uk": "Обчисліть: (−1)⁵",
+      "en": "Calculate: (−1)⁵"
+    },
+    "options": [
+      "1",
+      "−5",
+      "5",
+      "−1"
+    ],
+    "answer_index": 3,
+    "solution": {
+      "uk": "Непарний степінь: (−1)⁵ = −1",
+      "en": "Odd power: (−1)⁵ = −1"
+    },
+    "distractor_notes": [
+      "thought every power of −1 is 1",
+      "multiplied base by exponent",
+      "multiplied and dropped the sign",
+      ""
+    ],
+    "check": {
+      "kind": "evaluate",
+      "expr": "(−1)⁵"
+    }
+  },
+  {
+    "id": "pow_t1_009",
+    "topic": "powers_like_terms",
+    "tier": 1,
+    "question": {
+      "uk": "Зведіть подібні доданки: 3a + 5a",
+      "en": "Combine like terms: 3a + 5a"
+    },
+    "options": [
+      "8a²",
+      "8a",
+      "15a",
+      "8"
+    ],
+    "answer_index": 1,
+    "solution": {
+      "uk": "3a + 5a = (3 + 5)a = 8a",
+      "en": "3a + 5a = (3 + 5)a = 8a"
+    },
+    "distractor_notes": [
+      "multiplied the variables: a · a",
+      "",
+      "multiplied the coefficients",
+      "dropped the variable"
+    ],
+    "check": {
+      "kind": "simplify",
+      "expr": "3a + 5a"
+    }
+  },
+  {
+    "id": "pow_t1_010",
+    "topic": "powers_like_terms",
+    "tier": 1,
+    "question": {
+      "uk": "Зведіть подібні доданки: 7x − 2x",
+      "en": "Combine like terms: 7x − 2x"
+    },
+    "options": [
+      "9x",
+      "5x²",
+      "5x",
+      "5"
+    ],
+    "answer_index": 2,
+    "solution": {
+      "uk": "7x − 2x = (7 − 2)x = 5x",
+      "en": "7x − 2x = (7 − 2)x = 5x"
+    },
+    "distractor_notes": [
+      "added instead of subtracting",
+      "multiplied the variables",
+      "",
+      "dropped the variable"
+    ],
+    "check": {
+      "kind": "simplify",
+      "expr": "7x − 2x"
+    }
+  },
+  {
+    "id": "pow_t1_011",
+    "topic": "powers_like_terms",
+    "tier": 1,
+    "question": {
+      "uk": "Зведіть подібні доданки: 4m + m",
+      "en": "Combine like terms: 4m + m"
+    },
+    "options": [
+      "4m",
+      "5m",
+      "4m²",
+      "5"
+    ],
+    "answer_index": 1,
+    "solution": {
+      "uk": "4m + m = 4m + 1m = 5m",
+      "en": "4m + m = 4m + 1m = 5m"
+    },
+    "distractor_notes": [
+      "forgot that m = 1m",
+      "",
+      "multiplied instead of adding",
+      "dropped the variable"
+    ],
+    "check": {
+      "kind": "simplify",
+      "expr": "4m + m"
+    }
+  },
+  {
+    "id": "pow_t1_012",
+    "topic": "powers_like_terms",
+    "tier": 1,
+    "question": {
+      "uk": "Зведіть подібні доданки: 6y − y",
+      "en": "Combine like terms: 6y − y"
+    },
+    "options": [
+      "6",
+      "5",
+      "7y",
+      "5y"
+    ],
+    "answer_index": 3,
+    "solution": {
+      "uk": "6y − y = 6y − 1y = 5y",
+      "en": "6y − y = 6y − 1y = 5y"
+    },
+    "distractor_notes": [
+      "thought y − y cancels everything",
+      "dropped the variable",
+      "added instead of subtracting",
+      ""
+    ],
+    "check": {
+      "kind": "simplify",
+      "expr": "6y − y"
+    }
+  },
+  {
+    "id": "pow_t1_013",
+    "topic": "powers_like_terms",
+    "tier": 1,
+    "question": {
+      "uk": "Спростіть: x² · x³",
+      "en": "Simplify: x² · x³"
+    },
+    "options": [
+      "x⁶",
+      "2x⁵",
+      "x⁵",
+      "x"
+    ],
+    "answer_index": 2,
+    "solution": {
+      "uk": "x² · x³ = x²⁺³ = x⁵",
+      "en": "x² · x³ = x²⁺³ = x⁵"
+    },
+    "distractor_notes": [
+      "multiplied the exponents",
+      "doubled the base",
+      "",
+      "subtracted the exponents"
+    ],
+    "check": {
+      "kind": "simplify",
+      "expr": "x² · x³"
+    }
+  },
+  {
+    "id": "pow_t1_014",
+    "topic": "powers_like_terms",
+    "tier": 1,
+    "question": {
+      "uk": "Спростіть: a⁸ : a²",
+      "en": "Simplify: a⁸ : a²"
+    },
+    "options": [
+      "a⁴",
+      "a¹⁰",
+      "a⁶",
+      "a¹⁶"
+    ],
+    "answer_index": 2,
+    "solution": {
+      "uk": "a⁸ : a² = a⁸⁻² = a⁶",
+      "en": "a⁸ : a² = a⁸⁻² = a⁶"
+    },
+    "distractor_notes": [
+      "divided the exponents",
+      "added the exponents",
+      "",
+      "multiplied the exponents"
+    ],
+    "check": {
+      "kind": "simplify",
+      "expr": "a⁸ : a²"
+    }
+  },
+  {
+    "id": "pow_t1_015",
+    "topic": "powers_like_terms",
+    "tier": 1,
+    "question": {
+      "uk": "Спростіть: (x²)³",
+      "en": "Simplify: (x²)³"
+    },
+    "options": [
+      "x⁵",
+      "x⁸",
+      "x⁹",
+      "x⁶"
+    ],
+    "answer_index": 3,
+    "solution": {
+      "uk": "(x²)³ = x² · x² · x² = x⁶",
+      "en": "(x²)³ = x² · x² · x² = x⁶"
+    },
+    "distractor_notes": [
+      "added the exponents",
+      "raised the exponent to a power: 2³",
+      "raised the exponent to a power: 3²",
+      ""
+    ],
+    "check": {
+      "kind": "simplify",
+      "expr": "(x²)³"
+    }
+  },
+  {
+    "id": "pow_t2_001",
+    "topic": "powers_like_terms",
+    "tier": 2,
+    "question": {
+      "uk": "Зведіть подібні доданки: 3a + 5a − 2a",
+      "en": "Combine like terms: 3a + 5a − 2a"
+    },
+    "options": [
+      "10a",
+      "6a³",
+      "6a",
+      "6"
+    ],
+    "answer_index": 2,
+    "solution": {
+      "uk": "(3 + 5 − 2)a = 6a",
+      "en": "(3 + 5 − 2)a = 6a"
+    },
+    "distractor_notes": [
+      "ignored the minus sign",
+      "multiplied the variables",
+      "",
+      "dropped the variable"
+    ],
+    "check": {
+      "kind": "simplify",
+      "expr": "3a + 5a − 2a"
+    }
+  },
+  {
+    "id": "pow_t2_002",
+    "topic": "powers_like_terms",
+    "tier": 2,
+    "question": {
+      "uk": "Зведіть подібні доданки: 4x + 3y − x + 2y",
+      "en": "Combine like terms: 4x + 3y − x + 2y"
+    },
+    "options": [
+      "4x + 5y",
+      "8xy",
+      "3x + 5y",
+      "3x + y"
+    ],
+    "answer_index": 2,
+    "solution": {
+      "uk": "(4x − x) + (3y + 2y) = 3x + 5y",
+      "en": "(4x − x) + (3y + 2y) = 3x + 5y"
+    },
+    "distractor_notes": [
+      "forgot that −x = −1x",
+      "combined unlike terms",
+      "",
+      "applied the minus to 2y"
+    ],
+    "check": {
+      "kind": "simplify",
+      "expr": "4x + 3y − x + 2y"
+    }
+  },
+  {
+    "id": "pow_t2_003",
+    "topic": "powers_like_terms",
+    "tier": 2,
+    "question": {
+      "uk": "Обчисліть: −3²",
+      "en": "Calculate: −3²"
+    },
+    "options": [
+      "−9",
+      "9",
+      "−6",
+      "6"
+    ],
+    "answer_index": 0,
+    "solution": {
+      "uk": "−3² = −(3 · 3) = −9",
+      "en": "−3² = −(3 · 3) = −9"
+    },
+    "distractor_notes": [
+      "",
+      "squared the minus too: only 3 is squared",
+      "multiplied base by exponent",
+      "multiplied and dropped the sign"
+    ],
+    "check": {
+      "kind": "evaluate",
+      "expr": "−3²"
+    }
+  },
+  {
+    "id": "pow_t2_004",
+    "topic": "powers_like_terms",
+    "tier": 2,
+    "question": {
+      "uk": "Обчисліть: 2³ + 3²",
+      "en": "Calculate: 2³ + 3²"
+    },
+    "options": [
+      "17",
+      "12",
+      "72",
+      "10"
+    ],
+    "answer_index": 0,
+    "solution": {
+      "uk": "2³ + 3² = 8 + 9 = 17",
+      "en": "2³ + 3² = 8 + 9 = 17"
+    },
+    "distractor_notes": [
+      "",
+      "multiplied base by exponent",
+      "multiplied the powers instead of adding",
+      "added base and exponent"
+    ],
+    "check": {
+      "kind": "evaluate",
+      "expr": "2³ + 3²"
+    }
+  },
+  {
+    "id": "pow_t2_005",
+    "topic": "powers_like_terms",
+    "tier": 2,
+    "question": {
+      "uk": "Спростіть: x³ · x⁴ · x",
+      "en": "Simplify: x³ · x⁴ · x"
+    },
+    "options": [
+      "x⁷",
+      "x¹²",
+      "3x⁸",
+      "x⁸"
+    ],
+    "answer_index": 3,
+    "solution": {
+      "uk": "x³⁺⁴⁺¹ = x⁸",
+      "en": "x³⁺⁴⁺¹ = x⁸"
+    },
+    "distractor_notes": [
+      "forgot that x = x¹",
+      "multiplied the exponents",
+      "counted the factors as a coefficient",
+      ""
+    ],
+    "check": {
+      "kind": "simplify",
+      "expr": "x³ · x⁴ · x"
+    }
+  },
+  {
+    "id": "pow_t2_006",
+    "topic": "powers_like_terms",
+    "tier": 2,
+    "question": {
+      "uk": "Спростіть: 2x · 3x",
+      "en": "Simplify: 2x · 3x"
+    },
+    "options": [
+      "5x²",
+      "6x²",
+      "6x",
+      "5x"
+    ],
+    "answer_index": 1,
+    "solution": {
+      "uk": "(2 · 3) · (x · x) = 6x²",
+      "en": "(2 · 3) · (x · x) = 6x²"
+    },
+    "distractor_notes": [
+      "added the coefficients",
+      "",
+      "forgot that x · x = x²",
+      "added everything"
+    ],
+    "check": {
+      "kind": "simplify",
+      "expr": "2x · 3x"
+    }
+  },
+  {
+    "id": "pow_t2_007",
+    "topic": "powers_like_terms",
+    "tier": 2,
+    "question": {
+      "uk": "Зведіть подібні доданки: 5a² − 2a² + a²",
+      "en": "Combine like terms: 5a² − 2a² + a²"
+    },
+    "options": [
+      "3a²",
+      "4a⁶",
+      "4a²",
+      "2a²"
+    ],
+    "answer_index": 2,
+    "solution": {
+      "uk": "(5 − 2 + 1)a² = 4a²",
+      "en": "(5 − 2 + 1)a² = 4a²"
+    },
+    "distractor_notes": [
+      "forgot that a² = 1a²",
+      "added the exponents",
+      "",
+      "subtracted the last term"
+    ],
+    "check": {
+      "kind": "simplify",
+      "expr": "5a² − 2a² + a²"
+    }
+  },
+  {
+    "id": "pow_t2_008",
+    "topic": "powers_like_terms",
+    "tier": 2,
+    "question": {
+      "uk": "Спростіть: (a³)² · a²",
+      "en": "Simplify: (a³)² · a²"
+    },
+    "options": [
+      "a⁷",
+      "a¹²",
+      "a¹¹",
+      "a⁸"
+    ],
+    "answer_index": 3,
+    "solution": {
+      "uk": "(a³)² · a² = a⁶ · a² = a⁸",
+      "en": "(a³)² · a² = a⁶ · a² = a⁸"
+    },
+    "distractor_notes": [
+      "added exponents in the bracket: 3 + 2",
+      "multiplied all the exponents",
+      "raised the exponent to a power: 3² = 9",
+      ""
+    ],
+    "check": {
+      "kind": "simplify",
+      "expr": "(a³)² · a²"
+    }
+  },
+  {
+    "id": "pow_t2_009",
+    "topic": "powers_like_terms",
+    "tier": 2,
+    "question": {
+      "uk": "Спростіть: y⁹ : y³ · y",
+      "en": "Simplify: y⁹ : y³ · y"
+    },
+    "options": [
+      "y⁷",
+      "y⁶",
+      "y⁴",
+      "y¹³"
+    ],
+    "answer_index": 0,
+    "solution": {
+      "uk": "y⁹ : y³ · y = y⁶ · y = y⁷",
+      "en": "y⁹ : y³ · y = y⁶ · y = y⁷"
+    },
+    "distractor_notes": [
+      "",
+      "forgot the last y",
+      "divided the exponents: 9 : 3",
+      "added all the exponents"
+    ],
+    "check": {
+      "kind": "simplify",
+      "expr": "y⁹ : y³ · y"
+    }
+  },
+  {
+    "id": "pow_t2_010",
+    "topic": "powers_like_terms",
+    "tier": 2,
+    "question": {
+      "uk": "Знайдіть значення виразу 2a + 3a, якщо a = 4",
+      "en": "Find the value of 2a + 3a when a = 4"
+    },
+    "options": [
+      "54",
+      "9",
+      "20",
+      "11"
+    ],
+    "answer_index": 2,
+    "solution": {
+      "uk": "2a + 3a = 5a = 5 · 4 = 20",
+      "en": "2a + 3a = 5a = 5 · 4 = 20"
+    },
+    "distractor_notes": [
+      "wrote 5a as the digits 5 and 4",
+      "added 5 + 4",
+      "",
+      "substituted only into the first term: 8 + 3"
+    ],
+    "check": {
+      "kind": "evaluate",
+      "expr": "2a + 3a",
+      "subs": {
+        "a": 4
+      }
+    }
+  },
+  {
+    "id": "pow_t2_011",
+    "topic": "powers_like_terms",
+    "tier": 2,
+    "question": {
+      "uk": "Обчисліть: 10² − 5²",
+      "en": "Calculate: 10² − 5²"
+    },
+    "options": [
+      "25",
+      "10",
+      "95",
+      "75"
+    ],
+    "answer_index": 3,
+    "solution": {
+      "uk": "10² − 5² = 100 − 25 = 75",
+      "en": "10² − 5² = 100 − 25 = 75"
+    },
+    "distractor_notes": [
+      "subtracted before squaring: (10 − 5)²",
+      "multiplied bases by exponents: 20 − 10",
+      "forgot to square 5",
+      ""
+    ],
+    "check": {
+      "kind": "evaluate",
+      "expr": "10² − 5²"
+    }
+  },
+  {
+    "id": "pow_t2_012",
+    "topic": "powers_like_terms",
+    "tier": 2,
+    "question": {
+      "uk": "Обчисліть: 2 · 3²",
+      "en": "Calculate: 2 · 3²"
+    },
+    "options": [
+      "18",
+      "36",
+      "12",
+      "11"
+    ],
+    "answer_index": 0,
+    "solution": {
+      "uk": "3² = 9 → 2 · 9 = 18",
+      "en": "3² = 9 → 2 · 9 = 18"
+    },
+    "distractor_notes": [
+      "",
+      "multiplied before raising to a power: 6²",
+      "multiplied 3 by the exponent",
+      "added instead of multiplying"
+    ],
+    "check": {
+      "kind": "evaluate",
+      "expr": "2 · 3²"
+    }
+  },
+  {
+    "id": "pow_t2_013",
+    "topic": "powers_like_terms",
+    "tier": 2,
+    "question": {
+      "uk": "Обчисліть: (−1)⁴ + (−1)³",
+      "en": "Calculate: (−1)⁴ + (−1)³"
+    },
+    "options": [
+      "2",
+      "−2",
+      "−7",
+      "0"
+    ],
+    "answer_index": 3,
+    "solution": {
+      "uk": "(−1)⁴ + (−1)³ = 1 + (−1) = 0",
+      "en": "(−1)⁴ + (−1)³ = 1 + (−1) = 0"
+    },
+    "distractor_notes": [
+      "made both powers positive",
+      "made both powers negative",
+      "multiplied base by exponent",
+      ""
+    ],
+    "check": {
+      "kind": "evaluate",
+      "expr": "(−1)⁴ + (−1)³"
+    }
+  },
+  {
+    "id": "pow_t2_014",
+    "topic": "powers_like_terms",
+    "tier": 2,
+    "question": {
+      "uk": "Спростіть: 3x² · 2x",
+      "en": "Simplify: 3x² · 2x"
+    },
+    "options": [
+      "6x³",
+      "5x³",
+      "6x²",
+      "5x²"
+    ],
+    "answer_index": 0,
+    "solution": {
+      "uk": "(3 · 2) · x²⁺¹ = 6x³",
+      "en": "(3 · 2) · x²⁺¹ = 6x³"
+    },
+    "distractor_notes": [
+      "",
+      "added the coefficients",
+      "ignored the second x",
+      "added coefficients and ignored the second x"
+    ],
+    "check": {
+      "kind": "simplify",
+      "expr": "3x² · 2x"
+    }
+  },
+  {
+    "id": "pow_t2_015",
+    "topic": "powers_like_terms",
+    "tier": 2,
+    "question": {
+      "uk": "Зведіть подібні доданки: 2a² + 3a − a²",
+      "en": "Combine like terms: 2a² + 3a − a²"
+    },
+    "options": [
+      "4a²",
+      "3a² + 3a",
+      "a² + 3a",
+      "2a² + 2a"
+    ],
+    "answer_index": 2,
+    "solution": {
+      "uk": "(2a² − a²) + 3a = a² + 3a",
+      "en": "(2a² − a²) + 3a = a² + 3a"
+    },
+    "distractor_notes": [
+      "combined unlike terms",
+      "added a² instead of subtracting",
+      "",
+      "subtracted from the wrong term"
+    ],
+    "check": {
+      "kind": "simplify",
+      "expr": "2a² + 3a − a²"
+    }
+  },
+  {
+    "id": "pow_t3_001",
+    "topic": "powers_like_terms",
+    "tier": 3,
+    "question": {
+      "uk": "Спростіть: (2x²)³",
+      "en": "Simplify: (2x²)³"
+    },
+    "options": [
+      "6x⁵",
+      "8x⁶",
+      "2x⁶",
+      "8x⁵"
+    ],
+    "answer_index": 1,
+    "solution": {
+      "uk": "(2x²)³ = 2³ · (x²)³ = 8x⁶",
+      "en": "(2x²)³ = 2³ · (x²)³ = 8x⁶"
+    },
+    "distractor_notes": [
+      "multiplied 2 by 3 and added exponents",
+      "",
+      "forgot to cube the 2",
+      "added the exponents"
+    ],
+    "check": {
+      "kind": "simplify",
+      "expr": "(2x²)³"
+    }
+  },
+  {
+    "id": "pow_t3_002",
+    "topic": "powers_like_terms",
+    "tier": 3,
+    "question": {
+      "uk": "Спростіть: (−2a³)²",
+      "en": "Simplify: (−2a³)²"
+    },
+    "options": [
+      "−4a⁶",
+      "4a⁶",
+      "4a⁵",
+      "−2a⁶"
+    ],
+    "answer_index": 1,
+    "solution": {
+      "uk": "(−2a³)² = (−2)² · (a³)² = 4a⁶",
+      "en": "(−2a³)² = (−2)² · (a³)² = 4a⁶"
+    },
+    "distractor_notes": [
+      "kept the minus: an even power is positive",
+      "",
+      "added the exponents",
+      "forgot to square −2"
+    ],
+    "check": {
+      "kind": "simplify",
+      "expr": "(−2a³)²"
+    }
+  },
+  {
+    "id": "pow_t3_003",
+    "topic": "powers_like_terms",
+    "tier": 3,
+    "question": {
+      "uk": "Спростіть: 3x² · (−2x³)",
+      "en": "Simplify: 3x² · (−2x³)"
+    },
+    "options": [
+      "6x⁵",
+      "−6x⁵",
+      "−6x⁶",
+      "x⁵"
+    ],
+    "answer_index": 1,
+    "solution": {
+      "uk": "3 · (−2) · x²⁺³ = −6x⁵",
+      "en": "3 · (−2) · x²⁺³ = −6x⁵"
+    },
+    "distractor_notes": [
+      "lost the minus sign",
+      "",
+      "multiplied the exponents",
+      "added the coefficients"
+    ],
+    "check": {
+      "kind": "simplify",
+      "expr": "3x² · (−2x³)"
+    }
+  },
+  {
+    "id": "pow_t3_004",
+    "topic": "powers_like_terms",
+    "tier": 3,
+    "question": {
+      "uk": "Обчисліть: 2⁵ · 2³ : 2⁶",
+      "en": "Calculate: 2⁵ · 2³ : 2⁶"
+    },
+    "options": [
+      "2",
+      "512",
+      "1",
+      "4"
+    ],
+    "answer_index": 3,
+    "solution": {
+      "uk": "2⁵⁺³⁻⁶ = 2² = 4",
+      "en": "2⁵⁺³⁻⁶ = 2² = 4"
+    },
+    "distractor_notes": [
+      "stopped at the exponent: 5 + 3 − 6 = 2",
+      "multiplied the exponents: 2¹⁵ : 2⁶ = 2⁹",
+      "thought equal bases cancel to 1",
+      ""
+    ],
+    "check": {
+      "kind": "evaluate",
+      "expr": "2⁵ · 2³ : 2⁶"
+    }
+  },
+  {
+    "id": "pow_t3_005",
+    "topic": "powers_like_terms",
+    "tier": 3,
+    "question": {
+      "uk": "Спростіть: (a²)³ · a⁴ : a⁵",
+      "en": "Simplify: (a²)³ · a⁴ : a⁵"
+    },
+    "options": [
+      "a⁴",
+      "a¹⁰",
+      "a¹⁵",
+      "a⁵"
+    ],
+    "answer_index": 3,
+    "solution": {
+      "uk": "a⁶ · a⁴ : a⁵ = a⁶⁺⁴⁻⁵ = a⁵",
+      "en": "a⁶ · a⁴ : a⁵ = a⁶⁺⁴⁻⁵ = a⁵"
+    },
+    "distractor_notes": [
+      "added exponents in the bracket: 2 + 3",
+      "ignored the division",
+      "added the divisor's exponent",
+      ""
+    ],
+    "check": {
+      "kind": "simplify",
+      "expr": "(a²)³ · a⁴ : a⁵"
+    }
+  },
+  {
+    "id": "pow_t3_006",
+    "topic": "powers_like_terms",
+    "tier": 3,
+    "question": {
+      "uk": "Спростіть: 5x − 2(x − 3)",
+      "en": "Simplify: 5x − 2(x − 3)"
+    },
+    "options": [
+      "3x − 6",
+      "3x − 3",
+      "3x + 3",
+      "3x + 6"
+    ],
+    "answer_index": 3,
+    "solution": {
+      "uk": "5x − 2x + 6 = 3x + 6",
+      "en": "5x − 2x + 6 = 3x + 6"
+    },
+    "distractor_notes": [
+      "sign error: −2 · (−3) = +6",
+      "forgot to multiply 3 by 2, and the sign",
+      "forgot to multiply 3 by 2",
+      ""
+    ],
+    "check": {
+      "kind": "simplify",
+      "expr": "5x − 2(x − 3)"
+    }
+  },
+  {
+    "id": "pow_t3_007",
+    "topic": "powers_like_terms",
+    "tier": 3,
+    "question": {
+      "uk": "Зведіть подібні доданки: 3a² + 2a − a² − 5a",
+      "en": "Combine like terms: 3a² + 2a − a² − 5a"
+    },
+    "options": [
+      "4a² − 3a",
+      "2a² − 3a",
+      "2a² − 7a",
+      "−a"
+    ],
+    "answer_index": 1,
+    "solution": {
+      "uk": "(3a² − a²) + (2a − 5a) = 2a² − 3a",
+      "en": "(3a² − a²) + (2a − 5a) = 2a² − 3a"
+    },
+    "distractor_notes": [
+      "added a² instead of subtracting",
+      "",
+      "added 2 and 5 instead of subtracting",
+      "combined unlike terms"
+    ],
+    "check": {
+      "kind": "simplify",
+      "expr": "3a² + 2a − a² − 5a"
+    }
+  },
+  {
+    "id": "pow_t3_008",
+    "topic": "powers_like_terms",
+    "tier": 3,
+    "question": {
+      "uk": "Обчисліть: (−1)¹⁰¹ + (−1)¹⁰⁰",
+      "en": "Calculate: (−1)¹⁰¹ + (−1)¹⁰⁰"
+    },
+    "options": [
+      "2",
+      "−2",
+      "0",
+      "−201"
+    ],
+    "answer_index": 2,
+    "solution": {
+      "uk": "(−1)¹⁰¹ + (−1)¹⁰⁰ = −1 + 1 = 0",
+      "en": "(−1)¹⁰¹ + (−1)¹⁰⁰ = −1 + 1 = 0"
+    },
+    "distractor_notes": [
+      "made both powers positive",
+      "made both powers negative",
+      "",
+      "multiplied base by exponent"
+    ],
+    "check": {
+      "kind": "evaluate",
+      "expr": "(−1)¹⁰¹ + (−1)¹⁰⁰"
+    }
+  },
+  {
+    "id": "pow_t3_009",
+    "topic": "powers_like_terms",
+    "tier": 3,
+    "question": {
+      "uk": "Спростіть: 2x² · 3x³ − x⁵",
+      "en": "Simplify: 2x² · 3x³ − x⁵"
+    },
+    "options": [
+      "6x⁶ − x⁵",
+      "5x⁶",
+      "5x⁵",
+      "4x⁵"
+    ],
+    "answer_index": 2,
+    "solution": {
+      "uk": "6x⁵ − x⁵ = 5x⁵",
+      "en": "6x⁵ − x⁵ = 5x⁵"
+    },
+    "distractor_notes": [
+      "multiplied the exponents",
+      "multiplied the exponents, then combined unlike terms",
+      "",
+      "added the coefficients 2 and 3"
+    ],
+    "check": {
+      "kind": "simplify",
+      "expr": "2x² · 3x³ − x⁵"
+    }
+  },
+  {
+    "id": "pow_t3_010",
+    "topic": "powers_like_terms",
+    "tier": 3,
+    "question": {
+      "uk": "Спростіть: (3a)² − 2a²",
+      "en": "Simplify: (3a)² − 2a²"
+    },
+    "options": [
+      "a²",
+      "7a²",
+      "4a²",
+      "7a⁴"
+    ],
+    "answer_index": 1,
+    "solution": {
+      "uk": "(3a)² − 2a² = 9a² − 2a² = 7a²",
+      "en": "(3a)² − 2a² = 9a² − 2a² = 7a²"
+    },
+    "distractor_notes": [
+      "squared only a: 3a²",
+      "",
+      "multiplied 3 by the exponent: 6a²",
+      "added exponents when combining like terms"
+    ],
+    "check": {
+      "kind": "simplify",
+      "expr": "(3a)² − 2a²"
+    }
+  },
+  {
+    "id": "pow_t3_011",
+    "topic": "powers_like_terms",
+    "tier": 3,
+    "question": {
+      "uk": "Знайдіть значення виразу a² + 2a, якщо a = −3",
+      "en": "Find the value of a² + 2a when a = −3"
+    },
+    "options": [
+      "−15",
+      "15",
+      "−3",
+      "3"
+    ],
+    "answer_index": 3,
+    "solution": {
+      "uk": "(−3)² + 2 · (−3) = 9 − 6 = 3",
+      "en": "(−3)² + 2 · (−3) = 9 − 6 = 3"
+    },
+    "distractor_notes": [
+      "took (−3)² as −9",
+      "lost the sign of 2a",
+      "took (−3)² as −9 and lost the sign of 2a",
+      ""
+    ],
+    "check": {
+      "kind": "evaluate",
+      "expr": "a² + 2a",
+      "subs": {
+        "a": -3
+      }
+    }
+  },
+  {
+    "id": "pow_t3_012",
+    "topic": "powers_like_terms",
+    "tier": 3,
+    "question": {
+      "uk": "Спростіть: (x³)⁴ : (x²)⁵",
+      "en": "Simplify: (x³)⁴ : (x²)⁵"
+    },
+    "options": [
+      "x²",
+      "1",
+      "x²²",
+      "x¹²⁰"
+    ],
+    "answer_index": 0,
+    "solution": {
+      "uk": "(x³)⁴ : (x²)⁵ = x¹² : x¹⁰ = x²",
+      "en": "(x³)⁴ : (x²)⁵ = x¹² : x¹⁰ = x²"
+    },
+    "distractor_notes": [
+      "",
+      "added exponents in brackets: x⁷ : x⁷",
+      "added exponents instead of subtracting",
+      "multiplied exponents instead of subtracting"
+    ],
+    "check": {
+      "kind": "simplify",
+      "expr": "(x³)⁴ : (x²)⁵"
+    }
+  },
+  {
+    "id": "pow_t3_013",
+    "topic": "powers_like_terms",
+    "tier": 3,
+    "question": {
+      "uk": "Зведіть подібні доданки: 4ab + 3ba − 5ab",
+      "en": "Combine like terms: 4ab + 3ba − 5ab"
+    },
+    "options": [
+      "12ab",
+      "2a²b²",
+      "2ab",
+      "−4ab"
+    ],
+    "answer_index": 2,
+    "solution": {
+      "uk": "ba = ab → (4 + 3 − 5)ab = 2ab",
+      "en": "ba = ab → (4 + 3 − 5)ab = 2ab"
+    },
+    "distractor_notes": [
+      "ignored the minus",
+      "multiplied the variables",
+      "",
+      "put the minus in front of 3ba"
+    ],
+    "check": {
+      "kind": "simplify",
+      "expr": "4ab + 3ba − 5ab"
+    }
+  },
+  {
+    "id": "pow_t3_014",
+    "topic": "powers_like_terms",
+    "tier": 3,
+    "question": {
+      "uk": "Обчисліть: 2³ · 5³",
+      "en": "Calculate: 2³ · 5³"
+    },
+    "options": [
+      "1000",
+      "1 000 000",
+      "343",
+      "90"
+    ],
+    "answer_index": 0,
+    "solution": {
+      "uk": "2³ · 5³ = (2 · 5)³ = 10³ = 1000",
+      "en": "2³ · 5³ = (2 · 5)³ = 10³ = 1000"
+    },
+    "distractor_notes": [
+      "",
+      "multiplied the bases and added exponents: 10⁶",
+      "added the bases: 7³",
+      "multiplied bases by exponents: 6 · 15"
+    ],
+    "check": {
+      "kind": "evaluate",
+      "expr": "2³ · 5³"
+    }
+  },
+  {
+    "id": "pow_t3_015",
+    "topic": "powers_like_terms",
+    "tier": 3,
+    "question": {
+      "uk": "Спростіть: (−x)⁴ · (−x)³",
+      "en": "Simplify: (−x)⁴ · (−x)³"
+    },
+    "options": [
+      "x⁷",
+      "−x¹²",
+      "x¹²",
+      "−x⁷"
+    ],
+    "answer_index": 3,
+    "solution": {
+      "uk": "(−x)⁴ · (−x)³ = (−x)⁷ = −x⁷",
+      "en": "(−x)⁴ · (−x)³ = (−x)⁷ = −x⁷"
+    },
+    "distractor_notes": [
+      "lost the sign: the total power is odd",
+      "multiplied the exponents",
+      "multiplied exponents and lost the sign",
+      ""
+    ],
+    "check": {
+      "kind": "simplify",
+      "expr": "(−x)⁴ · (−x)³"
+    }
+  }
+]

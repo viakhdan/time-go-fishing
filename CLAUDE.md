@@ -11,4 +11,5 @@ Educational math fishing game for Ukrainian 7th graders. Godot 4.7, GDScript, GL
 - Godot CLI (headless checks): `C:/Godot_v4.7.2-stable_win64.exe/Godot_v4.7.2-stable_win64_console.exe --headless --path . --import` (the `.exe` in that path is a folder). The user often has the editor open, so avoid rewriting `project.godot` wholesale.
 - `Inspo/` is gitignored (copyrighted Dredge reference art); it exists only locally.
 - Fonts: `art/ui/theme.tres` is the project theme. PT Sans (body) / Oswald (buttons, `TitleLabel`) / PT Serif (`SerifLabel`), with Noto Sans + Noto Sans Math fallbacks for superscripts ⁴–⁹ and → √ ≤ ≥ ≠. No font has 🪙, so use a coin icon instead of the emoji.
-- Python tools in `tools/` (Python 3.13, numpy, Pillow, scikit-learn available).
+- Problem pools: `data/problems/<topic>.json`, a JSON array. Each problem has a dev-only `check` field (the math as shown, used by the validator; never shown to players). Run `python tools/validate_problems.py` after any edit; it must print OK. Player-facing math uses − · and superscripts, never ASCII - * ^.
+- Python tools in `tools/` (Python 3.13; deps in `tools/requirements.txt`).

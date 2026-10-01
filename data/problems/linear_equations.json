@@ -1,0 +1,1355 @@
+[
+  {
+    "id": "lin_t1_001",
+    "topic": "linear_equations",
+    "tier": 1,
+    "question": {
+      "uk": "Розв'яжіть рівняння: x + 7 = 12",
+      "en": "Solve: x + 7 = 12"
+    },
+    "options": [
+      "5",
+      "19",
+      "−5",
+      "12/7"
+    ],
+    "answer_index": 0,
+    "solution": {
+      "uk": "x = 12 − 7 = 5",
+      "en": "x = 12 − 7 = 5"
+    },
+    "distractor_notes": [
+      "",
+      "added 7 instead of subtracting",
+      "subtracted in the wrong order: 7 − 12",
+      "divided instead of subtracting"
+    ],
+    "check": {
+      "kind": "solve",
+      "expr": "x + 7 = 12"
+    }
+  },
+  {
+    "id": "lin_t1_002",
+    "topic": "linear_equations",
+    "tier": 1,
+    "question": {
+      "uk": "Розв'яжіть рівняння: x − 4 = 9",
+      "en": "Solve: x − 4 = 9"
+    },
+    "options": [
+      "5",
+      "−5",
+      "13",
+      "−13"
+    ],
+    "answer_index": 2,
+    "solution": {
+      "uk": "x = 9 + 4 = 13",
+      "en": "x = 9 + 4 = 13"
+    },
+    "distractor_notes": [
+      "subtracted 4 instead of adding",
+      "subtracted in the wrong order: 4 − 9",
+      "",
+      "added, then sign error"
+    ],
+    "check": {
+      "kind": "solve",
+      "expr": "x − 4 = 9"
+    }
+  },
+  {
+    "id": "lin_t1_003",
+    "topic": "linear_equations",
+    "tier": 1,
+    "question": {
+      "uk": "Розв'яжіть рівняння: 5x = 35",
+      "en": "Solve: 5x = 35"
+    },
+    "options": [
+      "30",
+      "7",
+      "175",
+      "40"
+    ],
+    "answer_index": 1,
+    "solution": {
+      "uk": "x = 35 : 5 = 7",
+      "en": "x = 35 : 5 = 7"
+    },
+    "distractor_notes": [
+      "subtracted 5 instead of dividing",
+      "",
+      "multiplied instead of dividing",
+      "added 5"
+    ],
+    "check": {
+      "kind": "solve",
+      "expr": "5x = 35"
+    }
+  },
+  {
+    "id": "lin_t1_004",
+    "topic": "linear_equations",
+    "tier": 1,
+    "question": {
+      "uk": "Розв'яжіть рівняння: x : 3 = 6",
+      "en": "Solve: x : 3 = 6"
+    },
+    "options": [
+      "2",
+      "9",
+      "3",
+      "18"
+    ],
+    "answer_index": 3,
+    "solution": {
+      "uk": "x = 6 · 3 = 18",
+      "en": "x = 6 · 3 = 18"
+    },
+    "distractor_notes": [
+      "divided instead of multiplying",
+      "added 3",
+      "subtracted 3",
+      ""
+    ],
+    "check": {
+      "kind": "solve",
+      "expr": "x : 3 = 6"
+    }
+  },
+  {
+    "id": "lin_t1_005",
+    "topic": "linear_equations",
+    "tier": 1,
+    "question": {
+      "uk": "Розв'яжіть рівняння: 12 − x = 5",
+      "en": "Solve: 12 − x = 5"
+    },
+    "options": [
+      "−7",
+      "17",
+      "−17",
+      "7"
+    ],
+    "answer_index": 3,
+    "solution": {
+      "uk": "x = 12 − 5 = 7",
+      "en": "x = 12 − 5 = 7"
+    },
+    "distractor_notes": [
+      "sign error when moving x",
+      "added instead of subtracting",
+      "added, then sign error",
+      ""
+    ],
+    "check": {
+      "kind": "solve",
+      "expr": "12 − x = 5"
+    }
+  },
+  {
+    "id": "lin_t1_006",
+    "topic": "linear_equations",
+    "tier": 1,
+    "question": {
+      "uk": "Розв'яжіть рівняння: 4x = −20",
+      "en": "Solve: 4x = −20"
+    },
+    "options": [
+      "5",
+      "−5",
+      "−24",
+      "−80"
+    ],
+    "answer_index": 1,
+    "solution": {
+      "uk": "x = −20 : 4 = −5",
+      "en": "x = −20 : 4 = −5"
+    },
+    "distractor_notes": [
+      "lost the minus sign",
+      "",
+      "subtracted 4 instead of dividing",
+      "multiplied instead of dividing"
+    ],
+    "check": {
+      "kind": "solve",
+      "expr": "4x = −20"
+    }
+  },
+  {
+    "id": "lin_t1_007",
+    "topic": "linear_equations",
+    "tier": 1,
+    "question": {
+      "uk": "Розв'яжіть рівняння: x + 15 = 9",
+      "en": "Solve: x + 15 = 9"
+    },
+    "options": [
+      "6",
+      "24",
+      "−24",
+      "−6"
+    ],
+    "answer_index": 3,
+    "solution": {
+      "uk": "x = 9 − 15 = −6",
+      "en": "x = 9 − 15 = −6"
+    },
+    "distractor_notes": [
+      "subtracted in the wrong order: 15 − 9",
+      "added 15 instead of subtracting",
+      "added, then sign error",
+      ""
+    ],
+    "check": {
+      "kind": "solve",
+      "expr": "x + 15 = 9"
+    }
+  },
+  {
+    "id": "lin_t1_008",
+    "topic": "linear_equations",
+    "tier": 1,
+    "question": {
+      "uk": "Розв'яжіть рівняння: −3x = 12",
+      "en": "Solve: −3x = 12"
+    },
+    "options": [
+      "−4",
+      "4",
+      "15",
+      "−36"
+    ],
+    "answer_index": 0,
+    "solution": {
+      "uk": "x = 12 : (−3) = −4",
+      "en": "x = 12 : (−3) = −4"
+    },
+    "distractor_notes": [
+      "",
+      "lost the minus sign",
+      "moved −3 as a term: 12 + 3",
+      "multiplied instead of dividing"
+    ],
+    "check": {
+      "kind": "solve",
+      "expr": "−3x = 12"
+    }
+  },
+  {
+    "id": "lin_t1_009",
+    "topic": "linear_equations",
+    "tier": 1,
+    "question": {
+      "uk": "Розв'яжіть рівняння: x − 8 = −3",
+      "en": "Solve: x − 8 = −3"
+    },
+    "options": [
+      "−11",
+      "11",
+      "5",
+      "−5"
+    ],
+    "answer_index": 2,
+    "solution": {
+      "uk": "x = −3 + 8 = 5",
+      "en": "x = −3 + 8 = 5"
+    },
+    "distractor_notes": [
+      "subtracted 8 instead of adding",
+      "added 8 and 3, ignoring the minus",
+      "",
+      "subtracted in the wrong order: 3 − 8"
+    ],
+    "check": {
+      "kind": "solve",
+      "expr": "x − 8 = −3"
+    }
+  },
+  {
+    "id": "lin_t1_010",
+    "topic": "linear_equations",
+    "tier": 1,
+    "question": {
+      "uk": "Розв'яжіть рівняння: 7x = 0",
+      "en": "Solve: 7x = 0"
+    },
+    "options": [
+      "7",
+      "−7",
+      "0",
+      "1/7"
+    ],
+    "answer_index": 2,
+    "solution": {
+      "uk": "x = 0 : 7 = 0",
+      "en": "x = 0 : 7 = 0"
+    },
+    "distractor_notes": [
+      "took the coefficient as the answer",
+      "moved 7 as a term",
+      "",
+      "divided 1 by 7"
+    ],
+    "check": {
+      "kind": "solve",
+      "expr": "7x = 0"
+    }
+  },
+  {
+    "id": "lin_t1_011",
+    "topic": "linear_equations",
+    "tier": 1,
+    "question": {
+      "uk": "Розв'яжіть рівняння: 6x = 42",
+      "en": "Solve: 6x = 42"
+    },
+    "options": [
+      "36",
+      "252",
+      "48",
+      "7"
+    ],
+    "answer_index": 3,
+    "solution": {
+      "uk": "x = 42 : 6 = 7",
+      "en": "x = 42 : 6 = 7"
+    },
+    "distractor_notes": [
+      "subtracted 6 instead of dividing",
+      "multiplied instead of dividing",
+      "added 6",
+      ""
+    ],
+    "check": {
+      "kind": "solve",
+      "expr": "6x = 42"
+    }
+  },
+  {
+    "id": "lin_t1_012",
+    "topic": "linear_equations",
+    "tier": 1,
+    "question": {
+      "uk": "Розв'яжіть рівняння: x + 3 = 3",
+      "en": "Solve: x + 3 = 3"
+    },
+    "options": [
+      "6",
+      "−6",
+      "3",
+      "0"
+    ],
+    "answer_index": 3,
+    "solution": {
+      "uk": "x = 3 − 3 = 0",
+      "en": "x = 3 − 3 = 0"
+    },
+    "distractor_notes": [
+      "added 3 instead of subtracting",
+      "added, then sign error",
+      "copied the right side",
+      ""
+    ],
+    "check": {
+      "kind": "solve",
+      "expr": "x + 3 = 3"
+    }
+  },
+  {
+    "id": "lin_t1_013",
+    "topic": "linear_equations",
+    "tier": 1,
+    "question": {
+      "uk": "Розв'яжіть рівняння: 9 + x = 2",
+      "en": "Solve: 9 + x = 2"
+    },
+    "options": [
+      "7",
+      "−7",
+      "11",
+      "−11"
+    ],
+    "answer_index": 1,
+    "solution": {
+      "uk": "x = 2 − 9 = −7",
+      "en": "x = 2 − 9 = −7"
+    },
+    "distractor_notes": [
+      "subtracted in the wrong order: 9 − 2",
+      "",
+      "added 9 instead of subtracting",
+      "added, then sign error"
+    ],
+    "check": {
+      "kind": "solve",
+      "expr": "9 + x = 2"
+    }
+  },
+  {
+    "id": "lin_t1_014",
+    "topic": "linear_equations",
+    "tier": 1,
+    "question": {
+      "uk": "Розв'яжіть рівняння: −x = 8",
+      "en": "Solve: −x = 8"
+    },
+    "options": [
+      "8",
+      "−1/8",
+      "1/8",
+      "−8"
+    ],
+    "answer_index": 3,
+    "solution": {
+      "uk": "x = 8 : (−1) = −8",
+      "en": "x = 8 : (−1) = −8"
+    },
+    "distractor_notes": [
+      "ignored the minus in −x",
+      "divided the wrong way: −1 : 8",
+      "divided the wrong way and lost the sign",
+      ""
+    ],
+    "check": {
+      "kind": "solve",
+      "expr": "−x = 8"
+    }
+  },
+  {
+    "id": "lin_t1_015",
+    "topic": "linear_equations",
+    "tier": 1,
+    "question": {
+      "uk": "Розв'яжіть рівняння: x : 4 = −2",
+      "en": "Solve: x : 4 = −2"
+    },
+    "options": [
+      "−8",
+      "8",
+      "−1/2",
+      "2"
+    ],
+    "answer_index": 0,
+    "solution": {
+      "uk": "x = −2 · 4 = −8",
+      "en": "x = −2 · 4 = −8"
+    },
+    "distractor_notes": [
+      "",
+      "lost the minus sign",
+      "divided instead of multiplying",
+      "added 4 instead of multiplying"
+    ],
+    "check": {
+      "kind": "solve",
+      "expr": "x : 4 = −2"
+    }
+  },
+  {
+    "id": "lin_t2_001",
+    "topic": "linear_equations",
+    "tier": 2,
+    "question": {
+      "uk": "Розв'яжіть рівняння: 3x − 4 = 11",
+      "en": "Solve: 3x − 4 = 11"
+    },
+    "options": [
+      "5",
+      "7/3",
+      "−5",
+      "15"
+    ],
+    "answer_index": 0,
+    "solution": {
+      "uk": "3x = 15 → x = 5",
+      "en": "3x = 15 → x = 5"
+    },
+    "distractor_notes": [
+      "",
+      "subtracted 4 instead of adding",
+      "sign error",
+      "forgot to divide by 3"
+    ],
+    "check": {
+      "kind": "solve",
+      "expr": "3x − 4 = 11"
+    }
+  },
+  {
+    "id": "lin_t2_002",
+    "topic": "linear_equations",
+    "tier": 2,
+    "question": {
+      "uk": "Розв'яжіть рівняння: 2x + 5 = 17",
+      "en": "Solve: 2x + 5 = 17"
+    },
+    "options": [
+      "11",
+      "12",
+      "17/2",
+      "6"
+    ],
+    "answer_index": 3,
+    "solution": {
+      "uk": "2x = 12 → x = 6",
+      "en": "2x = 12 → x = 6"
+    },
+    "distractor_notes": [
+      "added 5 instead of subtracting",
+      "forgot to divide by 2",
+      "forgot to subtract 5",
+      ""
+    ],
+    "check": {
+      "kind": "solve",
+      "expr": "2x + 5 = 17"
+    }
+  },
+  {
+    "id": "lin_t2_003",
+    "topic": "linear_equations",
+    "tier": 2,
+    "question": {
+      "uk": "Розв'яжіть рівняння: 5x + 3 = −12",
+      "en": "Solve: 5x + 3 = −12"
+    },
+    "options": [
+      "−3",
+      "−9/5",
+      "3",
+      "−15"
+    ],
+    "answer_index": 0,
+    "solution": {
+      "uk": "5x = −15 → x = −3",
+      "en": "5x = −15 → x = −3"
+    },
+    "distractor_notes": [
+      "",
+      "added 3 instead of subtracting",
+      "lost the minus sign",
+      "forgot to divide by 5"
+    ],
+    "check": {
+      "kind": "solve",
+      "expr": "5x + 3 = −12"
+    }
+  },
+  {
+    "id": "lin_t2_004",
+    "topic": "linear_equations",
+    "tier": 2,
+    "question": {
+      "uk": "Розв'яжіть рівняння: 4x − 7 = 2x + 5",
+      "en": "Solve: 4x − 7 = 2x + 5"
+    },
+    "options": [
+      "6",
+      "−1",
+      "2",
+      "12"
+    ],
+    "answer_index": 0,
+    "solution": {
+      "uk": "4x − 2x = 5 + 7 → 2x = 12 → x = 6",
+      "en": "4x − 2x = 5 + 7 → 2x = 12 → x = 6"
+    },
+    "distractor_notes": [
+      "",
+      "didn't change the sign of −7 when moving it",
+      "added 2x instead of subtracting",
+      "forgot to divide by 2"
+    ],
+    "check": {
+      "kind": "solve",
+      "expr": "4x − 7 = 2x + 5"
+    }
+  },
+  {
+    "id": "lin_t2_005",
+    "topic": "linear_equations",
+    "tier": 2,
+    "question": {
+      "uk": "Розв'яжіть рівняння: 7 − 2x = 1",
+      "en": "Solve: 7 − 2x = 1"
+    },
+    "options": [
+      "−3",
+      "3",
+      "4",
+      "6"
+    ],
+    "answer_index": 1,
+    "solution": {
+      "uk": "−2x = 1 − 7 = −6 → x = 3",
+      "en": "−2x = 1 − 7 = −6 → x = 3"
+    },
+    "distractor_notes": [
+      "lost the minus when dividing by −2",
+      "",
+      "added 1 instead of subtracting",
+      "forgot to divide by 2"
+    ],
+    "check": {
+      "kind": "solve",
+      "expr": "7 − 2x = 1"
+    }
+  },
+  {
+    "id": "lin_t2_006",
+    "topic": "linear_equations",
+    "tier": 2,
+    "question": {
+      "uk": "Розв'яжіть рівняння: x : 3 + 2 = 5",
+      "en": "Solve: x : 3 + 2 = 5"
+    },
+    "options": [
+      "1",
+      "21",
+      "3",
+      "9"
+    ],
+    "answer_index": 3,
+    "solution": {
+      "uk": "x : 3 = 3 → x = 9",
+      "en": "x : 3 = 3 → x = 9"
+    },
+    "distractor_notes": [
+      "divided instead of multiplying",
+      "added 2 instead of subtracting",
+      "forgot to multiply by 3",
+      ""
+    ],
+    "check": {
+      "kind": "solve",
+      "expr": "x : 3 + 2 = 5"
+    }
+  },
+  {
+    "id": "lin_t2_007",
+    "topic": "linear_equations",
+    "tier": 2,
+    "question": {
+      "uk": "Розв'яжіть рівняння: 3(x + 2) = 18",
+      "en": "Solve: 3(x + 2) = 18"
+    },
+    "options": [
+      "4",
+      "16/3",
+      "6",
+      "8"
+    ],
+    "answer_index": 0,
+    "solution": {
+      "uk": "x + 2 = 6 → x = 4",
+      "en": "x + 2 = 6 → x = 4"
+    },
+    "distractor_notes": [
+      "",
+      "forgot to multiply 2 by 3",
+      "forgot to subtract 2",
+      "added 2 instead of subtracting"
+    ],
+    "check": {
+      "kind": "solve",
+      "expr": "3(x + 2) = 18"
+    }
+  },
+  {
+    "id": "lin_t2_008",
+    "topic": "linear_equations",
+    "tier": 2,
+    "question": {
+      "uk": "Розв'яжіть рівняння: 6x = 2x + 20",
+      "en": "Solve: 6x = 2x + 20"
+    },
+    "options": [
+      "5/2",
+      "−5",
+      "16",
+      "5"
+    ],
+    "answer_index": 3,
+    "solution": {
+      "uk": "4x = 20 → x = 5",
+      "en": "4x = 20 → x = 5"
+    },
+    "distractor_notes": [
+      "added 2x instead of subtracting",
+      "sign error",
+      "subtracted 4 instead of dividing",
+      ""
+    ],
+    "check": {
+      "kind": "solve",
+      "expr": "6x = 2x + 20"
+    }
+  },
+  {
+    "id": "lin_t2_009",
+    "topic": "linear_equations",
+    "tier": 2,
+    "question": {
+      "uk": "Розв'яжіть рівняння: −2x + 9 = 3",
+      "en": "Solve: −2x + 9 = 3"
+    },
+    "options": [
+      "−3",
+      "6",
+      "3",
+      "−6"
+    ],
+    "answer_index": 2,
+    "solution": {
+      "uk": "−2x = −6 → x = 3",
+      "en": "−2x = −6 → x = 3"
+    },
+    "distractor_notes": [
+      "lost the minus when dividing by −2",
+      "forgot to divide by −2",
+      "",
+      "forgot to divide, then sign error"
+    ],
+    "check": {
+      "kind": "solve",
+      "expr": "−2x + 9 = 3"
+    }
+  },
+  {
+    "id": "lin_t2_010",
+    "topic": "linear_equations",
+    "tier": 2,
+    "question": {
+      "uk": "Розв'яжіть рівняння: 10 = 4x − 2",
+      "en": "Solve: 10 = 4x − 2"
+    },
+    "options": [
+      "2",
+      "12",
+      "3",
+      "−3"
+    ],
+    "answer_index": 2,
+    "solution": {
+      "uk": "4x = 12 → x = 3",
+      "en": "4x = 12 → x = 3"
+    },
+    "distractor_notes": [
+      "subtracted 2 instead of adding",
+      "forgot to divide by 4",
+      "",
+      "sign error"
+    ],
+    "check": {
+      "kind": "solve",
+      "expr": "10 = 4x − 2"
+    }
+  },
+  {
+    "id": "lin_t2_011",
+    "topic": "linear_equations",
+    "tier": 2,
+    "question": {
+      "uk": "Розв'яжіть рівняння: x : 2 − 3 = 4",
+      "en": "Solve: x : 2 − 3 = 4"
+    },
+    "options": [
+      "2",
+      "7/2",
+      "14",
+      "7"
+    ],
+    "answer_index": 2,
+    "solution": {
+      "uk": "x : 2 = 7 → x = 14",
+      "en": "x : 2 = 7 → x = 14"
+    },
+    "distractor_notes": [
+      "subtracted 3 instead of adding",
+      "divided instead of multiplying",
+      "",
+      "forgot to multiply by 2"
+    ],
+    "check": {
+      "kind": "solve",
+      "expr": "x : 2 − 3 = 4"
+    }
+  },
+  {
+    "id": "lin_t2_012",
+    "topic": "linear_equations",
+    "tier": 2,
+    "question": {
+      "uk": "Розв'яжіть рівняння: 8 − x = 3x",
+      "en": "Solve: 8 − x = 3x"
+    },
+    "options": [
+      "2",
+      "4",
+      "8/3",
+      "−2"
+    ],
+    "answer_index": 0,
+    "solution": {
+      "uk": "8 = 4x → x = 2",
+      "en": "8 = 4x → x = 2"
+    },
+    "distractor_notes": [
+      "",
+      "subtracted x instead of adding: 2x = 8",
+      "ignored −x",
+      "sign error: −4x = 8"
+    ],
+    "check": {
+      "kind": "solve",
+      "expr": "8 − x = 3x"
+    }
+  },
+  {
+    "id": "lin_t2_013",
+    "topic": "linear_equations",
+    "tier": 2,
+    "question": {
+      "uk": "Розв'яжіть рівняння: 5x − 1 = 4x + 6",
+      "en": "Solve: 5x − 1 = 4x + 6"
+    },
+    "options": [
+      "5",
+      "7/9",
+      "7",
+      "−7"
+    ],
+    "answer_index": 2,
+    "solution": {
+      "uk": "5x − 4x = 6 + 1 → x = 7",
+      "en": "5x − 4x = 6 + 1 → x = 7"
+    },
+    "distractor_notes": [
+      "didn't change the sign of −1 when moving it",
+      "added 4x instead of subtracting",
+      "",
+      "sign error"
+    ],
+    "check": {
+      "kind": "solve",
+      "expr": "5x − 1 = 4x + 6"
+    }
+  },
+  {
+    "id": "lin_t2_014",
+    "topic": "linear_equations",
+    "tier": 2,
+    "question": {
+      "uk": "Розв'яжіть рівняння: 2x + 3x = 25",
+      "en": "Solve: 2x + 3x = 25"
+    },
+    "options": [
+      "25/6",
+      "20",
+      "125",
+      "5"
+    ],
+    "answer_index": 3,
+    "solution": {
+      "uk": "5x = 25 → x = 5",
+      "en": "5x = 25 → x = 5"
+    },
+    "distractor_notes": [
+      "multiplied the coefficients: 6x",
+      "subtracted 5 instead of dividing",
+      "multiplied instead of dividing",
+      ""
+    ],
+    "check": {
+      "kind": "solve",
+      "expr": "2x + 3x = 25"
+    }
+  },
+  {
+    "id": "lin_t2_015",
+    "topic": "linear_equations",
+    "tier": 2,
+    "question": {
+      "uk": "Розв'яжіть рівняння: 3x + 7 = 7",
+      "en": "Solve: 3x + 7 = 7"
+    },
+    "options": [
+      "14/3",
+      "1",
+      "0",
+      "7/3"
+    ],
+    "answer_index": 2,
+    "solution": {
+      "uk": "3x = 0 → x = 0",
+      "en": "3x = 0 → x = 0"
+    },
+    "distractor_notes": [
+      "added 7 instead of subtracting",
+      "thought 3x = 0 means x = 1",
+      "",
+      "forgot to move +7"
+    ],
+    "check": {
+      "kind": "solve",
+      "expr": "3x + 7 = 7"
+    }
+  },
+  {
+    "id": "lin_t3_001",
+    "topic": "linear_equations",
+    "tier": 3,
+    "question": {
+      "uk": "Розв'яжіть рівняння: 2(x − 3) = x + 5",
+      "en": "Solve: 2(x − 3) = x + 5"
+    },
+    "options": [
+      "8",
+      "11",
+      "−1",
+      "11/3"
+    ],
+    "answer_index": 1,
+    "solution": {
+      "uk": "2x − 6 = x + 5 → x = 11",
+      "en": "2x − 6 = x + 5 → x = 11"
+    },
+    "distractor_notes": [
+      "forgot to multiply 3 by 2",
+      "",
+      "sign error: x = 5 − 6",
+      "added x instead of subtracting"
+    ],
+    "check": {
+      "kind": "solve",
+      "expr": "2(x − 3) = x + 5"
+    }
+  },
+  {
+    "id": "lin_t3_002",
+    "topic": "linear_equations",
+    "tier": 3,
+    "question": {
+      "uk": "Розв'яжіть рівняння: 3(x + 1) − 2x = 7",
+      "en": "Solve: 3(x + 1) − 2x = 7"
+    },
+    "options": [
+      "6",
+      "4/5",
+      "4",
+      "10"
+    ],
+    "answer_index": 2,
+    "solution": {
+      "uk": "3x + 3 − 2x = 7 → x + 3 = 7 → x = 4",
+      "en": "3x + 3 − 2x = 7 → x + 3 = 7 → x = 4"
+    },
+    "distractor_notes": [
+      "forgot to multiply 1 by 3",
+      "sign error on −2x",
+      "",
+      "moved +3 with the wrong sign"
+    ],
+    "check": {
+      "kind": "solve",
+      "expr": "3(x + 1) − 2x = 7"
+    }
+  },
+  {
+    "id": "lin_t3_003",
+    "topic": "linear_equations",
+    "tier": 3,
+    "question": {
+      "uk": "Розв'яжіть рівняння: 5 − 2(x − 1) = 3",
+      "en": "Solve: 5 − 2(x − 1) = 3"
+    },
+    "options": [
+      "2",
+      "0",
+      "3/2",
+      "−2"
+    ],
+    "answer_index": 0,
+    "solution": {
+      "uk": "5 − 2x + 2 = 3 → −2x = −4 → x = 2",
+      "en": "5 − 2x + 2 = 3 → −2x = −4 → x = 2"
+    },
+    "distractor_notes": [
+      "",
+      "sign error: −2 · (−1) = +2",
+      "forgot to multiply 1 by 2",
+      "sign error at the end"
+    ],
+    "check": {
+      "kind": "solve",
+      "expr": "5 − 2(x − 1) = 3"
+    }
+  },
+  {
+    "id": "lin_t3_004",
+    "topic": "linear_equations",
+    "tier": 3,
+    "question": {
+      "uk": "Розв'яжіть рівняння: (x + 4)/3 = x − 2",
+      "en": "Solve: (x + 4)/3 = x − 2"
+    },
+    "options": [
+      "3",
+      "5",
+      "−5",
+      "10"
+    ],
+    "answer_index": 1,
+    "solution": {
+      "uk": "x + 4 = 3x − 6 → 2x = 10 → x = 5",
+      "en": "x + 4 = 3x − 6 → 2x = 10 → x = 5"
+    },
+    "distractor_notes": [
+      "forgot to multiply 2 by 3",
+      "",
+      "sign error",
+      "forgot to divide by 2"
+    ],
+    "check": {
+      "kind": "solve",
+      "expr": "(x + 4)/3 = x − 2"
+    }
+  },
+  {
+    "id": "lin_t3_005",
+    "topic": "linear_equations",
+    "tier": 3,
+    "question": {
+      "uk": "Розв'яжіть рівняння: 4x − (x − 5) = 20",
+      "en": "Solve: 4x − (x − 5) = 20"
+    },
+    "options": [
+      "25/3",
+      "3",
+      "5",
+      "15"
+    ],
+    "answer_index": 2,
+    "solution": {
+      "uk": "4x − x + 5 = 20 → 3x = 15 → x = 5",
+      "en": "4x − x + 5 = 20 → 3x = 15 → x = 5"
+    },
+    "distractor_notes": [
+      "didn't change the sign of −5 after opening the bracket",
+      "added x instead of subtracting",
+      "",
+      "forgot to divide by 3"
+    ],
+    "check": {
+      "kind": "solve",
+      "expr": "4x − (x − 5) = 20"
+    }
+  },
+  {
+    "id": "lin_t3_006",
+    "topic": "linear_equations",
+    "tier": 3,
+    "question": {
+      "uk": "Задумали число. Якщо його помножити на 3 і відняти 5, вийде стільки ж, скільки, якщо до нього додати 7. Яке число задумали?",
+      "en": "I think of a number. If I multiply it by 3 and subtract 5, I get the same as when I add 7 to it. What is the number?"
+    },
+    "options": [
+      "1",
+      "6",
+      "12",
+      "3"
+    ],
+    "answer_index": 1,
+    "solution": {
+      "uk": "3x − 5 = x + 7 → 2x = 12 → x = 6",
+      "en": "3x − 5 = x + 7 → 2x = 12 → x = 6"
+    },
+    "distractor_notes": [
+      "didn't change signs when moving terms: 2x = 2",
+      "",
+      "forgot to divide by 2",
+      "added x instead of subtracting: 4x = 12"
+    ],
+    "check": {
+      "kind": "solve",
+      "expr": "3x − 5 = x + 7",
+      "word_problem": true
+    }
+  },
+  {
+    "id": "lin_t3_007",
+    "topic": "linear_equations",
+    "tier": 3,
+    "question": {
+      "uk": "У Лесі на 4 цукерки більше, ніж в Олі. Разом у них 20 цукерок. Скільки цукерок в Олі?",
+      "en": "Lesia has 4 more sweets than Olia. Together they have 20 sweets. How many sweets does Olia have?"
+    },
+    "options": [
+      "12",
+      "16",
+      "8",
+      "10"
+    ],
+    "answer_index": 2,
+    "solution": {
+      "uk": "Оля: x, Леся: x + 4 → 2x + 4 = 20 → x = 8",
+      "en": "Olia: x, Lesia: x + 4 → 2x + 4 = 20 → x = 8"
+    },
+    "distractor_notes": [
+      "found Lesia's sweets instead of Olia's",
+      "forgot to divide by 2",
+      "",
+      "ignored the difference of 4"
+    ],
+    "check": {
+      "kind": "solve",
+      "expr": "x + (x + 4) = 20",
+      "word_problem": true
+    }
+  },
+  {
+    "id": "lin_t3_008",
+    "topic": "linear_equations",
+    "tier": 3,
+    "question": {
+      "uk": "Розв'яжіть рівняння: 2(3x − 1) = 4(x + 2)",
+      "en": "Solve: 2(3x − 1) = 4(x + 2)"
+    },
+    "options": [
+      "3/2",
+      "5",
+      "2",
+      "3"
+    ],
+    "answer_index": 1,
+    "solution": {
+      "uk": "6x − 2 = 4x + 8 → 2x = 10 → x = 5",
+      "en": "6x − 2 = 4x + 8 → 2x = 10 → x = 5"
+    },
+    "distractor_notes": [
+      "forgot to multiply the numbers in both brackets",
+      "",
+      "forgot to multiply 2 by 4",
+      "subtracted 2 instead of adding: 2x = 6"
+    ],
+    "check": {
+      "kind": "solve",
+      "expr": "2(3x − 1) = 4(x + 2)"
+    }
+  },
+  {
+    "id": "lin_t3_009",
+    "topic": "linear_equations",
+    "tier": 3,
+    "question": {
+      "uk": "Розв'яжіть рівняння: 7x − 3(x + 2) = 2(x + 1)",
+      "en": "Solve: 7x − 3(x + 2) = 2(x + 1)"
+    },
+    "options": [
+      "−2",
+      "7/2",
+      "2",
+      "4"
+    ],
+    "answer_index": 3,
+    "solution": {
+      "uk": "4x − 6 = 2x + 2 → 2x = 8 → x = 4",
+      "en": "4x − 6 = 2x + 2 → 2x = 8 → x = 4"
+    },
+    "distractor_notes": [
+      "sign error: −3 · 2 = +6",
+      "forgot to multiply 1 by 2",
+      "forgot to multiply 2 by 3",
+      ""
+    ],
+    "check": {
+      "kind": "solve",
+      "expr": "7x − 3(x + 2) = 2(x + 1)"
+    }
+  },
+  {
+    "id": "lin_t3_010",
+    "topic": "linear_equations",
+    "tier": 3,
+    "question": {
+      "uk": "Розв'яжіть рівняння: (x − 1)/2 = (x + 2)/5",
+      "en": "Solve: (x − 1)/2 = (x + 2)/5"
+    },
+    "options": [
+      "−4",
+      "1",
+      "3",
+      "−1/3"
+    ],
+    "answer_index": 2,
+    "solution": {
+      "uk": "5(x − 1) = 2(x + 2) → 5x − 5 = 2x + 4 → 3x = 9 → x = 3",
+      "en": "5(x − 1) = 2(x + 2) → 5x − 5 = 2x + 4 → 3x = 9 → x = 3"
+    },
+    "distractor_notes": [
+      "multiplied by the wrong denominators",
+      "forgot to multiply −1 and 2",
+      "",
+      "sign error: 3x = 4 − 5"
+    ],
+    "check": {
+      "kind": "solve",
+      "expr": "(x − 1)/2 = (x + 2)/5"
+    }
+  },
+  {
+    "id": "lin_t3_011",
+    "topic": "linear_equations",
+    "tier": 3,
+    "question": {
+      "uk": "Розв'яжіть рівняння: 3(2x − 1) − 2(3x + 1) = x",
+      "en": "Solve: 3(2x − 1) − 2(3x + 1) = x"
+    },
+    "options": [
+      "−5",
+      "−1",
+      "−2",
+      "5"
+    ],
+    "answer_index": 0,
+    "solution": {
+      "uk": "6x − 3 − 6x − 2 = x → x = −5",
+      "en": "6x − 3 − 6x − 2 = x → x = −5"
+    },
+    "distractor_notes": [
+      "",
+      "sign error: −2 · 1 = +2",
+      "forgot to multiply the numbers in the brackets",
+      "lost the minus sign"
+    ],
+    "check": {
+      "kind": "solve",
+      "expr": "3(2x − 1) − 2(3x + 1) = x"
+    }
+  },
+  {
+    "id": "lin_t3_012",
+    "topic": "linear_equations",
+    "tier": 3,
+    "question": {
+      "uk": "Розв'яжіть рівняння: 12 − 3(x − 4) = 0",
+      "en": "Solve: 12 − 3(x − 4) = 0"
+    },
+    "options": [
+      "0",
+      "8/3",
+      "8",
+      "4"
+    ],
+    "answer_index": 2,
+    "solution": {
+      "uk": "12 − 3x + 12 = 0 → 3x = 24 → x = 8",
+      "en": "12 − 3x + 12 = 0 → 3x = 24 → x = 8"
+    },
+    "distractor_notes": [
+      "sign error: −3 · (−4) = −12",
+      "forgot to multiply 4 by 3",
+      "",
+      "subtracted 12 − 3 first"
+    ],
+    "check": {
+      "kind": "solve",
+      "expr": "12 − 3(x − 4) = 0"
+    }
+  },
+  {
+    "id": "lin_t3_013",
+    "topic": "linear_equations",
+    "tier": 3,
+    "question": {
+      "uk": "Батон дорожчий за булочку на 10 грн. 2 батони і 3 булочки разом коштують 70 грн. Скільки коштує булочка (у грн)?",
+      "en": "A loaf costs 10 UAH more than a bun. 2 loaves and 3 buns cost 70 UAH in total. How much does a bun cost (in UAH)?"
+    },
+    "options": [
+      "12",
+      "20",
+      "10",
+      "14"
+    ],
+    "answer_index": 2,
+    "solution": {
+      "uk": "Булочка: x, батон: x + 10 → 3x + 2(x + 10) = 70 → 5x = 50 → x = 10",
+      "en": "Bun: x, loaf: x + 10 → 3x + 2(x + 10) = 70 → 5x = 50 → x = 10"
+    },
+    "distractor_notes": [
+      "forgot to multiply 10 by 2",
+      "found the price of a loaf instead of a bun",
+      "",
+      "ignored the 10 UAH difference"
+    ],
+    "check": {
+      "kind": "solve",
+      "expr": "3x + 2(x + 10) = 70",
+      "word_problem": true
+    }
+  },
+  {
+    "id": "lin_t3_014",
+    "topic": "linear_equations",
+    "tier": 3,
+    "question": {
+      "uk": "Розв'яжіть рівняння: 5(x − 2) − 3(x − 4) = 8",
+      "en": "Solve: 5(x − 2) − 3(x − 4) = 8"
+    },
+    "options": [
+      "3",
+      "15",
+      "5",
+      "6"
+    ],
+    "answer_index": 0,
+    "solution": {
+      "uk": "5x − 10 − 3x + 12 = 8 → 2x = 6 → x = 3",
+      "en": "5x − 10 − 3x + 12 = 8 → 2x = 6 → x = 3"
+    },
+    "distractor_notes": [
+      "",
+      "sign error: −3 · (−4) = −12",
+      "moved +2 with the wrong sign",
+      "forgot to divide by 2"
+    ],
+    "check": {
+      "kind": "solve",
+      "expr": "5(x − 2) − 3(x − 4) = 8"
+    }
+  },
+  {
+    "id": "lin_t3_015",
+    "topic": "linear_equations",
+    "tier": 3,
+    "question": {
+      "uk": "Розв'яжіть рівняння: x/2 + x/3 = 10",
+      "en": "Solve: x/2 + x/3 = 10"
+    },
+    "options": [
+      "12",
+      "50",
+      "2",
+      "60"
+    ],
+    "answer_index": 0,
+    "solution": {
+      "uk": "3x + 2x = 60 → 5x = 60 → x = 12",
+      "en": "3x + 2x = 60 → 5x = 60 → x = 12"
+    },
+    "distractor_notes": [
+      "",
+      "added the fractions as x/5",
+      "multiplied only the left side by 6",
+      "forgot to divide by 5"
+    ],
+    "check": {
+      "kind": "solve",
+      "expr": "x/2 + x/3 = 10"
+    }
+  }
+]
