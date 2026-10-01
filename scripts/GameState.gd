@@ -12,6 +12,8 @@ const LOCALES: Array[String] = ["uk", "en"]
 
 ## Tests point this elsewhere so they never touch the player's save.
 var save_path := "user://save.json"
+## The economy simulation turns this off; the game always saves.
+var saving_enabled := true
 
 var locale := "uk"
 var coins := 0
@@ -133,7 +135,11 @@ func reset() -> void:
 	upgrades_changed.emit()
 
 
+## Writes to a temp file first and then swaps it in, so a crash mid-write
+## can't leave a half-written save behind.
 func save_game() -> void:
+	if not saving_enabled:
+		return
 	var data := {
 		"version": SAVE_VERSION,
 		"locale": locale,
@@ -145,41 +151,79 @@ func save_game() -> void:
 		"trophy": trophy,
 		"trip_second_chances": trip_second_chances,
 	}
-	var file := FileAccess.open(save_path, FileAccess.WRITE)
+	var tmp_path := save_path + ".tmp"
+	var file := FileAccess.open(tmp_path, FileAccess.WRITE)
 	if file == null:
 		push_error("Could not write save: %s" % error_string(FileAccess.get_open_error()))
 		return
 	file.store_string(JSON.stringify(data, "\t"))
+	file.close()
+	var err := DirAccess.rename_absolute(tmp_path, save_path)
+	if err != OK:
+		push_error("Could not replace save: %s" % error_string(err))
 
 
+## Loads the save; if it's unreadable, falls back to the last good copy
+## (save.json.bak, refreshed after every successful load).
 func load_game() -> void:
-	if not FileAccess.file_exists(save_path):
+	var backup_path := save_path + ".bak"
+	var data = _read_save(save_path)
+	if data == null and FileAccess.file_exists(save_path):
+		push_warning("Save file is corrupt, trying the backup.")
+		data = _read_save(backup_path)
+	if data == null:
 		return
-	var data = JSON.parse_string(FileAccess.get_file_as_string(save_path))
-	if typeof(data) != TYPE_DICTIONARY:
-		push_warning("Save file is corrupt, starting fresh.")
-		return
-	# JSON numbers load as floats, so cast everything back to int.
-	locale = data.get("locale", "uk") if data.get("locale") in LOCALES else "uk"
-	coins = int(data.get("coins", 0))
+	_apply_save(data)
+	if saving_enabled and _read_save(save_path) != null:
+		DirAccess.copy_absolute(save_path, backup_path)
+
+
+func _read_save(path: String) -> Variant:
+	if not FileAccess.file_exists(path):
+		return null
+	# A JSON instance reports bad input through its return code instead of
+	# logging an engine error, so a corrupt save fails quietly.
+	var json := JSON.new()
+	if json.parse(FileAccess.get_file_as_string(path)) != OK:
+		return null
+	return json.data if json.data is Dictionary else null
+
+
+## Applies saved data, dropping anything the current game data no longer has
+## (a renamed fish, a removed upgrade) so an old save can never crash the game.
+## JSON numbers load as floats, so everything is cast back to int.
+func _apply_save(data: Dictionary) -> void:
+	if int(data.get("version", SAVE_VERSION)) > SAVE_VERSION:
+		push_warning("Save is from a newer version of the game; loading what we can.")
+	locale = data.get("locale") if data.get("locale") in LOCALES else "uk"
+	coins = maxi(0, int(data.get("coins", 0)))
 	hold.clear()
 	for fish in data.get("hold", []):
-		hold.append({
-			"species": str(fish.species),
-			"size_cm": int(fish.size_cm),
-			"value": int(fish.value),
-		})
-	for id in data.get("upgrades", {}):
-		upgrades[id] = int(data.upgrades[id])
+		if fish is Dictionary and GameData.has_fish(str(fish.get("species", ""))):
+			hold.append({
+				"species": str(fish.species),
+				"size_cm": int(fish.get("size_cm", 0)),
+				"value": int(fish.get("value", 0)),
+			})
+	upgrades = _default_upgrades()
+	var saved_upgrades: Dictionary = data.get("upgrades", {})
+	for id in saved_upgrades:
+		if GameData.has_upgrade(id):
+			upgrades[id] = clampi(int(saved_upgrades[id]), 0, GameData.upgrade(id).levels.size())
 	encyclopedia.clear()
-	for id in data.get("encyclopedia", {}):
-		var entry: Dictionary = data.encyclopedia[id]
-		encyclopedia[id] = {
-			"count": int(entry.get("count", 0)),
-			"best_cm": int(entry.get("best_cm", 0)),
-			"best_value": int(entry.get("best_value", 0)),
-		}
-	zone_complete_rewarded.assign(data.get("zone_complete_rewarded", []))
+	var saved_entries: Dictionary = data.get("encyclopedia", {})
+	for id in saved_entries:
+		var entry = saved_entries[id]
+		if entry is Dictionary and GameData.has_fish(id):
+			encyclopedia[id] = {
+				"count": int(entry.get("count", 0)),
+				"best_cm": int(entry.get("best_cm", 0)),
+				"best_value": int(entry.get("best_value", 0)),
+			}
+	zone_complete_rewarded.clear()
+	for id in data.get("zone_complete_rewarded", []):
+		if GameData.has_zone(str(id)):
+			zone_complete_rewarded.append(str(id))
 	trophy = data.get("trophy")
 	trip_second_chances = int(data.get("trip_second_chances", 0))
 

@@ -7,6 +7,7 @@ const SUITES := [
 	preload("res://tests/test_core.gd"),
 	preload("res://tests/test_economy.gd"),
 	preload("res://tests/test_ui.gd"),
+	preload("res://tests/test_save.gd"),
 ]
 
 
@@ -22,7 +23,8 @@ func _ready() -> void:
 		failures.append_array(suite.failures)
 		checks += suite.checks
 		suite.queue_free()
-	DirAccess.remove_absolute(ProjectSettings.globalize_path(GameState.save_path))
+	for suffix in ["", ".bak", ".tmp"]:
+		DirAccess.remove_absolute(ProjectSettings.globalize_path(GameState.save_path + suffix))
 	for f in failures:
 		print("  FAIL ", f)
 	print("%d checks, %d failed" % [checks, failures.size()])

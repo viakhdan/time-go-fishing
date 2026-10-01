@@ -79,6 +79,7 @@ func _shoot_meta(locale: String) -> void:
 	await _save("%s_8_release" % locale)
 	zone.queue_free()
 
+	GameState.zone_complete_rewarded.assign(["lake"])
 	var map: Control = load("res://scenes/Map.tscn").instantiate()
 	add_child(map)
 	await _save("%s_9_map" % locale)
@@ -96,6 +97,9 @@ func _shoot_meta(locale: String) -> void:
 	var main: Control = load("res://scenes/Main.tscn").instantiate()
 	add_child(main)
 	await _save("%s_0_menu" % locale)
+	main.reset_button.pressed.emit()
+	await _save("%s_0b_reset_dialog" % locale)
+	main.reset_dialog.hide()
 	main.queue_free()
 
 	GameState.encyclopedia.x_eel = {"count": 3, "best_cm": 84, "best_value": 19}

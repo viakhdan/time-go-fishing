@@ -36,6 +36,18 @@ func fish(id: String) -> Dictionary:
 	return _fish[id]
 
 
+func has_fish(id: String) -> bool:
+	return id in _fish
+
+
+func has_zone(id: String) -> bool:
+	return id in _zones
+
+
+func has_upgrade(id: String) -> bool:
+	return id in _upgrades
+
+
 func rarity(id: String) -> Dictionary:
 	return _rarities[id]
 

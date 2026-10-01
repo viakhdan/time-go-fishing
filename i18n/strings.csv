@@ -61,6 +61,10 @@ UI_HOLD_EMPTY,Трюм порожній. Час рибалити!,The hold is em
 UI_SELECT_FISH,"Обери рибу, щоб продати її окремо",Pick a fish to sell it on its own
 UI_REQUIRES,Потрібно: {upgrade},Requires: {upgrade}
 UI_CATCH_TO_UNLOCK,"Спіймай цю рибу, щоб дізнатися про неї більше.",Catch this fish to learn more about it.
+UI_ZONE_BADGE,Усіх риб знайдено!,Every fish found!
+UI_RESET,Скинути прогрес,Reset progress
+UI_RESET_CONFIRM,"Усі монети, риби, покращення й записи в енциклопедії зникнуть. Почати спочатку?","All coins, fish, upgrades and encyclopedia entries will be lost. Start over?"
+UI_RESET_OK,"Так, скинути","Yes, reset"
 STAT_SLOTS,Місць,Slots
 STAT_TIMER,Таймер,Timer
 STAT_REEL_ZONE,Зелена зона,Green zone

@@ -83,3 +83,26 @@ layout_mode = 2
 size_flags_horizontal = 4
 script = ExtResource("2_lang")
 button_size = Vector2(96, 64)
+
+[node name="ResetButton" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -340.0
+offset_top = -96.0
+offset_right = -40.0
+offset_bottom = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 24
+text = "UI_RESET"
+
+[node name="ResetDialog" type="ConfirmationDialog" parent="."]
+unique_name_in_owner = true
+auto_translate_mode = 2
+size = Vector2i(820, 260)
+dialog_autowrap = true

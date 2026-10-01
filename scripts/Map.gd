@@ -1,12 +1,14 @@
 extends Control
 ## Zone picker + way to the dock (DESIGN.md §2, §7). Locked zones name the
-## upgrade that opens them. Zone previews are flat placeholders until the art exists.
+## upgrade that opens them; completed zones get a badge (§8.2). Zone previews
+## are flat placeholders until the art exists.
 
 const ZONE_SCENE := "res://scenes/Zone.tscn"
 const DOCK_SCENE := "res://scenes/Dock.tscn"
 const MAIN_SCENE := "res://scenes/Main.tscn"
 const ENCYCLOPEDIA_SCENE := "res://scenes/Encyclopedia.tscn"
 const SCENE_PATH := "res://scenes/Map.tscn"
+const BADGE: Texture2D = preload("res://art/ui/icons/badge.svg")
 
 @onready var coins_label: CoinCounter = %Coins
 @onready var encyclopedia_button: Button = %EncyclopediaButton
@@ -14,7 +16,7 @@ const SCENE_PATH := "res://scenes/Map.tscn"
 @onready var menu_button: Button = %MenuButton
 @onready var cards: HBoxContainer = %Cards
 
-## zone id -> { "discovered": Label, "button": Button }
+## zone id -> { "discovered": Label, "badge": Control, "badge_label": Label, "button": Button }
 var _cards := {}
 
 
@@ -56,6 +58,17 @@ func _make_card(zone: Dictionary) -> Control:
 	water.anchor_right = 1.0
 	water.anchor_bottom = 1.0
 	preview.add_child(water)
+	var badge := TextureRect.new()
+	badge.texture = BADGE
+	badge.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	badge.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	badge.anchor_left = 1.0
+	badge.anchor_right = 1.0
+	badge.offset_left = -104
+	badge.offset_top = 12
+	badge.offset_right = -12
+	badge.offset_bottom = 104
+	preview.add_child(badge)
 	box.add_child(preview)
 
 	var name_label := Label.new()
@@ -74,6 +87,11 @@ func _make_card(zone: Dictionary) -> Control:
 	discovered.auto_translate_mode = Node.AUTO_TRANSLATE_MODE_DISABLED
 	box.add_child(discovered)
 
+	var badge_label := Label.new()
+	badge_label.text = "UI_ZONE_BADGE"
+	badge_label.add_theme_color_override("font_color", Palette.LANTERN)
+	box.add_child(badge_label)
+
 	var button := Button.new()
 	button.custom_minimum_size = Vector2(0, 80)
 	button.theme_type_variation = &"PrimaryButton"
@@ -82,7 +100,7 @@ func _make_card(zone: Dictionary) -> Control:
 	button.pressed.connect(_fish_in.bind(zone.id))
 	box.add_child(button)
 
-	_cards[zone.id] = {"discovered": discovered, "button": button}
+	_cards[zone.id] = {"discovered": discovered, "badge": badge, "badge_label": badge_label, "button": button}
 	return card
 
 
@@ -91,6 +109,9 @@ func _refresh() -> void:
 		var card: Dictionary = _cards[zone.id]
 		var found: int = zone.fish.filter(func(id): return id in GameState.encyclopedia).size()
 		card.discovered.text = tr("UI_DISCOVERED").format({"n": found, "total": zone.fish.size()})
+		var complete: bool = zone.id in GameState.zone_complete_rewarded
+		card.badge.visible = complete
+		card.badge_label.visible = complete
 		var button: Button = card.button
 		button.disabled = not GameData.is_zone_unlocked(zone.id)
 		if button.disabled:

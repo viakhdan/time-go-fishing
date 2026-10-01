@@ -239,6 +239,20 @@ func _tabs() -> void:
 
 
 func _misc() -> void:
+	# Dialogs (reset confirmation): wood-framed like every other panel.
+	theme.set_stylebox("panel", "AcceptDialog", box(Palette.INK_SOFT, Color.TRANSPARENT, 0, 32, 24))
+	var frame := box(Palette.INK_SOFT, Palette.WOOD, 4)
+	frame.expand_margin_top = 44
+	frame.set_expand_margin(SIDE_LEFT, 4)
+	frame.set_expand_margin(SIDE_RIGHT, 4)
+	frame.set_expand_margin(SIDE_BOTTOM, 4)
+	theme.set_stylebox("embedded_border", "Window", frame)
+	theme.set_stylebox("embedded_unfocused_border", "Window", frame)
+	theme.set_font("title_font", "Window", fonts.heading)
+	theme.set_font_size("title_font_size", "Window", 28)
+	theme.set_color("title_color", "Window", Palette.PAPER_LIGHT)
+	theme.set_constant("title_height", "Window", 44)
+
 	theme.set_stylebox("panel", "TooltipPanel", box(Palette.INK_SOFT, Palette.WOOD, 2, 12, 6))
 	theme.set_color("font_color", "TooltipLabel", Palette.PAPER_LIGHT)
 	var grabber := box(Palette.WOOD)
