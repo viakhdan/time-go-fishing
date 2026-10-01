@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 256" width="512" height="256">
+  <!-- X-Eel: a slippery eel whose body crosses itself in an x. -->
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M440 64 C340 96 220 150 120 192 C80 208 50 190 62 160 C74 130 118 116 170 112 C260 108 370 160 454 204" stroke="#121413" stroke-width="40"/>
+    <path d="M440 64 C340 96 220 150 120 192 C80 208 50 190 62 160 C74 130 118 116 170 112 C260 108 370 160 454 204" stroke="#3f5e6a" stroke-width="28"/>
+    <path d="M440 64 C340 96 220 150 120 192 C80 208 50 190 62 160 C74 130 118 116 170 112 C260 108 370 160 454 204" stroke="#18a9a8" stroke-width="4" stroke-dasharray="18 12"/>
+  </g>
+  <!-- Redraw the upper strand where it crosses so the x reads clearly. -->
+  <path d="M340 97 C300 112 260 130 220 146" stroke="#121413" stroke-width="40" fill="none" stroke-linecap="butt"/>
+  <path d="M345 95 C300 112 260 130 215 148" stroke="#3f5e6a" stroke-width="28" fill="none" stroke-linecap="butt"/>
+  <path d="M345 95 C300 112 260 130 215 148" stroke="#18a9a8" stroke-width="4" stroke-dasharray="18 12" fill="none"/>
+  <polygon points="454,204 486,186 490,226" fill="#273244" stroke="#121413" stroke-width="5" stroke-linejoin="round"/>
+  <polygon points="424,50 470,40 498,54 478,76 432,80" fill="#3f5e6a" stroke="#121413" stroke-width="5" stroke-linejoin="round"/>
+  <polygon points="432,80 478,76 498,54 470,66" fill="#273244"/>
+  <path d="M498 56 L476 62" stroke="#121413" stroke-width="3.5" stroke-linecap="round"/>
+  <circle cx="462" cy="52" r="10" fill="#18a9a8" stroke="#121413" stroke-width="3.5"/>
+  <circle cx="464" cy="52" r="5" fill="#121413"/>
+  <circle cx="466" cy="50" r="2" fill="#fefefd"/>
+</svg>

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 256" width="512" height="256">
+  <!-- The Great Null: a huge round night-fish with a glowing empty-set mark and a lantern lure. -->
+  <defs>
+    <radialGradient id="lure">
+      <stop offset="0" stop-color="#f3d27a" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#f3d27a" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <circle cx="470" cy="26" r="26" fill="url(#lure)"/>
+  <polygon points="452,128 438,76 400,44 340,26 270,24 204,40 152,76 126,110 126,146 152,180 204,216 270,232 340,230 400,212 438,180" fill="none" stroke="#18a9a8" stroke-width="16" stroke-linejoin="round" opacity="0.35"/>
+  <g stroke="#0f282e" stroke-width="5" stroke-linejoin="round">
+    <polygon points="132,108 36,52 58,128 36,204 132,148" fill="#273244"/>
+    <polygon points="452,128 438,76 400,44 340,26 270,24 204,40 152,76 126,110 126,146 152,180 204,216 270,232 340,230 400,212 438,180" fill="#0a1426"/>
+  </g>
+  <polygon points="204,40 340,26 270,90" fill="#273244"/>
+  <polygon points="152,76 204,40 196,110" fill="#273244" opacity="0.7"/>
+  <polygon points="126,146 452,128 438,180 400,212 340,230 270,232 204,216 152,180" fill="#0f282e" opacity="0.7"/>
+  <g fill="none" stroke="#18a9a8" stroke-width="11" stroke-linecap="round">
+    <circle cx="270" cy="132" r="54"/>
+    <path d="M218 196 L322 68"/>
+  </g>
+  <g fill="#18a9a8">
+    <circle cx="180" cy="170" r="4"/><circle cx="212" cy="196" r="4"/><circle cx="350" cy="206" r="4"/>
+    <circle cx="390" cy="188" r="4"/><circle cx="160" cy="120" r="3"/><circle cx="410" cy="84" r="3"/>
+  </g>
+  <path d="M398 48 Q424 6 466 22" stroke="#0f282e" stroke-width="7" fill="none" stroke-linecap="round"/>
+  <path d="M398 48 Q424 6 466 22" stroke="#273244" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <circle cx="470" cy="26" r="9" fill="#f3d27a" stroke="#0f282e" stroke-width="3"/>
+  <path d="M452 132 Q436 150 414 148" stroke="#18a9a8" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <polygon points="430,144 424,154 420,146" fill="#eee4cf"/>
+  <circle cx="398" cy="104" r="24" fill="#18a9a8" opacity="0.35"/>
+  <circle cx="398" cy="104" r="18" fill="#eee4cf" stroke="#0f282e" stroke-width="4"/>
+  <circle cx="401" cy="104" r="10" fill="#0a1426"/>
+  <circle cx="404" cy="100" r="3.5" fill="#fefefd"/>
+</svg>

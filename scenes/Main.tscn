@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene load_steps=4 format=3]
 
 [ext_resource type="Script" path="res://scripts/Main.gd" id="1_main"]
 [ext_resource type="Script" path="res://scripts/LangToggle.gd" id="2_lang"]
+[ext_resource type="Texture2D" path="res://art/backgrounds/lake.svg" id="3_lake"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -30,6 +31,27 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 0
 color = Color(0.059, 0.157, 0.18, 1)
+
+[node name="Art" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 6
+texture = ExtResource("3_lake")
+
+[node name="Dim" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.039, 0.078, 0.149, 0.55)
 
 [node name="Center" type="CenterContainer" parent="."]
 layout_mode = 1

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 256" width="512" height="256">
+  <!-- Mirror Bream: tall and perfectly symmetric top to bottom, with a bright mirror line. -->
+  <g stroke="#241f1d" stroke-width="5" stroke-linejoin="round">
+    <polygon points="126,116 56,62 84,128 56,194 126,140" fill="#7c726c"/>
+    <polygon points="248,46 284,8 322,42" fill="#7c726c"/>
+    <polygon points="248,210 284,248 322,214" fill="#7c726c"/>
+    <polygon points="456,128 422,94 362,54 290,32 220,50 152,94 118,118 118,138 152,162 220,206 290,224 362,202 422,162" fill="#96989b"/>
+  </g>
+  <polygon points="220,50 362,54 292,104" fill="#eee4cf" opacity="0.85"/>
+  <polygon points="220,206 362,202 292,152" fill="#eee4cf" opacity="0.85"/>
+  <polygon points="152,94 220,50 200,112" fill="#62878f" opacity="0.6"/>
+  <polygon points="152,162 220,206 200,144" fill="#62878f" opacity="0.6"/>
+  <path d="M130 128 L452 128" stroke="#fefefd" stroke-width="6" stroke-linecap="round"/>
+  <polygon points="456,128 422,94 362,54 290,32 220,50 152,94 118,118 118,138 152,162 220,206 290,224 362,202 422,162" fill="none" stroke="#241f1d" stroke-width="5" stroke-linejoin="round"/>
+  <circle cx="402" cy="110" r="16" fill="#eee4cf" stroke="#241f1d" stroke-width="4"/>
+  <circle cx="405" cy="110" r="8.5" fill="#121413"/>
+  <circle cx="408" cy="106" r="3" fill="#fefefd"/>
+  <circle cx="402" cy="146" r="16" fill="#eee4cf" stroke="#241f1d" stroke-width="4" opacity="0.45"/>
+  <circle cx="405" cy="146" r="8.5" fill="#121413" opacity="0.45"/>
+</svg>

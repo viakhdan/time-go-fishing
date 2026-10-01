@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 256" width="512" height="256">
+  <!-- Power Pike: long torpedo pike whose spots come in powers of two (1, 2, 4, 8). -->
+  <g stroke="#241f1d" stroke-width="5" stroke-linejoin="round">
+    <polygon points="104,116 22,76 44,132 22,188 104,148" fill="#165f48"/>
+    <polygon points="146,108 168,70 212,100" fill="#165f48"/>
+    <polygon points="146,156 168,194 212,164" fill="#165f48"/>
+    <polygon points="286,166 302,196 326,166" fill="#165f48"/>
+    <polygon points="498,134 472,120 432,110 360,98 280,94 200,98 140,108 96,120 96,144 140,156 200,166 280,170 360,166 432,154 472,146" fill="#3b896c"/>
+  </g>
+  <polygon points="96,132 498,134 472,146 432,154 360,166 280,170 200,166 140,156" fill="#68c07d" opacity="0.55"/>
+  <polygon points="140,108 200,98 280,94 360,98 432,110 440,116 140,114" fill="#165f48"/>
+  <g fill="#d5c8af">
+    <polygon points="392,124 398,118 404,124 398,130"/>
+    <polygon points="336,118 342,112 348,118 342,124"/><polygon points="336,142 342,136 348,142 342,148"/>
+    <polygon points="268,118 274,112 280,118 274,124"/><polygon points="290,118 296,112 302,118 296,124"/>
+    <polygon points="268,142 274,136 280,142 274,148"/><polygon points="290,142 296,136 302,142 296,148"/>
+    <polygon points="160,122 165,117 170,122 165,127"/><polygon points="180,122 185,117 190,122 185,127"/>
+    <polygon points="200,122 205,117 210,122 205,127"/><polygon points="220,122 225,117 230,122 225,127"/>
+    <polygon points="160,142 165,137 170,142 165,147"/><polygon points="180,142 185,137 190,142 185,147"/>
+    <polygon points="200,142 205,137 210,142 205,147"/><polygon points="220,142 225,137 230,142 225,147"/>
+  </g>
+  <polygon points="404,144 372,168 414,156" fill="#165f48" stroke="#241f1d" stroke-width="3" stroke-linejoin="round"/>
+  <polygon points="498,134 472,120 432,110 360,98 280,94 200,98 140,108 96,120 96,144 140,156 200,166 280,170 360,166 432,154 472,146" fill="none" stroke="#241f1d" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M498 134 L450 138" stroke="#241f1d" stroke-width="4" stroke-linecap="round"/>
+  <polygon points="486,135 480,142 476,136" fill="#fefefd"/>
+  <polygon points="470,137 464,144 460,138" fill="#fefefd"/>
+  <circle cx="440" cy="120" r="13" fill="#eee4cf" stroke="#241f1d" stroke-width="4"/>
+  <circle cx="443" cy="120" r="7" fill="#121413"/>
+  <circle cx="445" cy="117" r="2.5" fill="#fefefd"/>
+</svg>

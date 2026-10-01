@@ -1,7 +1,7 @@
 extends Control
 ## Shared zone scene, configured by GameState.current_zone (DESIGN.md §2, §10).
-## Connects FishingLoop to the modal panels. Backgrounds are flat placeholders
-## until the zone art exists.
+## Connects FishingLoop to the modal panels. The zone art sits over flat
+## fallback colours, which only show if the background file is missing.
 
 const MAP_SCENE := "res://scenes/Map.tscn"
 const DOCK_SCENE := "res://scenes/Dock.tscn"
@@ -15,6 +15,7 @@ const MODAL_STATES := [FishingLoop.State.PROBLEM, FishingLoop.State.REEL, Fishin
 @onready var loop: FishingLoop = $FishingLoop
 @onready var background: ColorRect = $Background
 @onready var water: ColorRect = $Water
+@onready var art: TextureRect = %Art
 @onready var zone_label: Label = %ZoneLabel
 @onready var coins_label: CoinCounter = %Coins
 @onready var hold_label: Label = %HoldLabel
@@ -43,6 +44,8 @@ func _ready() -> void:
 	loop.zone_id = zone.id
 	background.color = Palette.ZONE_BG.get(zone.id, Palette.NIGHT)
 	water.color = Palette.ZONE_WATER.get(zone.id, Palette.DEEP_TEAL)
+	if ResourceLoader.exists(zone.background):
+		art.texture = load(zone.background)
 	zone_label.text = zone.name_key
 	_build_rig()
 

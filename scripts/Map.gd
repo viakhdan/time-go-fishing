@@ -1,7 +1,6 @@
 extends Control
 ## Zone picker + way to the dock (DESIGN.md §2, §7). Locked zones name the
-## upgrade that opens them; completed zones get a badge (§8.2). Zone previews
-## are flat placeholders until the art exists.
+## upgrade that opens them; completed zones get a badge (§8.2).
 
 const ZONE_SCENE := "res://scenes/Zone.tscn"
 const DOCK_SCENE := "res://scenes/Dock.tscn"
@@ -58,6 +57,13 @@ func _make_card(zone: Dictionary) -> Control:
 	water.anchor_right = 1.0
 	water.anchor_bottom = 1.0
 	preview.add_child(water)
+	if ResourceLoader.exists(zone.background):
+		var art := TextureRect.new()
+		art.texture = load(zone.background)
+		art.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+		art.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+		art.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED
+		preview.add_child(art)
 	var badge := TextureRect.new()
 	badge.texture = BADGE
 	badge.expand_mode = TextureRect.EXPAND_IGNORE_SIZE

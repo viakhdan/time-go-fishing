@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 256" width="512" height="256">
+  <!-- Square Carp: deep-bodied carp whose scales grow in squares (9, 4, 1). -->
+  <g stroke="#241f1d" stroke-width="5" stroke-linejoin="round">
+    <polygon points="122,120 48,66 72,137 48,208 122,156" fill="#876446"/>
+    <polygon points="198,72 228,32 330,38 342,62" fill="#876446"/>
+    <polygon points="298,204 318,236 360,198" fill="#876446"/>
+    <polygon points="448,136 430,106 392,78 330,60 260,58 190,70 140,94 112,122 112,152 140,178 200,202 270,210 340,204 400,184 434,162" fill="#b7a072"/>
+  </g>
+  <polygon points="112,138 448,136 434,162 400,184 340,204 270,210 200,202 140,178" fill="#a68554"/>
+  <polygon points="190,70 330,60 268,104" fill="#d5c8af"/>
+  <g fill="#d5c8af" stroke="#654831" stroke-width="2.5">
+    <rect x="148" y="108" width="15" height="15"/><rect x="167" y="108" width="15" height="15"/><rect x="186" y="108" width="15" height="15"/>
+    <rect x="148" y="127" width="15" height="15"/><rect x="167" y="127" width="15" height="15"/><rect x="186" y="127" width="15" height="15"/>
+    <rect x="148" y="146" width="15" height="15"/><rect x="167" y="146" width="15" height="15"/><rect x="186" y="146" width="15" height="15"/>
+    <rect x="236" y="112" width="21" height="21"/><rect x="261" y="112" width="21" height="21"/>
+    <rect x="236" y="137" width="21" height="21"/><rect x="261" y="137" width="21" height="21"/>
+    <rect x="316" y="118" width="30" height="30"/>
+  </g>
+  <polygon points="356,150 314,178 362,168" fill="#876446" stroke="#241f1d" stroke-width="3" stroke-linejoin="round"/>
+  <polygon points="448,136 430,106 392,78 330,60 260,58 190,70 140,94 112,122 112,152 140,178 200,202 270,210 340,204 400,184 434,162" fill="none" stroke="#241f1d" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M446 142 Q462 156 454 176" stroke="#241f1d" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+  <circle cx="404" cy="116" r="17" fill="#eee4cf" stroke="#241f1d" stroke-width="4"/>
+  <circle cx="407" cy="116" r="9" fill="#121413"/>
+  <circle cx="410" cy="112" r="3" fill="#fefefd"/>
+</svg>

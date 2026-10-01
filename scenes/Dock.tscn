@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3]
+[gd_scene load_steps=7 format=3]
 
 [ext_resource type="Script" path="res://scripts/Dock.gd" id="1_dock"]
 [ext_resource type="PackedScene" path="res://scenes/HoldPanel.tscn" id="2_hold"]
 [ext_resource type="Script" path="res://scripts/CoinCounter.gd" id="3_coins"]
 [ext_resource type="Script" path="res://scripts/LangToggle.gd" id="4_lang"]
 [ext_resource type="Texture2D" path="res://art/ui/icons/coin.svg" id="5_coin"]
+[ext_resource type="Texture2D" path="res://art/backgrounds/harbour.svg" id="6_harbour"]
 
 [node name="Dock" type="Control"]
 layout_mode = 3
@@ -23,6 +24,27 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.141, 0.122, 0.114, 1)
+
+[node name="Art" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 6
+texture = ExtResource("6_harbour")
+
+[node name="Dim" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.039, 0.078, 0.149, 0.35)
 
 [node name="Layout" type="MarginContainer" parent="."]
 layout_mode = 1

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 256" width="512" height="256">
+  <!-- Zero Perch: humped perch with a spiky dorsal fin and a big zero ring on its side. -->
+  <g stroke="#241f1d" stroke-width="5" stroke-linejoin="round">
+    <polygon points="118,128 38,78 58,140 38,200 118,152" fill="#7d5230"/>
+    <polygon points="186,92 200,40 222,84 242,34 262,80 284,38 300,78" fill="#7d5230"/>
+    <polygon points="146,106 158,70 192,94" fill="#7d5230"/>
+    <polygon points="296,184 316,226 342,184" fill="#7d5230"/>
+    <polygon points="196,182 182,214 228,186" fill="#7d5230"/>
+    <polygon points="444,140 422,108 382,86 320,74 250,76 180,90 130,110 110,130 110,150 140,168 200,184 280,190 360,182 416,164" fill="#a68554"/>
+  </g>
+  <polygon points="110,142 444,140 416,164 360,182 280,190 200,184 140,168" fill="#876446"/>
+  <polygon points="180,92 320,76 262,112" fill="#b7a072"/>
+  <g fill="#654831" opacity="0.85">
+    <polygon points="212,86 232,82 226,186 206,183"/>
+    <polygon points="346,80 364,84 356,180 338,184"/>
+    <polygon points="160,104 176,98 172,174 156,170"/>
+  </g>
+  <polygon points="276,94 304,94 322,114 322,150 304,170 276,170 258,150 258,114" fill="none" stroke="#eee4cf" stroke-width="11" stroke-linejoin="round"/>
+  <polygon points="330,140 290,162 338,158" fill="#7d5230" stroke="#241f1d" stroke-width="3" stroke-linejoin="round"/>
+  <polygon points="444,140 422,108 382,86 320,74 250,76 180,90 130,110 110,130 110,150 140,168 200,184 280,190 360,182 416,164" fill="none" stroke="#241f1d" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M444 140 L420 147" stroke="#241f1d" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="400" cy="118" r="17" fill="#eee4cf" stroke="#241f1d" stroke-width="4"/>
+  <circle cx="403" cy="118" r="9" fill="#121413"/>
+  <circle cx="406" cy="114" r="3" fill="#fefefd"/>
+</svg>

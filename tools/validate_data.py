@@ -102,6 +102,11 @@ def main():
             continue
         if not z["fish"]:
             err(f"zone {zid}: enabled but has no fish")
+        if not os.path.exists(z["background"].replace("res://", "")):
+            err(f"zone {zid}: background {z['background']} not found")
+        for fid in z["fish"]:
+            if fid in fish_by_id and not os.path.exists(fish_by_id[fid]["sprite"].replace("res://", "")):
+                err(f"fish {fid}: sprite {fish_by_id[fid]['sprite']} not found")
         if not os.path.exists(os.path.join(DATA, "problems", z["topic"] + ".json")):
             err(f"zone {zid}: enabled but problem pool {z['topic']}.json is missing")
         unlock = z["unlock"]

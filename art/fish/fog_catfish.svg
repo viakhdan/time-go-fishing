@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 256" width="512" height="256">
+  <!-- Fog Catfish: only the whiskers are sure; the body dissolves into mist toward the tail
+       in flat colour steps (no transparency, so the silhouette stays solid). -->
+  <polygon points="150,122 74,98 58,142 74,186 150,162" fill="#a3bdbe" stroke="#62878f" stroke-width="4" stroke-linejoin="round"/>
+  <polygon points="96,112 60,120 70,142 58,164 96,170 82,142" fill="#c4d4d4"/>
+  <polygon points="200,108 140,124 140,160 200,176 212,142" fill="#a3bdbe" stroke="#62878f" stroke-width="4" stroke-linejoin="round"/>
+  <polygon points="270,96 200,108 212,142 200,176 270,186 282,140" fill="#62878f" stroke="#3f5e6a" stroke-width="4" stroke-linejoin="round"/>
+  <g stroke="#121413" stroke-width="5" stroke-linejoin="round">
+    <polygon points="300,96 322,62 350,94" fill="#273244"/>
+    <polygon points="476,152 464,120 422,98 350,90 270,96 282,140 270,186 350,186 422,180 464,170" fill="#344551"/>
+  </g>
+  <polygon points="282,146 476,152 464,170 422,180 350,186 270,186" fill="#273244"/>
+  <polygon points="282,112 350,90 422,98 370,124" fill="#62878f"/>
+  <polygon points="360,176 330,206 382,184" fill="#273244" stroke="#121413" stroke-width="3" stroke-linejoin="round"/>
+  <g stroke="#eee4cf" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.8">
+    <path d="M60 128 L150 124 L232 132"/>
+    <path d="M84 158 L180 150 L250 160"/>
+  </g>
+  <path d="M470 150 L438 158" stroke="#121413" stroke-width="4" stroke-linecap="round"/>
+  <g stroke="#eee4cf" stroke-width="5" stroke-linecap="round" fill="none">
+    <path d="M464 146 Q500 128 508 88"/>
+    <path d="M462 158 Q500 176 502 224"/>
+    <path d="M448 162 Q466 196 452 230"/>
+    <path d="M456 136 Q480 110 474 76"/>
+  </g>
+  <circle cx="426" cy="128" r="13" fill="#eee4cf" stroke="#121413" stroke-width="4"/>
+  <circle cx="429" cy="128" r="7" fill="#121413"/>
+  <circle cx="431" cy="125" r="2.5" fill="#fefefd"/>
+</svg>

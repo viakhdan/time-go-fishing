@@ -5,6 +5,7 @@ extends Control
 ## fish are drawn as a solid silhouette (DESIGN.md §8.2, §9.4).
 
 const SIDES := 10  # Low-poly body outline
+const SILHOUETTE_SHADER := preload("res://art/ui/silhouette.gdshader")
 
 @export var silhouette_color := Palette.INK_SOFT
 
@@ -18,6 +19,14 @@ func setup(id: String, is_known := true) -> void:
 	known = is_known
 	var sprite: String = GameData.fish(id).sprite
 	_texture = load(sprite) if ResourceLoader.exists(sprite) else null
+	# A shader, not modulate: multiplying would leave the markings faintly visible.
+	if _texture and not known:
+		var mat := ShaderMaterial.new()
+		mat.shader = SILHOUETTE_SHADER
+		mat.set_shader_parameter("fill_color", silhouette_color)
+		material = mat
+	else:
+		material = null
 	queue_redraw()
 
 
@@ -29,7 +38,7 @@ func _draw() -> void:
 	var h := w / 2.0
 	var rect := Rect2((size - Vector2(w, h)) / 2.0, Vector2(w, h))
 	if _texture:
-		draw_texture_rect(_texture, rect, false, Color.WHITE if known else Color(silhouette_color, 1.0))
+		draw_texture_rect(_texture, rect, false)
 		return
 	var base := Color(GameData.rarity_of(fish_id).color) if known else silhouette_color
 	_draw_placeholder(rect, base)

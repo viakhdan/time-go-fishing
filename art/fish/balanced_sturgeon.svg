@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 256" width="512" height="256">
+  <!-- Balanced Sturgeon: armoured plates along a perfectly level back and an "=" on its side. -->
+  <g stroke="#241f1d" stroke-width="5" stroke-linejoin="round">
+    <polygon points="124,114 18,58 58,128 40,170 124,146" fill="#4c3932"/>
+    <polygon points="160,110 176,80 208,106" fill="#4c3932"/>
+    <polygon points="170,154 188,184 214,158" fill="#4c3932"/>
+    <polygon points="504,150 474,134 420,120 340,108 260,104 180,108 120,116 120,146 180,160 260,168 340,168 420,164 470,160" fill="#876446"/>
+  </g>
+  <polygon points="120,134 504,150 470,160 420,164 340,168 260,168 180,160" fill="#b7a072"/>
+  <polygon points="120,116 180,108 260,104 340,108 420,120 430,124 120,124" fill="#654831"/>
+  <g fill="#eee4cf" stroke="#241f1d" stroke-width="3" stroke-linejoin="round">
+    <polygon points="164,112 174,98 184,112 174,122"/>
+    <polygon points="206,108 216,94 226,108 216,118"/>
+    <polygon points="248,106 258,92 268,106 258,116"/>
+    <polygon points="290,106 300,92 310,106 300,116"/>
+    <polygon points="332,108 342,94 352,108 342,118"/>
+    <polygon points="374,112 384,98 394,112 384,122"/>
+  </g>
+  <g fill="#f3d27a" stroke="#241f1d" stroke-width="3">
+    <rect x="262" y="130" width="64" height="9" rx="3"/>
+    <rect x="262" y="146" width="64" height="9" rx="3"/>
+  </g>
+  <polygon points="410,158 378,192 426,168" fill="#4c3932" stroke="#241f1d" stroke-width="3" stroke-linejoin="round"/>
+  <polygon points="504,150 474,134 420,120 340,108 260,104 180,108 120,116 120,146 180,160 260,168 340,168 420,164 470,160" fill="none" stroke="#241f1d" stroke-width="5" stroke-linejoin="round"/>
+  <g stroke="#241f1d" stroke-width="3.5" stroke-linecap="round">
+    <path d="M478 158 L476 180"/><path d="M466 160 L462 182"/>
+  </g>
+  <circle cx="450" cy="138" r="11" fill="#eee4cf" stroke="#241f1d" stroke-width="4"/>
+  <circle cx="453" cy="138" r="6" fill="#121413"/>
+  <circle cx="455" cy="135" r="2" fill="#fefefd"/>
+</svg>
