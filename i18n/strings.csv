@@ -35,7 +35,7 @@ UI_SELL_ALL,Продати все,Sell all
 UI_BUY,Купити,Buy
 UI_MAX_LEVEL,Макс. рівень,Max level
 UI_LEVEL,Рів.,Lv
-UI_NEED_MORE,Бракує {n} 🪙,Need {n} more 🪙
+UI_NEED_MORE,Бракує {n} {coin},Need {n} more {coin}
 UI_LOCKED,Закрито,Locked
 UI_UNLOCKS,Відкриває: {zone},Unlocks: {zone}
 UI_DISCOVERED,Відкрито: {n} / {total},Discovered: {n} / {total}
@@ -48,8 +48,8 @@ UI_SHOW_ANSWER,Показати відповідь,Show answer
 UI_DEEP_FACT,Глибший факт,Deeper fact
 UI_DEEP_FACT_LOCKED,Спіймай {n} (зараз {have}/{n}),Catch {n} ({have}/{n})
 UI_UNKNOWN,???,???
-UI_DISCOVERY_BONUS,Нове відкриття! +{n} 🪙,New discovery! +{n} 🪙
-UI_ZONE_COMPLETE,Усіх риб зони знайдено! +{n} 🪙,Every fish in this zone found! +{n} 🪙
+UI_DISCOVERY_BONUS,Нове відкриття! +{n} {coin},New discovery! +{n} {coin}
+UI_ZONE_COMPLETE,Усіх риб зони знайдено! +{n} {coin},Every fish in this zone found! +{n} {coin}
 UI_SIZE_CM,{n} см,{n} cm
 UI_TIMER_S,{n} с,{n} s
 UI_MENU,Меню,Menu
@@ -60,6 +60,7 @@ UI_CANCEL,Скасувати,Cancel
 UI_HOLD_EMPTY,Трюм порожній. Час рибалити!,The hold is empty. Time to go fishing!
 UI_SELECT_FISH,"Обери рибу, щоб продати її окремо",Pick a fish to sell it on its own
 UI_REQUIRES,Потрібно: {upgrade},Requires: {upgrade}
+UI_CATCH_TO_UNLOCK,"Спіймай цю рибу, щоб дізнатися про неї більше.",Catch this fish to learn more about it.
 STAT_SLOTS,Місць,Slots
 STAT_TIMER,Таймер,Timer
 STAT_REEL_ZONE,Зелена зона,Green zone

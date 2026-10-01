@@ -1,13 +1,28 @@
 class_name UIText
 ## Shared formatting for player-facing numbers and upgrade effects.
 
-## No bundled font has 🪙; this renders through the system emoji font on desktop.
-## TODO(step 6): replace with a coin icon (see ART_STYLE.md §10).
-const COIN := "🪙"
+## No bundled font has 🪙, so coins are an icon (ART_STYLE.md §10). Labels that
+## show coins inline are RichTextLabels using coin_tag(); strings.csv marks the
+## spot with {coin}.
+const COIN_PATH := "res://art/ui/icons/coin.svg"
+const COIN_TEXTURE: Texture2D = preload(COIN_PATH)
 
 
-static func coins(amount: int) -> String:
-	return "%d %s" % [amount, COIN]
+## BBCode for the coin icon, sized to sit in a line of text.
+static func coin_tag(size := 28) -> String:
+	return "[img=%dx%d]%s[/img]" % [size, size, COIN_PATH]
+
+
+## "47 <coin>" as BBCode.
+static func coins(amount: int, size := 28) -> String:
+	return "%d %s" % [amount, coin_tag(size)]
+
+
+## Translates a key and fills {placeholders}, including {coin}. BBCode result.
+static func rich(key: String, params := {}, coin_size := 28) -> String:
+	var all := params.duplicate()
+	all["coin"] = coin_tag(coin_size)
+	return _t(key).format(all)
 
 
 ## Decimal number in the current language's style: 1,5 in Ukrainian, 1.5 in English.

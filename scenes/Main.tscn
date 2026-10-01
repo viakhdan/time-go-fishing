@@ -1,8 +1,7 @@
 [gd_scene load_steps=3 format=3]
 
 [ext_resource type="Script" path="res://scripts/Main.gd" id="1_main"]
-
-[sub_resource type="ButtonGroup" id="ButtonGroup_lang"]
+[ext_resource type="Script" path="res://scripts/LangToggle.gd" id="2_lang"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -20,7 +19,17 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.0392, 0.0784, 0.149, 1)
+color = Color(0.039, 0.078, 0.149, 1)
+
+[node name="Water" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 0.72
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.059, 0.157, 0.18, 1)
 
 [node name="Center" type="CenterContainer" parent="."]
 layout_mode = 1
@@ -36,59 +45,41 @@ theme_override_constants/separation = 24
 
 [node name="Title" type="Label" parent="Center/Menu"]
 layout_mode = 2
-theme_type_variation = &"TitleLabel"
-theme_override_colors/font_color = Color(0.996, 0.996, 0.992, 1)
-theme_override_font_sizes/font_size = 96
+theme_type_variation = &"OverlayLabel"
+theme_override_font_sizes/font_size = 120
 text = "UI_TITLE"
 horizontal_alignment = 1
 
 [node name="Subtitle" type="Label" parent="Center/Menu"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.639, 0.741, 0.745, 1)
-theme_override_font_sizes/font_size = 28
+theme_type_variation = &"MutedLabel"
+theme_override_font_sizes/font_size = 32
 text = "UI_SUBTITLE"
 horizontal_alignment = 1
 
 [node name="Spacer" type="Control" parent="Center/Menu"]
-custom_minimum_size = Vector2(0, 32)
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 
 [node name="PlayButton" type="Button" parent="Center/Menu"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(420, 72)
+custom_minimum_size = Vector2(460, 96)
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 36
+theme_type_variation = &"PrimaryButton"
+theme_override_font_sizes/font_size = 44
 text = "UI_PLAY"
 
 [node name="EncyclopediaButton" type="Button" parent="Center/Menu"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(420, 72)
+custom_minimum_size = Vector2(460, 80)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 36
 text = "UI_ENCYCLOPEDIA"
 
-[node name="Lang" type="HBoxContainer" parent="Center/Menu"]
+[node name="LangToggle" type="HBoxContainer" parent="Center/Menu"]
 layout_mode = 2
-alignment = 1
-
-[node name="LangUK" type="Button" parent="Center/Menu/Lang"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(96, 56)
-layout_mode = 2
-theme_override_font_sizes/font_size = 28
-toggle_mode = true
-button_group = SubResource("ButtonGroup_lang")
-text = "UA"
-auto_translate_mode = 2
-
-[node name="LangEN" type="Button" parent="Center/Menu/Lang"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(96, 56)
-layout_mode = 2
-theme_override_font_sizes/font_size = 28
-toggle_mode = true
-button_group = SubResource("ButtonGroup_lang")
-text = "EN"
-auto_translate_mode = 2
+size_flags_horizontal = 4
+script = ExtResource("2_lang")
+button_size = Vector2(96, 64)

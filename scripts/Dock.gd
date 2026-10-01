@@ -1,11 +1,9 @@
 extends Control
 ## Dock: Market (sell fish) and Workshop (buy upgrades) tabs (DESIGN.md §5, §10).
-## Placeholder look until step 6.
 
 const MAP_SCENE := "res://scenes/Map.tscn"
-const WARNING_COLOR := Color("#d8433c")
 
-@onready var coins_label: Label = %CoinsLabel
+@onready var coins_label: CoinCounter = %Coins
 @onready var go_fishing_button: Button = %GoFishingButton
 @onready var tabs: TabContainer = %Tabs
 @onready var hold_panel: HBoxContainer = %HoldPanel
@@ -14,7 +12,7 @@ const WARNING_COLOR := Color("#d8433c")
 @onready var sell_all_button: Button = %SellAllButton
 @onready var upgrade_rows: VBoxContainer = %UpgradeRows
 
-## upgrade id -> { "level": Label, "effects": Label, "buy": Button, "missing": Label }
+## upgrade id -> { "level": Label, "effects": Label, "buy": Button, "missing": RichTextLabel }
 var _rows := {}
 
 
@@ -44,6 +42,7 @@ func _go_fishing() -> void:
 
 func _make_row(upgrade: Dictionary) -> Control:
 	var panel := PanelContainer.new()
+	panel.theme_type_variation = &"Card"
 	var margin := MarginContainer.new()
 	for side in ["left", "top", "right", "bottom"]:
 		margin.add_theme_constant_override("margin_" + side, 20)
@@ -52,8 +51,15 @@ func _make_row(upgrade: Dictionary) -> Control:
 	row.add_theme_constant_override("separation", 32)
 	margin.add_child(row)
 
+	var icon := TextureRect.new()
+	icon.texture = load(upgrade.icon)
+	icon.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	icon.custom_minimum_size = Vector2(64, 64)
+	row.add_child(icon)
+
 	var names := VBoxContainer.new()
-	names.custom_minimum_size.x = 440
+	names.custom_minimum_size.x = 400
 	row.add_child(names)
 	var name_label := Label.new()
 	name_label.theme_type_variation = &"TitleLabel"
@@ -63,7 +69,7 @@ func _make_row(upgrade: Dictionary) -> Control:
 	var desc := Label.new()
 	desc.text = upgrade.desc_key
 	desc.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	desc.add_theme_color_override("font_color", Color("#a3bdbe"))
+	desc.theme_type_variation = &"MutedLabel"
 	desc.add_theme_font_size_override("font_size", 22)
 	names.add_child(desc)
 
@@ -80,14 +86,21 @@ func _make_row(upgrade: Dictionary) -> Control:
 	buy_box.alignment = BoxContainer.ALIGNMENT_CENTER
 	row.add_child(buy_box)
 	var buy := Button.new()
+	buy.theme_type_variation = &"PrimaryButton"
+	buy.icon_alignment = HORIZONTAL_ALIGNMENT_RIGHT
 	buy.custom_minimum_size.y = 72
 	buy.add_theme_font_size_override("font_size", 32)
 	buy.auto_translate_mode = Node.AUTO_TRANSLATE_MODE_DISABLED
 	buy.pressed.connect(func(): Economy.buy(upgrade.id))
 	buy_box.add_child(buy)
-	var missing := _dynamic_label(22)
-	missing.add_theme_color_override("font_color", WARNING_COLOR)
+	var missing := RichTextLabel.new()
+	missing.bbcode_enabled = true
+	missing.fit_content = true
+	missing.scroll_active = false
 	missing.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	missing.add_theme_color_override("default_color", Palette.ALARM)
+	missing.add_theme_font_size_override("normal_font_size", 22)
+	missing.auto_translate_mode = Node.AUTO_TRANSLATE_MODE_DISABLED
 	buy_box.add_child(missing)
 
 	_rows[upgrade.id] = {"level": level, "effects": effects, "buy": buy, "missing": missing}
@@ -103,7 +116,6 @@ func _dynamic_label(font_size: int) -> Label:
 
 
 func _refresh() -> void:
-	coins_label.text = UIText.coins(GameState.coins)
 	tabs.set_tab_title(0, tr("UI_MARKET"))
 	tabs.set_tab_title(1, tr("UI_WORKSHOP"))
 	_refresh_market()
@@ -121,9 +133,10 @@ func _refresh_market() -> void:
 		var fish: Dictionary = GameState.hold[selected]
 		market_info.text = "%s · %s" % [tr(GameData.fish(fish.species).name_key), tr("UI_SIZE_CM").format({"n": fish.size_cm})]
 	sell_button.disabled = selected < 0
-	sell_button.text = tr("UI_SELL") if selected < 0 else "%s: %s" % [tr("UI_SELL"), UIText.coins(GameState.hold[selected].value)]
+	sell_button.text = tr("UI_SELL") if selected < 0 else "%s: %d" % [tr("UI_SELL"), GameState.hold[selected].value]
+	sell_button.icon = null if selected < 0 else UIText.COIN_TEXTURE
 	sell_all_button.disabled = empty
-	sell_all_button.text = "%s: %s" % [tr("UI_SELL_ALL"), UIText.coins(Economy.hold_value())]
+	sell_all_button.text = "%s: %d" % [tr("UI_SELL_ALL"), Economy.hold_value()]
 
 
 func _refresh_workshop() -> void:
@@ -135,7 +148,8 @@ func _refresh_workshop() -> void:
 		row.level.text = "%s %d" % [lv, level] if maxed else "%s %d → %d" % [lv, level, level + 1]
 		row.effects.text = "" if maxed else "\n".join(UIText.upgrade_effects(id, level, level + 1))
 		var buy: Button = row.buy
-		buy.text = tr("UI_MAX_LEVEL") if maxed else UIText.coins(Economy.next_cost(id))
+		buy.text = tr("UI_MAX_LEVEL") if maxed else str(Economy.next_cost(id))
+		buy.icon = null if maxed else UIText.COIN_TEXTURE
 		buy.disabled = not Economy.can_buy(id)
 		var missing := Economy.missing_coins(id)
-		row.missing.text = tr("UI_NEED_MORE").format({"n": missing}) if missing > 0 else ""
+		row.missing.text = UIText.rich("UI_NEED_MORE", {"n": missing}, 22) if missing > 0 else ""

@@ -107,7 +107,7 @@ func test_dock_market() -> void:
 	check(not dock.sell_button.disabled and dock.sell_button.text.contains("40"), "sell shows the fish price")
 	dock.sell_button.pressed.emit()
 	check(GameState.coins == 40 and GameState.hold.size() == 1, "sold through the Market")
-	check(dock.coins_label.text.begins_with("40"), "coins label updated")
+	check(dock.coins_label.amount_label.text == "40", "coins label updated")
 	dock.sell_all_button.pressed.emit()
 	check(GameState.hold.is_empty() and dock.sell_all_button.disabled, "sell all empties the hold")
 	check(dock.market_info.text == tr("UI_HOLD_EMPTY"), "empty hold message")

@@ -1,19 +1,26 @@
 extends Control
 ## Shared zone scene, configured by GameState.current_zone (DESIGN.md §2, §10).
-## Connects FishingLoop to the modal panels. Placeholder visuals until step 6.
+## Connects FishingLoop to the modal panels. Backgrounds are flat placeholders
+## until the zone art exists.
 
 const MAP_SCENE := "res://scenes/Map.tscn"
 const DOCK_SCENE := "res://scenes/Dock.tscn"
-const PLACEHOLDER_BG := {"lake": Color("#a68554"), "river": Color("#62878f"), "bay": Color("#0a1426")}
+const ENCYCLOPEDIA_SCENE := "res://scenes/Encyclopedia.tscn"
+const SCENE_PATH := "res://scenes/Zone.tscn"
+## Upgrades shown as rig levels in the HUD (§5.2, §10).
+const RIG := ["rod", "bait"]
 const STATUS_KEYS := {FishingLoop.State.WAITING: "UI_WAITING", FishingLoop.State.BITE: "UI_BITE"}
 const MODAL_STATES := [FishingLoop.State.PROBLEM, FishingLoop.State.REEL, FishingLoop.State.CAUGHT, FishingLoop.State.ESCAPED]
 
 @onready var loop: FishingLoop = $FishingLoop
 @onready var background: ColorRect = $Background
+@onready var water: ColorRect = $Water
 @onready var zone_label: Label = %ZoneLabel
-@onready var coins_label: Label = %CoinsLabel
+@onready var coins_label: CoinCounter = %Coins
 @onready var hold_label: Label = %HoldLabel
+@onready var rig: HBoxContainer = %Rig
 @onready var map_button: Button = %MapButton
+@onready var encyclopedia_button: Button = %EncyclopediaButton
 @onready var status_label: Label = %StatusLabel
 @onready var cast_button: Button = %CastButton
 @onready var hold_full_box: Control = %HoldFullBox
@@ -28,16 +35,21 @@ const MODAL_STATES := [FishingLoop.State.PROBLEM, FishingLoop.State.REEL, Fishin
 @onready var reel: PanelContainer = %ReelMinigame
 @onready var catch_card: PanelContainer = %CatchCard
 
+var _rig_labels := {}
+
 
 func _ready() -> void:
 	var zone := GameData.zone(GameState.current_zone)
 	loop.zone_id = zone.id
-	background.color = PLACEHOLDER_BG.get(zone.id, Color.BLACK)
+	background.color = Palette.ZONE_BG.get(zone.id, Palette.NIGHT)
+	water.color = Palette.ZONE_WATER.get(zone.id, Palette.DEEP_TEAL)
 	zone_label.text = zone.name_key
+	_build_rig()
 
 	cast_button.pressed.connect(loop.cast)
 	map_button.pressed.connect(_leave.bind(MAP_SCENE))
 	return_button.pressed.connect(_leave.bind(DOCK_SCENE))
+	encyclopedia_button.pressed.connect(_open_encyclopedia)
 	release_button.pressed.connect(_set_release_mode.bind(true))
 	cancel_release_button.pressed.connect(_set_release_mode.bind(false))
 	confirm_release_button.pressed.connect(_release_selected)
@@ -53,8 +65,8 @@ func _ready() -> void:
 	reel.finished.connect(loop.reel_result)
 	catch_card.closed.connect(loop.acknowledge)
 
-	GameState.coins_changed.connect(_update_hud.unbind(1))
 	GameState.hold_changed.connect(_update_hud)
+	GameState.upgrades_changed.connect(_update_hud)
 	_update_hud()
 	_on_state_changed(loop.state)
 
@@ -76,7 +88,9 @@ func _on_state_changed(state: FishingLoop.State) -> void:
 	cast_button.visible = idle and not full
 	hold_full_box.visible = idle and full and not releasing
 	release_box.visible = idle and releasing
+	# Leaving mid-catch would lose the fish, so the exits only work when idle.
 	map_button.disabled = not idle
+	encyclopedia_button.disabled = not idle
 	status_label.text = STATUS_KEYS.get(state, "")
 	# Each panel is shown by its own signal handler; here we only hide stale ones.
 	if state not in [FishingLoop.State.PROBLEM, FishingLoop.State.ESCAPED]:
@@ -112,9 +126,33 @@ func _release_selected() -> void:
 	_set_release_mode(false)
 
 
+## Rig icons with their upgrade level, e.g. [rod] Lv 2 [bait] Lv 1.
+func _build_rig() -> void:
+	for id in RIG:
+		var icon := TextureRect.new()
+		icon.texture = load(GameData.upgrade(id).icon)
+		icon.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+		icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+		icon.custom_minimum_size = Vector2(32, 32)
+		icon.tooltip_text = GameData.upgrade(id).name_key
+		icon.mouse_filter = Control.MOUSE_FILTER_PASS
+		rig.add_child(icon)
+		var label := Label.new()
+		label.add_theme_font_size_override("font_size", 28)
+		label.auto_translate_mode = Node.AUTO_TRANSLATE_MODE_DISABLED
+		rig.add_child(label)
+		_rig_labels[id] = label
+
+
 func _update_hud() -> void:
-	coins_label.text = UIText.coins(GameState.coins)
-	hold_label.text = "%s %d/%d" % [tr("UI_HOLD"), GameState.hold.size(), GameState.hold_capacity()]
+	hold_label.text = "%d/%d" % [GameState.hold.size(), GameState.hold_capacity()]
+	for id in _rig_labels:
+		_rig_labels[id].text = "%s %d" % [tr("UI_LEVEL"), GameState.upgrade_level(id)]
+
+
+func _open_encyclopedia() -> void:
+	GameState.return_scene = SCENE_PATH
+	_leave(ENCYCLOPEDIA_SCENE)
 
 
 func _leave(scene: String) -> void:

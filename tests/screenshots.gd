@@ -92,6 +92,24 @@ func _shoot_meta(locale: String) -> void:
 	dock.tabs.current_tab = 1
 	await _save("%s_11_workshop" % locale)
 	dock.queue_free()
+
+	var main: Control = load("res://scenes/Main.tscn").instantiate()
+	add_child(main)
+	await _save("%s_0_menu" % locale)
+	main.queue_free()
+
+	GameState.encyclopedia.x_eel = {"count": 3, "best_cm": 84, "best_value": 19}
+	GameState.encyclopedia.power_pike = {"count": 6, "best_cm": 101, "best_value": 51}
+	var enc: Control = load("res://scenes/Encyclopedia.tscn").instantiate()
+	add_child(enc)
+	enc.select("x_eel")
+	enc.show_answer_button.pressed.emit()
+	await _save("%s_12_encyclopedia" % locale)
+	enc.select("power_pike")
+	await _save("%s_13_encyclopedia_deep" % locale)
+	enc.select("balanced_sturgeon")
+	await _save("%s_14_encyclopedia_unknown" % locale)
+	enc.queue_free()
 	await get_tree().process_frame
 
 

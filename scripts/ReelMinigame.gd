@@ -1,6 +1,6 @@
 extends PanelContainer
 ## Timing bar (DESIGN.md §3.3): a marker bounces along the bar, the player stops
-## it inside the green zone. It's for feel, not difficulty. Placeholder styling.
+## it inside the green zone. It's for feel, not difficulty.
 
 signal finished(hit: bool)
 

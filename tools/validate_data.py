@@ -78,6 +78,8 @@ def main():
         upg_by_id[u["id"]] = u
         need_key(u["name_key"], f"upgrade {u['id']}")
         need_key(u["desc_key"], f"upgrade {u['id']}")
+        if not os.path.exists(u["icon"].replace("res://", "")):
+            err(f"upgrade {u['id']}: icon {u['icon']} not found")
         costs = [lv["cost"] for lv in u["levels"]]
         if not costs or costs != sorted(costs) or len(set(costs)) != len(costs):
             err(f"upgrade {u['id']}: costs must be strictly increasing, got {costs}")

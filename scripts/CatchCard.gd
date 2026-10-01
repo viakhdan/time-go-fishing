@@ -1,15 +1,15 @@
 extends PanelContainer
-## Fish reveal: sprite, name, rarity, size, value (DESIGN.md §10). Until the fish
-## art exists (step 6), a block in the rarity colour stands in for the sprite.
+## Fish reveal: picture, name, rarity, size, value (DESIGN.md §10).
 
 signal closed
 
-@onready var sprite: TextureRect = %Sprite
-@onready var sprite_placeholder: ColorRect = %SpritePlaceholder
+const STARS: Dictionary = preload("res://scripts/ProblemPanel.gd").STARS
+
+@onready var picture: FishPicture = %Picture
 @onready var name_label: Label = %NameLabel
 @onready var rarity_label: Label = %RarityLabel
-@onready var info_label: Label = %InfoLabel
-@onready var bonus_label: Label = %BonusLabel
+@onready var info_label: RichTextLabel = %InfoLabel
+@onready var bonus_label: RichTextLabel = %BonusLabel
 @onready var to_hold_button: Button = %ToHoldButton
 
 var _result := {}
@@ -22,14 +22,8 @@ func _ready() -> void:
 func show_catch(result: Dictionary) -> void:
 	_result = result
 	var fish := GameData.fish(result.species)
-	var color := Color(GameData.rarity(fish.rarity).color)
-	var has_sprite := ResourceLoader.exists(fish.sprite)
-	sprite.visible = has_sprite
-	sprite_placeholder.visible = not has_sprite
-	if has_sprite:
-		sprite.texture = load(fish.sprite)
-	sprite_placeholder.color = color
-	rarity_label.add_theme_color_override("font_color", color)
+	picture.setup(result.species)
+	rarity_label.add_theme_color_override("font_color", Color(GameData.rarity(fish.rarity).color))
 	_refresh_text()
 	show()
 	to_hold_button.grab_focus()
@@ -45,17 +39,17 @@ func _refresh_text() -> void:
 		return
 	var fish := GameData.fish(_result.species)
 	name_label.text = tr(fish.name_key)
-	rarity_label.text = tr(GameData.rarity(fish.rarity).name_key).to_upper()
-	var info := "%s · ≈%s" % [tr("UI_SIZE_CM").format({"n": _result.size_cm}), UIText.coins(_result.value)]
+	rarity_label.text = "%s  %s" % [STARS[fish.rarity], tr(GameData.rarity(fish.rarity).name_key).to_upper()]
+	var info := "%s  ·  ≈%s" % [tr("UI_SIZE_CM").format({"n": _result.size_cm}), UIText.coins(_result.value, 30)]
 	if _result.is_new:
-		info += " · " + tr("UI_NEW")
+		info += "  ·  [color=%s]%s[/color]" % [Palette.LANTERN.to_html(false), tr("UI_NEW")]
 	elif _result.new_record:
-		info += " · " + tr("UI_NEW_RECORD")
+		info += "  ·  [color=%s]%s[/color]" % [Palette.LANTERN.to_html(false), tr("UI_NEW_RECORD")]
 	info_label.text = info
 	var bonuses: Array[String] = []
 	if _result.discovery_bonus > 0:
-		bonuses.append(tr("UI_DISCOVERY_BONUS").format({"n": _result.discovery_bonus}))
+		bonuses.append(UIText.rich("UI_DISCOVERY_BONUS", {"n": _result.discovery_bonus}))
 	if _result.zone_complete_bonus > 0:
-		bonuses.append(tr("UI_ZONE_COMPLETE").format({"n": _result.zone_complete_bonus}))
+		bonuses.append(UIText.rich("UI_ZONE_COMPLETE", {"n": _result.zone_complete_bonus}))
 	bonus_label.text = "\n".join(bonuses)
 	bonus_label.visible = not bonuses.is_empty()

@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene load_steps=6 format=3]
 
 [ext_resource type="Script" path="res://scripts/Dock.gd" id="1_dock"]
 [ext_resource type="PackedScene" path="res://scenes/HoldPanel.tscn" id="2_hold"]
+[ext_resource type="Script" path="res://scripts/CoinCounter.gd" id="3_coins"]
+[ext_resource type="Script" path="res://scripts/LangToggle.gd" id="4_lang"]
+[ext_resource type="Texture2D" path="res://art/ui/icons/coin.svg" id="5_coin"]
 
 [node name="Dock" type="Control"]
 layout_mode = 3
@@ -19,7 +22,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.298, 0.224, 0.196, 1)
+color = Color(0.141, 0.122, 0.114, 1)
 
 [node name="Layout" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -48,16 +51,22 @@ theme_type_variation = &"TitleLabel"
 theme_override_font_sizes/font_size = 64
 text = "UI_DOCK"
 
-[node name="CoinsLabel" type="Label" parent="Layout/Content/TopBar"]
+[node name="Coins" type="HBoxContainer" parent="Layout/Content/TopBar"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_font_sizes/font_size = 40
-auto_translate_mode = 2
+script = ExtResource("3_coins")
+font_size = 40
+
+[node name="LangToggle" type="HBoxContainer" parent="Layout/Content/TopBar"]
+layout_mode = 2
+script = ExtResource("4_lang")
+button_size = Vector2(72, 72)
 
 [node name="GoFishingButton" type="Button" parent="Layout/Content/TopBar"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 72)
 layout_mode = 2
+theme_type_variation = &"PrimaryButton"
 theme_override_font_sizes/font_size = 32
 text = "UI_GO_FISHING"
 
@@ -83,7 +92,7 @@ theme_override_constants/separation = 32
 [node name="HoldPanel" parent="Layout/Content/Tabs/Market/Box" instance=ExtResource("2_hold")]
 unique_name_in_owner = true
 layout_mode = 2
-slot_size = 104
+slot_size = 108
 show_prices = true
 selectable = true
 
@@ -101,6 +110,7 @@ theme_override_constants/separation = 24
 unique_name_in_owner = true
 custom_minimum_size = Vector2(360, 80)
 layout_mode = 2
+icon_alignment = 2
 theme_override_font_sizes/font_size = 32
 auto_translate_mode = 2
 
@@ -108,6 +118,9 @@ auto_translate_mode = 2
 unique_name_in_owner = true
 custom_minimum_size = Vector2(420, 80)
 layout_mode = 2
+theme_type_variation = &"PrimaryButton"
+icon = ExtResource("5_coin")
+icon_alignment = 2
 theme_override_font_sizes/font_size = 32
 auto_translate_mode = 2
 

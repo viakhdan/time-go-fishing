@@ -1,7 +1,6 @@
 extends HBoxContainer
 ## The hold (DESIGN.md §4): one slot per unit of capacity, 1 fish = 1 slot.
 ## Used in the Zone (pick a fish to release) and the Dock (sell with prices).
-## Placeholder look until step 6: a rarity-coloured block stands in for the sprite.
 
 signal selection_changed(index: int)  ## -1 when nothing is selected
 
@@ -47,6 +46,7 @@ func _make_slot(index: int, group: ButtonGroup) -> Button:
 	var slot := Button.new()
 	slot.custom_minimum_size = Vector2(slot_size, slot_size + (32 if show_prices else 0))
 	slot.toggle_mode = true
+	slot.theme_type_variation = &"HoldSlot"
 	slot.button_group = group
 	slot.auto_translate_mode = Node.AUTO_TRANSLATE_MODE_DISABLED
 	if fish.is_empty():
@@ -57,32 +57,29 @@ func _make_slot(index: int, group: ButtonGroup) -> Button:
 	if fish.is_empty():
 		return slot
 
-	var data := GameData.fish(fish.species)
-	slot.tooltip_text = tr(data.name_key)
+	slot.tooltip_text = tr(GameData.fish(fish.species).name_key)
 	var box := VBoxContainer.new()
 	box.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	box.alignment = BoxContainer.ALIGNMENT_CENTER
+	box.add_theme_constant_override("separation", 0)
 	box.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	slot.add_child(box)
 
-	var picture: Control
-	if ResourceLoader.exists(data.sprite):
-		picture = TextureRect.new()
-		picture.texture = load(data.sprite)
-		picture.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-		picture.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
-	else:
-		picture = ColorRect.new()
-		picture.color = Color(GameData.rarity(data.rarity).color)
-	picture.custom_minimum_size = Vector2(slot_size * 0.7, slot_size * 0.4)
+	var picture := FishPicture.new()
+	picture.custom_minimum_size = Vector2(slot_size * 0.9, slot_size * 0.55)
 	picture.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
 	picture.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	picture.setup(fish.species)
 	box.add_child(picture)
 
-	var label := Label.new()
-	label.text = UIText.coins(fish.value) if show_prices else tr("UI_SIZE_CM").format({"n": fish.size_cm})
+	var label := RichTextLabel.new()
+	label.bbcode_enabled = true
+	label.fit_content = true
+	label.scroll_active = false
+	label.autowrap_mode = TextServer.AUTOWRAP_OFF
 	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	label.add_theme_font_size_override("font_size", 20)
+	label.add_theme_font_size_override("normal_font_size", 20)
+	label.text = UIText.coins(fish.value, 18) if show_prices else tr("UI_SIZE_CM").format({"n": fish.size_cm})
 	label.auto_translate_mode = Node.AUTO_TRANSLATE_MODE_DISABLED
 	label.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	box.add_child(label)

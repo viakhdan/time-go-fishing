@@ -27,6 +27,8 @@ var trip_second_chances := 0
 
 ## Zone the player is fishing in. Not saved: a restart begins at the menu.
 var current_zone := "lake"
+## Where the Encyclopedia's Back button goes. Not saved.
+var return_scene := "res://scenes/Main.tscn"
 
 
 func _ready() -> void:

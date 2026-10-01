@@ -1,13 +1,15 @@
 extends Control
 ## Zone picker + way to the dock (DESIGN.md §2, §7). Locked zones name the
-## upgrade that opens them. Placeholder look until step 6; badges in step 7.
+## upgrade that opens them. Zone previews are flat placeholders until the art exists.
 
 const ZONE_SCENE := "res://scenes/Zone.tscn"
 const DOCK_SCENE := "res://scenes/Dock.tscn"
 const MAIN_SCENE := "res://scenes/Main.tscn"
-const ZONE_COLORS: Dictionary = preload("res://scripts/Zone.gd").PLACEHOLDER_BG
+const ENCYCLOPEDIA_SCENE := "res://scenes/Encyclopedia.tscn"
+const SCENE_PATH := "res://scenes/Map.tscn"
 
-@onready var coins_label: Label = %CoinsLabel
+@onready var coins_label: CoinCounter = %Coins
+@onready var encyclopedia_button: Button = %EncyclopediaButton
 @onready var dock_button: Button = %DockButton
 @onready var menu_button: Button = %MenuButton
 @onready var cards: HBoxContainer = %Cards
@@ -19,6 +21,9 @@ var _cards := {}
 func _ready() -> void:
 	dock_button.pressed.connect(_open.bind(DOCK_SCENE))
 	menu_button.pressed.connect(_open.bind(MAIN_SCENE))
+	encyclopedia_button.pressed.connect(func():
+		GameState.return_scene = SCENE_PATH
+		_open(ENCYCLOPEDIA_SCENE))
 	for zone in GameData.zones():
 		cards.add_child(_make_card(zone))
 	_refresh()
@@ -31,6 +36,7 @@ func _notification(what: int) -> void:
 
 func _make_card(zone: Dictionary) -> Control:
 	var card := PanelContainer.new()
+	card.theme_type_variation = &"Card"
 	card.custom_minimum_size = Vector2(560, 0)
 	card.size_flags_vertical = Control.SIZE_SHRINK_BEGIN
 	var margin := MarginContainer.new()
@@ -42,8 +48,14 @@ func _make_card(zone: Dictionary) -> Control:
 	margin.add_child(box)
 
 	var preview := ColorRect.new()
-	preview.color = ZONE_COLORS.get(zone.id, Color.BLACK)
-	preview.custom_minimum_size = Vector2(0, 220)
+	preview.color = Palette.ZONE_BG.get(zone.id, Palette.NIGHT)
+	preview.custom_minimum_size = Vector2(0, 240)
+	var water := ColorRect.new()
+	water.color = Palette.ZONE_WATER.get(zone.id, Palette.DEEP_TEAL)
+	water.anchor_top = 0.62
+	water.anchor_right = 1.0
+	water.anchor_bottom = 1.0
+	preview.add_child(water)
 	box.add_child(preview)
 
 	var name_label := Label.new()
@@ -54,7 +66,8 @@ func _make_card(zone: Dictionary) -> Control:
 
 	var topic_label := Label.new()
 	topic_label.text = "TOPIC_" + zone.topic.to_upper()
-	topic_label.add_theme_color_override("font_color", Color("#a3bdbe"))
+	topic_label.theme_type_variation = &"MutedLabel"
+	topic_label.add_theme_font_size_override("font_size", 26)
 	box.add_child(topic_label)
 
 	var discovered := Label.new()
@@ -63,6 +76,7 @@ func _make_card(zone: Dictionary) -> Control:
 
 	var button := Button.new()
 	button.custom_minimum_size = Vector2(0, 80)
+	button.theme_type_variation = &"PrimaryButton"
 	button.add_theme_font_size_override("font_size", 32)
 	button.auto_translate_mode = Node.AUTO_TRANSLATE_MODE_DISABLED
 	button.pressed.connect(_fish_in.bind(zone.id))
@@ -73,7 +87,6 @@ func _make_card(zone: Dictionary) -> Control:
 
 
 func _refresh() -> void:
-	coins_label.text = UIText.coins(GameState.coins)
 	for zone in GameData.zones():
 		var card: Dictionary = _cards[zone.id]
 		var found: int = zone.fish.filter(func(id): return id in GameState.encyclopedia).size()

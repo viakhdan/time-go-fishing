@@ -1,13 +1,13 @@
 extends PanelContainer
 ## Question + 4 answers + timer (DESIGN.md §10). After a miss it shows the
-## correct answer and the one-line solution (§3.3). Placeholder styling until step 6.
+## correct answer and the one-line solution (§3.3).
 
 signal answered(index: int)
 signal continue_pressed
 
 const STARS := {"common": "★", "uncommon": "★★", "rare": "★★★", "legendary": "★★★★"}
 const TIMER_WARNING_S := 10.0
-const WARNING_COLOR := Color("#d8433c")
+const WARNING_COLOR := Palette.ALARM
 
 @onready var rarity_label: Label = %RarityLabel
 @onready var timer_label: Label = %TimerLabel
@@ -18,6 +18,7 @@ const WARNING_COLOR := Color("#d8433c")
 @onready var result_label: Label = %ResultLabel
 @onready var answer_label: Label = %AnswerLabel
 @onready var solution_label: Label = %SolutionLabel
+@onready var solution_card: PanelContainer = %SolutionCard
 @onready var continue_button: Button = %ContinueButton
 
 var _problem := {}
@@ -67,7 +68,7 @@ func show_miss(reason: FishingLoop.Escape) -> void:
 	timer_label.hide()
 	answers.hide()
 	answer_label.show()
-	solution_label.show()
+	solution_card.show()
 	_show_feedback()
 
 
@@ -79,7 +80,7 @@ func show_reel_escape() -> void:
 	question_label.hide()
 	answers.hide()
 	answer_label.hide()
-	solution_label.hide()
+	solution_card.hide()
 	_show_feedback()
 
 

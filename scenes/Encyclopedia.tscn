@@ -1,0 +1,232 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/Encyclopedia.gd" id="1_enc"]
+[ext_resource type="Script" path="res://scripts/LangToggle.gd" id="2_lang"]
+[ext_resource type="Script" path="res://scripts/FishPicture.gd" id="3_picture"]
+
+[node name="Encyclopedia" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_enc")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.071, 0.078, 0.075, 1)
+
+[node name="Layout" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 48
+
+[node name="Content" type="VBoxContainer" parent="Layout"]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="TopBar" type="HBoxContainer" parent="Layout/Content"]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="Title" type="Label" parent="Layout/Content/TopBar"]
+layout_mode = 2
+theme_type_variation = &"TitleLabel"
+theme_override_font_sizes/font_size = 64
+text = "UI_ENCYCLOPEDIA"
+
+[node name="DiscoveredLabel" type="Label" parent="Layout/Content/TopBar"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+theme_type_variation = &"MutedLabel"
+theme_override_font_sizes/font_size = 32
+auto_translate_mode = 2
+
+[node name="LangToggle" type="HBoxContainer" parent="Layout/Content/TopBar"]
+layout_mode = 2
+script = ExtResource("2_lang")
+button_size = Vector2(72, 72)
+
+[node name="BackButton" type="Button" parent="Layout/Content/TopBar"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 72)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "UI_BACK"
+
+[node name="Book" type="PanelContainer" parent="Layout/Content"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_type_variation = &"PaperPanel"
+
+[node name="Margin" type="MarginContainer" parent="Layout/Content/Book"]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="Pages" type="HBoxContainer" parent="Layout/Content/Book/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="LeftPage" type="ScrollContainer" parent="Layout/Content/Book/Margin/Pages"]
+custom_minimum_size = Vector2(720, 0)
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="FishList" type="VBoxContainer" parent="Layout/Content/Book/Margin/Pages/LeftPage"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 16
+
+[node name="Spine" type="ColorRect" parent="Layout/Content/Book/Margin/Pages"]
+custom_minimum_size = Vector2(4, 0)
+layout_mode = 2
+color = Color(0.396, 0.282, 0.192, 1)
+
+[node name="RightPage" type="ScrollContainer" parent="Layout/Content/Book/Margin/Pages"]
+layout_mode = 2
+size_flags_horizontal = 3
+horizontal_scroll_mode = 0
+
+[node name="Detail" type="VBoxContainer" parent="Layout/Content/Book/Margin/Pages/RightPage"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 12
+
+[node name="PictureBox" type="PanelContainer" parent="Layout/Content/Book/Margin/Pages/RightPage/Detail"]
+layout_mode = 2
+theme_type_variation = &"PaperInset"
+
+[node name="Picture" type="Control" parent="Layout/Content/Book/Margin/Pages/RightPage/Detail/PictureBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 170)
+layout_mode = 2
+script = ExtResource("3_picture")
+
+[node name="NameLabel" type="Label" parent="Layout/Content/Book/Margin/Pages/RightPage/Detail"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"PaperTitle"
+theme_override_font_sizes/font_size = 48
+auto_translate_mode = 2
+
+[node name="SubLabel" type="Label" parent="Layout/Content/Book/Margin/Pages/RightPage/Detail"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"PaperHeading"
+theme_override_font_sizes/font_size = 28
+auto_translate_mode = 2
+
+[node name="LockedLabel" type="Label" parent="Layout/Content/Book/Margin/Pages/RightPage/Detail"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"PaperLabel"
+theme_override_font_sizes/font_size = 28
+text = "UI_CATCH_TO_UNLOCK"
+autowrap_mode = 3
+
+[node name="Known" type="VBoxContainer" parent="Layout/Content/Book/Margin/Pages/RightPage/Detail"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="RecordsBox" type="PanelContainer" parent="Layout/Content/Book/Margin/Pages/RightPage/Detail/Known"]
+layout_mode = 2
+theme_type_variation = &"PaperInset"
+
+[node name="Records" type="RichTextLabel" parent="Layout/Content/Book/Margin/Pages/RightPage/Detail/Known/RecordsBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"PaperRichText"
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+auto_translate_mode = 2
+
+[node name="FlavorLabel" type="Label" parent="Layout/Content/Book/Margin/Pages/RightPage/Detail/Known"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"FlavorLabel"
+theme_override_font_sizes/font_size = 28
+autowrap_mode = 3
+auto_translate_mode = 2
+
+[node name="FactHeading" type="Label" parent="Layout/Content/Book/Margin/Pages/RightPage/Detail/Known"]
+layout_mode = 2
+theme_type_variation = &"PaperHeading"
+theme_override_font_sizes/font_size = 28
+text = "UI_MATH_FACT"
+
+[node name="FactLabel" type="Label" parent="Layout/Content/Book/Margin/Pages/RightPage/Detail/Known"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"PaperLabel"
+theme_override_font_sizes/font_size = 26
+autowrap_mode = 3
+auto_translate_mode = 2
+
+[node name="TryHeading" type="Label" parent="Layout/Content/Book/Margin/Pages/RightPage/Detail/Known"]
+layout_mode = 2
+theme_type_variation = &"PaperHeading"
+theme_override_font_sizes/font_size = 28
+text = "UI_TRY_IT"
+
+[node name="TryRow" type="HBoxContainer" parent="Layout/Content/Book/Margin/Pages/RightPage/Detail/Known"]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="TryQuestion" type="Label" parent="Layout/Content/Book/Margin/Pages/RightPage/Detail/Known/TryRow"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"PaperLabel"
+theme_override_font_sizes/font_size = 30
+auto_translate_mode = 2
+
+[node name="ShowAnswerButton" type="Button" parent="Layout/Content/Book/Margin/Pages/RightPage/Detail/Known/TryRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 56)
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "UI_SHOW_ANSWER"
+
+[node name="TryAnswer" type="Label" parent="Layout/Content/Book/Margin/Pages/RightPage/Detail/Known/TryRow"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_type_variation = &"PaperTitle"
+theme_override_font_sizes/font_size = 30
+auto_translate_mode = 2
+
+[node name="DeepHeading" type="Label" parent="Layout/Content/Book/Margin/Pages/RightPage/Detail/Known"]
+layout_mode = 2
+theme_type_variation = &"PaperHeading"
+theme_override_font_sizes/font_size = 28
+text = "UI_DEEP_FACT"
+
+[node name="DeepLabel" type="Label" parent="Layout/Content/Book/Margin/Pages/RightPage/Detail/Known"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"PaperLabel"
+theme_override_font_sizes/font_size = 26
+autowrap_mode = 3
+auto_translate_mode = 2

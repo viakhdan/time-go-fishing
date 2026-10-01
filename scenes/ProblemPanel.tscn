@@ -4,6 +4,7 @@
 
 [node name="ProblemPanel" type="PanelContainer"]
 custom_minimum_size = Vector2(1100, 0)
+theme_type_variation = &"ModalPanel"
 script = ExtResource("1_panel")
 
 [node name="Margin" type="MarginContainer" parent="."]
@@ -37,14 +38,15 @@ auto_translate_mode = 2
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
-theme_override_colors/font_color = Color(0.953, 0.824, 0.478, 1)
+theme_override_colors/font_color = Color(0.953, 0.804, 0.478, 1)
 autowrap_mode = 3
 auto_translate_mode = 2
 
 [node name="QuestionLabel" type="Label" parent="Margin/Content"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_font_sizes/font_size = 40
+theme_override_colors/font_color = Color(0.996, 0.996, 0.992, 1)
+theme_override_font_sizes/font_size = 44
 autowrap_mode = 3
 auto_translate_mode = 2
 
@@ -96,7 +98,7 @@ theme_override_constants/separation = 16
 [node name="ResultLabel" type="Label" parent="Margin/Content/Feedback"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_colors/font_color = Color(0.847, 0.263, 0.235, 1)
+theme_type_variation = &"WarningLabel"
 theme_override_font_sizes/font_size = 36
 auto_translate_mode = 2
 
@@ -107,7 +109,19 @@ theme_override_font_sizes/font_size = 32
 autowrap_mode = 3
 auto_translate_mode = 2
 
-[node name="SolutionLabel" type="Label" parent="Margin/Content/Feedback"]
+[node name="SolutionCard" type="PanelContainer" parent="Margin/Content/Feedback"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"Card"
+
+[node name="SolutionMargin" type="MarginContainer" parent="Margin/Content/Feedback/SolutionCard"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 12
+
+[node name="SolutionLabel" type="Label" parent="Margin/Content/Feedback/SolutionCard/SolutionMargin"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
@@ -118,6 +132,7 @@ auto_translate_mode = 2
 unique_name_in_owner = true
 custom_minimum_size = Vector2(320, 72)
 layout_mode = 2
+theme_type_variation = &"PrimaryButton"
 size_flags_horizontal = 8
 theme_override_font_sizes/font_size = 32
 text = "UI_CONTINUE"

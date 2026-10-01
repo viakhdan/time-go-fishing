@@ -6,6 +6,7 @@ extends Node
 const SUITES := [
 	preload("res://tests/test_core.gd"),
 	preload("res://tests/test_economy.gd"),
+	preload("res://tests/test_ui.gd"),
 ]
 
 
