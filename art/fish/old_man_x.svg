@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 256" width="512" height="256">
+  <!-- Old Man X (boss): a huge grumpy old catfish with an X-shaped scar and drooping whiskers. -->
+  <polygon points="110,112 26,68 48,138 26,208 110,164" fill="#0f282e" stroke="#121413" stroke-width="5" stroke-linejoin="round"/>
+  <polygon points="270,70 296,30 336,68" fill="#0f282e" stroke="#121413" stroke-width="5" stroke-linejoin="round"/>
+  <polygon points="492,150 472,110 412,80 322,66 232,70 152,90 102,112 102,164 152,186 232,200 322,204 412,196 472,176" fill="#273244" stroke="#121413" stroke-width="5" stroke-linejoin="round"/>
+  <polygon points="492,150 492,150 472,176 412,196 322,204 232,200 152,186 102,164 102,150" fill="#344551" opacity="1.0"/>
+  <polygon points="232,70 322,66 412,80 340,110" fill="#3f5e6a" opacity="1.0"/>
+  <circle cx="180" cy="110" r="6" fill="#62878f"/>
+  <circle cx="206" cy="96" r="6" fill="#62878f"/>
+  <circle cx="160" cy="128" r="6" fill="#62878f"/>
+  <circle cx="430" cy="92" r="6" fill="#62878f"/>
+  <circle cx="446" cy="104" r="6" fill="#62878f"/>
+  <path d="M218 104 L306 180 M306 104 L218 180" stroke="#eee4cf" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M218 104 L306 180 M306 104 L218 180" stroke="#d8433c" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <polygon points="492,150 472,110 412,80 322,66 232,70 152,90 102,112 102,164 152,186 232,200 322,204 412,196 472,176" fill="none" stroke="#121413" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M492 150 L452 162" stroke="#121413" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M476 158 Q500 200 470 244" stroke="#eee4cf" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M462 164 Q470 206 438 238" stroke="#eee4cf" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M484 140 Q510 120 506 80" stroke="#eee4cf" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="430" cy="124" r="17" fill="#eee4cf" stroke="#121413" stroke-width="4"/>
+  <circle cx="433.06" cy="124" r="8.5" fill="#121413"/>
+  <circle cx="435.95" cy="119.75" r="3.06" fill="#fefefd"/>
+  <path d="M408 102 L446 110" stroke="#121413" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

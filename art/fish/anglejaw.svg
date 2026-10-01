@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 256" width="512" height="256">
+  <!-- Anglejaw: its jaw opens at exactly 90°, marked with a right-angle square. -->
+  <polygon points="118,128 38,78 58,140 38,200 118,152" fill="#654831" stroke="#241f1d" stroke-width="5" stroke-linejoin="round"/>
+  <polygon points="200,86 222,46 262,78" fill="#654831" stroke="#241f1d" stroke-width="5" stroke-linejoin="round"/>
+  <polygon points="290,188 310,224 338,188" fill="#654831" stroke="#241f1d" stroke-width="5" stroke-linejoin="round"/>
+  <polygon points="410,128 462,78 430,70 382,70 320,72 250,76 180,90 130,110 110,130 110,150 140,168 200,184 280,190 360,186 430,186 462,178" fill="#7d5230" stroke="#241f1d" stroke-width="5" stroke-linejoin="round"/>
+  <polygon points="110,142 410,142 440,186 430,186 360,186 280,190 200,184 140,168" fill="#654831" opacity="1.0"/>
+  <polygon points="180,90 320,72 262,110" fill="#a68554" opacity="1.0"/>
+  <polygon points="424,114 432,126 438,114" fill="#eee4cf" stroke="#241f1d" stroke-width="0" stroke-linejoin="round"/>
+  <polygon points="440,98 448,110 454,98" fill="#eee4cf" stroke="#241f1d" stroke-width="0" stroke-linejoin="round"/>
+  <polygon points="424,142 432,130 438,142" fill="#eee4cf" stroke="#241f1d" stroke-width="0" stroke-linejoin="round"/>
+  <polygon points="440,158 448,146 454,158" fill="#eee4cf" stroke="#241f1d" stroke-width="0" stroke-linejoin="round"/>
+  <polygon points="410,128 420,118 430,128 420,138" fill="none" stroke="#f3d27a" stroke-width="3"/>
+  <polygon points="410,128 462,78 430,70 382,70 320,72 250,76 180,90 130,110 110,130 110,150 140,168 200,184 280,190 360,186 430,186 462,178" fill="none" stroke="#241f1d" stroke-width="5" stroke-linejoin="round"/>
+  <circle cx="372" cy="102" r="16" fill="#eee4cf" stroke="#241f1d" stroke-width="4"/>
+  <circle cx="374.88" cy="102" r="8.0" fill="#121413"/>
+  <circle cx="377.6" cy="98.0" r="2.88" fill="#fefefd"/>
+</svg>

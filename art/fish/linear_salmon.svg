@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 256" width="512" height="256">
+  <!-- Linear Salmon: silver salmon with a graph on its side: a straight line through two points. -->
+  <polygon points="126,116 40,70 64,132 40,194 126,148" fill="#344551" stroke="#121413" stroke-width="5" stroke-linejoin="round"/>
+  <polygon points="240,88 262,50 300,86" fill="#344551" stroke="#121413" stroke-width="5" stroke-linejoin="round"/>
+  <polygon points="150,104 160,84 176,100" fill="#344551" stroke="#121413" stroke-width="5" stroke-linejoin="round"/>
+  <polygon points="468,136 446,112 396,94 320,84 240,86 170,98 118,118 118,146 170,164 240,176 320,178 396,168 446,154" fill="#a3bdbe" stroke="#121413" stroke-width="5" stroke-linejoin="round"/>
+  <polygon points="118,118 170,98 240,86 320,84 396,94 446,112 452,118 118,122" fill="#3f5e6a" opacity="1.0"/>
+  <polygon points="468,150 446,154 396,168 320,178 240,176 170,164 118,150" fill="#d5c8af" opacity="1.0"/>
+  <circle cx="200" cy="110" r="2.5" fill="#344551"/>
+  <circle cx="200" cy="132" r="2.5" fill="#344551"/>
+  <circle cx="200" cy="154" r="2.5" fill="#344551"/>
+  <circle cx="230" cy="110" r="2.5" fill="#344551"/>
+  <circle cx="230" cy="132" r="2.5" fill="#344551"/>
+  <circle cx="230" cy="154" r="2.5" fill="#344551"/>
+  <circle cx="260" cy="110" r="2.5" fill="#344551"/>
+  <circle cx="260" cy="132" r="2.5" fill="#344551"/>
+  <circle cx="260" cy="154" r="2.5" fill="#344551"/>
+  <circle cx="290" cy="110" r="2.5" fill="#344551"/>
+  <circle cx="290" cy="132" r="2.5" fill="#344551"/>
+  <circle cx="290" cy="154" r="2.5" fill="#344551"/>
+  <circle cx="320" cy="110" r="2.5" fill="#344551"/>
+  <circle cx="320" cy="132" r="2.5" fill="#344551"/>
+  <circle cx="320" cy="154" r="2.5" fill="#344551"/>
+  <circle cx="350" cy="110" r="2.5" fill="#344551"/>
+  <circle cx="350" cy="132" r="2.5" fill="#344551"/>
+  <circle cx="350" cy="154" r="2.5" fill="#344551"/>
+  <circle cx="380" cy="110" r="2.5" fill="#344551"/>
+  <circle cx="380" cy="132" r="2.5" fill="#344551"/>
+  <circle cx="380" cy="154" r="2.5" fill="#344551"/>
+  <path d="M200 166 L380 104" stroke="#f3d27a" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="252" cy="148" r="7" fill="#d8433c" stroke="#121413" stroke-width="3"/>
+  <circle cx="332" cy="120" r="7" fill="#d8433c" stroke="#121413" stroke-width="3"/>
+  <polygon points="468,136 446,112 396,94 320,84 240,86 170,98 118,118 118,146 170,164 240,176 320,178 396,168 446,154" fill="none" stroke="#121413" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M468 136 L440 144 L430 138" stroke="#121413" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="418" cy="118" r="14" fill="#eee4cf" stroke="#121413" stroke-width="4"/>
+  <circle cx="420.52" cy="118" r="7.0" fill="#121413"/>
+  <circle cx="422.9" cy="114.5" r="2.52" fill="#fefefd"/>
+</svg>

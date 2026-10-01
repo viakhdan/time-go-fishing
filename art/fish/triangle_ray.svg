@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 256" width="512" height="256">
+  <!-- Triangle Ray: a ray whose body is a triangle, each corner marked with an angle arc. -->
+  <path d="M190 128 L18 128" stroke="#121413" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M190 128 L18 128" stroke="#344551" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <polygon points="40,120 22,128 40,136" fill="#344551" stroke="#121413" stroke-width="3" stroke-linejoin="round"/>
+  <polygon points="478,128 200,18 200,238" fill="#273244" stroke="#121413" stroke-width="5" stroke-linejoin="round"/>
+  <polygon points="478,128 200,128 200,238" fill="#0f282e" opacity="1.0"/>
+  <polygon points="478,128 200,18 330,110" fill="#3f5e6a" opacity="1.0"/>
+  <path d="M440 113 A40 40 0 0 1 440 143" fill="none" stroke="#f3d27a" stroke-width="4"/>
+  <path d="M200 58 A40 40 0 0 0 236 32" fill="none" stroke="#f3d27a" stroke-width="4"/>
+  <path d="M200 198 A40 40 0 0 1 236 224" fill="none" stroke="#f3d27a" stroke-width="4"/>
+  <circle cx="290" cy="100" r="4" fill="#18a9a8"/>
+  <circle cx="310" cy="150" r="4" fill="#18a9a8"/>
+  <circle cx="260" cy="128" r="4" fill="#18a9a8"/>
+  <circle cx="340" cy="128" r="4" fill="#18a9a8"/>
+  <circle cx="250" cy="84" r="4" fill="#18a9a8"/>
+  <circle cx="250" cy="172" r="4" fill="#18a9a8"/>
+  <polygon points="478,128 200,18 200,238" fill="none" stroke="#121413" stroke-width="5" stroke-linejoin="round"/>
+  <circle cx="430" cy="112" r="11" fill="#eee4cf" stroke="#121413" stroke-width="4"/>
+  <circle cx="431.98" cy="112" r="5.5" fill="#121413"/>
+  <circle cx="433.85" cy="109.25" r="2" fill="#fefefd"/>
+  <circle cx="430" cy="144" r="11" fill="#eee4cf" stroke="#121413" stroke-width="4"/>
+  <circle cx="431.98" cy="144" r="5.5" fill="#121413"/>
+  <circle cx="433.85" cy="141.25" r="2" fill="#fefefd"/>
+</svg>

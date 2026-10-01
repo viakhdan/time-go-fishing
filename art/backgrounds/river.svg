@@ -688,9 +688,8 @@
   <path d="M415 798 L415 838" stroke="#241f1d" stroke-width="3"/>
   <path d="M463 785 L463 825" stroke="#241f1d" stroke-width="3"/>
   <path d="M512 772 L512 812" stroke="#241f1d" stroke-width="3"/>
-  <rect x="530" y="690" width="26" height="90" fill="#121413" opacity="1.0"/>
-  <rect x="539" y="622" width="8" height="70" fill="#121413" opacity="1.0"/>
-  <circle cx="543" cy="608" r="90" fill="url(#g4)"/>
-  <polygon points="531,592 555,592 553,622 533,622" fill="#f3d27a" opacity="1" stroke="#121413" stroke-width="3" stroke-linejoin="round"/>
-  <polygon points="529,592 557,592 543,580" fill="#121413" opacity="1.0"/>
+  <rect x="526" y="690" width="8" height="70" fill="#121413" opacity="1.0"/>
+  <circle cx="530" cy="676" r="90" fill="url(#g4)"/>
+  <polygon points="518,660 542,660 540,690 520,690" fill="#f3d27a" opacity="1" stroke="#121413" stroke-width="3" stroke-linejoin="round"/>
+  <polygon points="516,660 544,660 530,648" fill="#121413" opacity="1.0"/>
 </svg>

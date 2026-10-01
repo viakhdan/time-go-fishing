@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 256" width="512" height="256">
+  <!-- Vertical Flounder: flat mottled flounder, both eyes on top, with two crossing lines and equal vertical angles. -->
+  <polygon points="128,116 58,84 76,128 58,172 128,140" fill="#876446" stroke="#241f1d" stroke-width="5" stroke-linejoin="round"/>
+  <polygon points="470,128 440,64 372,26 290,16 206,26 140,60 110,104 110,152 140,196 206,230 290,240 372,230 440,192" fill="#876446" stroke="#241f1d" stroke-width="5" stroke-linejoin="round"/>
+  <polygon points="460,128 430,74 370,40 290,30 210,40 150,70 120,110 120,146 150,186 210,216 290,226 370,216 430,182" fill="#b7a072" stroke="#241f1d" stroke-width="5" stroke-linejoin="round"/>
+  <polygon points="460,128 460,128 430,182 370,216 290,226 210,216 150,186 120,146 120,128" fill="#a68554" opacity="1.0"/>
+  <circle cx="190" cy="90" r="6" fill="#876446"/>
+  <circle cx="220" cy="170" r="6" fill="#876446"/>
+  <circle cx="330" cy="70" r="6" fill="#876446"/>
+  <circle cx="350" cy="186" r="6" fill="#876446"/>
+  <circle cx="170" cy="134" r="6" fill="#876446"/>
+  <circle cx="400" cy="150" r="6" fill="#876446"/>
+  <path d="M220 80 L350 180 M350 80 L220 180" stroke="#654831" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M265 115 A28 28 0 0 1 305 115" fill="none" stroke="#f3d27a" stroke-width="4"/>
+  <path d="M265 145 A28 28 0 0 0 305 145" fill="none" stroke="#f3d27a" stroke-width="4"/>
+  <polygon points="460,128 430,74 370,40 290,30 210,40 150,70 120,110 120,146 150,186 210,216 290,226 370,216 430,182" fill="none" stroke="#241f1d" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M460 128 L440 140" stroke="#241f1d" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="400" cy="84" r="14" fill="#eee4cf" stroke="#241f1d" stroke-width="4"/>
+  <circle cx="402.52" cy="84" r="7.0" fill="#121413"/>
+  <circle cx="404.9" cy="80.5" r="2.52" fill="#fefefd"/>
+  <circle cx="430" cy="108" r="12" fill="#eee4cf" stroke="#241f1d" stroke-width="4"/>
+  <circle cx="432.16" cy="108" r="6.0" fill="#121413"/>
+  <circle cx="434.2" cy="105.0" r="2.16" fill="#fefefd"/>
+</svg>

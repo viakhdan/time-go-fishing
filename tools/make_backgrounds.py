@@ -6,7 +6,7 @@ is stable; tweak the scene functions and rerun:
 
     python tools/make_backgrounds.py
 
-Writes art/backgrounds/lake.svg, river.svg, dock.svg (1920×1080). The horizon
+Writes art/backgrounds/lake.svg, river.svg, sea.svg, harbour.svg (1920×1080). The horizon
 sits at 60 % height and the centre stays calm for the game's status text.
 """
 import math
@@ -172,7 +172,6 @@ def dock(svg, rng, left, right, top, deck, side, post, plank_line):
         x = left + (right - left) * t
         y_top = y_near + (y_far - 40 - y_near) * t
         svg.add(f'<path d="M{x:.0f} {y_top:.0f} L{x:.0f} {y_top + 40:.0f}" stroke="{plank_line}" stroke-width="3"/>')
-    svg.rect(right - 30, y_far - 110, 26, 90, post)
 
 
 def lantern(svg, x, y, glow_r=110):
@@ -238,8 +237,61 @@ def river():
     foam(svg, rng, 36, hz + 20, H - 40, FOAM, 0.45)
     reeds(svg, rng, 1560, 1920, H, 140, 280, SLATE, STEEL)
     dock(svg, rng, -20, 560, 800, WOOD, WOOD_DARK, INK_SOFT, WOOD_DARK)
-    lantern(svg, 543, 622, 90)  # stands on the jetty's end post
+    lantern(svg, 530, 690, 90)  # stands on the far end of the deck
     svg.write("river.svg")
+
+
+def wave_row(svg, rng, y, height, width, color, foam_color, foam_opacity):
+    """A row of flat, jagged wave crests with small foam caps."""
+    x = -rng.uniform(0, width)
+    while x < W:
+        w = width * rng.uniform(0.7, 1.3)
+        h = height * rng.uniform(0.6, 1.2)
+        peak = x + w * rng.uniform(0.4, 0.6)
+        svg.poly([(x, y), (peak, y - h), (x + w, y)], color)
+        svg.poly([(peak - w * 0.12, y - h * 0.7), (peak, y - h), (peak + w * 0.1, y - h * 0.75)], foam_color, foam_opacity)
+        x += w * rng.uniform(0.7, 0.95)
+
+
+def sea():
+    """Open Seas: wide horizon, rolling crests, sea stacks in the haze, the boat's bow."""
+    rng = random.Random(21)
+    svg = Svg()
+    hz = 640
+    sky(svg, [(0, SLATE), (170, STEEL), (340, SEA), (480, MIST), (580, FOAM)], hz)
+    svg.glow(1260, 470, 560, PAPER_LIGHT, 0.4)
+    svg.add(f'<circle cx="1260" cy="470" r="52" fill="{PAPER_LIGHT}" opacity="0.85"/>')
+    for cx, cy, w in [(260, 110, 560), (980, 60, 420), (1640, 150, 560), (700, 280, 460), (1380, 330, 420), (180, 400, 360)]:
+        torn_cloud(svg, rng, cx, cy, w, w * 0.2, STEEL if cy < 200 else SEA, 0.85)
+    # Sea stacks on the horizon.
+    for x0, width, height in [(150, 90, 150), (270, 60, 90), (1500, 120, 170), (1650, 70, 100), (1760, 50, 60)]:
+        pts = [(x0, hz + 2)]
+        steps = 6
+        for i in range(steps + 1):
+            px = x0 + width * i / steps
+            top = hz - height * (0.75 + rng.uniform(0, 0.25)) if 0 < i < steps else hz - height * 0.3
+            pts.append((px, top))
+        pts.append((x0 + width, hz + 2))
+        svg.poly(pts, STEEL)
+        svg.poly([(x0 + width * 0.5, hz + 2), (x0 + width * 0.5, hz - height * 0.8), (x0 + width, hz - height * 0.3), (x0 + width, hz + 2)], SLATE, 0.6)
+    svg.rect(0, 560, W, hz - 560, FOAM, 0.3)
+    water(svg, [(hz, MIST), (700, SEA), (790, STEEL), (900, SLATE)], hz)
+    for i in range(10):  # sun glitter
+        y = hz + 10 + i * 20
+        w = 150 - i * 10 + rng.uniform(-20, 20)
+        svg.rect(1260 - w / 2 + rng.uniform(-24, 24), y, w, 5, PAPER_LIGHT, 0.6 - i * 0.04)
+    for y, h, w, color in [(690, 10, 80, MIST), (740, 18, 120, SEA), (810, 28, 170, SEA), (890, 40, 230, STEEL), (990, 56, 300, SLATE), (1090, 70, 360, SLATE)]:
+        wave_row(svg, rng, y, h, w, color, PAPER_LIGHT, 0.75)
+    foam(svg, rng, 30, hz + 20, H - 60, FOAM, 0.4)
+    # The boat's bow in the bottom-left corner instead of a jetty.
+    svg.poly([(-20, 840), (420, 880), (560, 1080), (-20, 1080)], WOOD_DARK)
+    svg.poly([(-20, 820), (440, 858), (420, 880), (-20, 840)], OCHRE_DARK)
+    for i in range(1, 7):
+        x = i * 70
+        y = 820 + 38 * x / 440
+        svg.rect(x, y - 60, 8, 60, WOOD)
+    svg.add(f'<path d="M0 {760} L{440} {800}" stroke="{WOOD}" stroke-width="8"/>')
+    svg.write("sea.svg")
 
 
 def harbour():
@@ -283,4 +335,5 @@ if __name__ == "__main__":
     os.makedirs(OUT, exist_ok=True)
     lake()
     river()
+    sea()
     harbour()

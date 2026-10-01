@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 256" width="512" height="256">
+  <!-- Like-Term Roach: silver roach with three identical marks (like terms) and red eyes. -->
+  <polygon points="118,128 38,78 58,140 38,200 118,152" fill="#7d5230" stroke="#241f1d" stroke-width="5" stroke-linejoin="round"/>
+  <polygon points="190,90 214,50 262,80" fill="#7d5230" stroke="#241f1d" stroke-width="5" stroke-linejoin="round"/>
+  <polygon points="290,186 310,222 338,184" fill="#7d5230" stroke="#241f1d" stroke-width="5" stroke-linejoin="round"/>
+  <polygon points="444,140 422,108 382,86 320,74 250,76 180,90 130,110 110,130 110,150 140,168 200,184 280,190 360,182 416,164" fill="#96989b" stroke="#241f1d" stroke-width="5" stroke-linejoin="round"/>
+  <polygon points="444,140 444,140 416,164 360,182 280,190 200,184 140,168 110,150 110,140" fill="#7c726c" opacity="1.0"/>
+  <polygon points="180,90 320,74 262,112" fill="#eee4cf" opacity="0.8"/>
+  <rect x="180" y="118" width="30" height="30" rx="9" fill="#eee4cf" stroke="#241f1d" stroke-width="3"/>
+  <rect x="240" y="118" width="30" height="30" rx="9" fill="#eee4cf" stroke="#241f1d" stroke-width="3"/>
+  <rect x="300" y="118" width="30" height="30" rx="9" fill="#eee4cf" stroke="#241f1d" stroke-width="3"/>
+  <path d="M188 126 Q195 142 202 126" stroke="#241f1d" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M248 126 Q255 142 262 126" stroke="#241f1d" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M308 126 Q315 142 322 126" stroke="#241f1d" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <polygon points="330,142 292,164 338,160" fill="#7d5230" opacity="1.0"/>
+  <polygon points="444,140 422,108 382,86 320,74 250,76 180,90 130,110 110,130 110,150 140,168 200,184 280,190 360,182 416,164" fill="none" stroke="#241f1d" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M444 140 L420 147" stroke="#241f1d" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="400" cy="118" r="17" fill="#eee4cf" stroke="#241f1d" stroke-width="4"/>
+  <circle cx="402.55" cy="118" r="11.899999999999999" fill="#d8433c"/>
+  <circle cx="403.06" cy="118" r="8.5" fill="#121413"/>
+  <circle cx="405.95" cy="113.75" r="3.06" fill="#fefefd"/>
+</svg>

@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 256" width="512" height="256">
+  <!-- Protractor Sunfish (legendary): a huge round sunfish with degree ticks all around its rim and a protractor on its side. -->
+  <polygon points="250,34 230,-4 300,28" fill="#7c726c" stroke="#241f1d" stroke-width="5" stroke-linejoin="round"/>
+  <polygon points="250,222 230,260 300,228" fill="#7c726c" stroke="#241f1d" stroke-width="5" stroke-linejoin="round"/>
+  <polygon points="164,90 120,70 104,128 120,186 164,166" fill="#7c726c" stroke="#241f1d" stroke-width="5" stroke-linejoin="round"/>
+  <polygon points="430,128 416,76 370,40 300,26 230,34 180,64 160,100 156,128 160,156 180,192 230,222 300,230 370,216 416,180" fill="#bfaf96" stroke="#241f1d" stroke-width="5" stroke-linejoin="round"/>
+  <polygon points="430,128 430,128 416,180 370,216 300,230 230,222 180,192 160,156 156,128 156,128" fill="#96989b" opacity="1.0"/>
+  <polygon points="230,34 300,26 370,40 300,80" fill="#eee4cf" opacity="1.0"/>
+  <path d="M421.0 128.0 L409.0 128.0" stroke="#241f1d" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M416.6 103.2 L405.0 105.5" stroke="#241f1d" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M403.9 80.0 L393.5 84.5" stroke="#241f1d" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M383.5 60.1 L375.0 66.5" stroke="#241f1d" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M357.0 44.9 L351.0 52.7" stroke="#241f1d" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M326.1 35.3 L323.0 44.0" stroke="#241f1d" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M293.0 32.0 L293.0 41.0" stroke="#241f1d" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M259.9 35.3 L263.0 44.0" stroke="#241f1d" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M229.0 44.9 L235.0 52.7" stroke="#241f1d" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M202.5 60.1 L211.0 66.5" stroke="#241f1d" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M182.1 80.0 L192.5 84.5" stroke="#241f1d" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M169.4 103.2 L181.0 105.5" stroke="#241f1d" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M165.0 128.0 L177.0 128.0" stroke="#241f1d" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M169.4 152.8 L181.0 150.5" stroke="#241f1d" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M182.1 176.0 L192.5 171.5" stroke="#241f1d" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M202.5 195.9 L211.0 189.5" stroke="#241f1d" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M229.0 211.1 L235.0 203.3" stroke="#241f1d" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M259.9 220.7 L263.0 212.0" stroke="#241f1d" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M293.0 224.0 L293.0 215.0" stroke="#241f1d" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M326.1 220.7 L323.0 212.0" stroke="#241f1d" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M357.0 211.1 L351.0 203.3" stroke="#241f1d" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M383.5 195.9 L375.0 189.5" stroke="#241f1d" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M403.9 176.0 L393.5 171.5" stroke="#241f1d" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M416.6 152.8 L405.0 150.5" stroke="#241f1d" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M228 150 A52 52 0 0 1 332 150 Z" fill="#f3d27a" opacity="0.85" stroke="#241f1d" stroke-width="3"/>
+  <path d="M332.0 150.0 L322.0 150.0" stroke="#241f1d" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M325.0 124.0 L316.4 129.0" stroke="#241f1d" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M306.0 105.0 L301.0 113.6" stroke="#241f1d" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M280.0 98.0 L280.0 108.0" stroke="#241f1d" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M254.0 105.0 L259.0 113.6" stroke="#241f1d" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M235.0 124.0 L243.6 129.0" stroke="#241f1d" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M228.0 150.0 L238.0 150.0" stroke="#241f1d" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M280 150 L322 118" stroke="#d8433c" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <polygon points="430,128 416,76 370,40 300,26 230,34 180,64 160,100 156,128 160,156 180,192 230,222 300,230 370,216 416,180" fill="none" stroke="#241f1d" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M430 128 L414 134" stroke="#241f1d" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="386" cy="100" r="17" fill="#eee4cf" stroke="#241f1d" stroke-width="4"/>
+  <circle cx="389.06" cy="100" r="8.5" fill="#121413"/>
+  <circle cx="391.95" cy="95.75" r="3.06" fill="#fefefd"/>
+</svg>

@@ -68,9 +68,9 @@ func _build_list() -> void:
 		heading.text = zone.name_key
 		fish_list.add_child(heading)
 		var grid := GridContainer.new()
-		grid.columns = 2
-		grid.add_theme_constant_override("h_separation", 16)
-		grid.add_theme_constant_override("v_separation", 16)
+		grid.columns = 3
+		grid.add_theme_constant_override("h_separation", 12)
+		grid.add_theme_constant_override("v_separation", 12)
 		fish_list.add_child(grid)
 		for fish_id in zone.fish:
 			grid.add_child(_make_tile(fish_id, group))
@@ -81,7 +81,7 @@ func _make_tile(fish_id: String, group: ButtonGroup) -> Button:
 	tile.theme_type_variation = &"PaperTile"
 	tile.toggle_mode = true
 	tile.button_group = group
-	tile.custom_minimum_size = Vector2(340, 150)
+	tile.custom_minimum_size = Vector2(218, 122)
 	tile.auto_translate_mode = Node.AUTO_TRANSLATE_MODE_DISABLED
 	tile.pressed.connect(select.bind(fish_id))
 	var box := VBoxContainer.new()
@@ -90,12 +90,13 @@ func _make_tile(fish_id: String, group: ButtonGroup) -> Button:
 	box.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	tile.add_child(box)
 	var pic := FishPicture.new()
-	pic.custom_minimum_size = Vector2(0, 90)
+	pic.custom_minimum_size = Vector2(0, 60)
 	pic.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	box.add_child(pic)
 	var label := Label.new()
 	label.theme_type_variation = &"PaperLabel"
 	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	label.auto_translate_mode = Node.AUTO_TRANSLATE_MODE_DISABLED
 	label.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	box.add_child(label)

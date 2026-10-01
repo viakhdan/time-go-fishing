@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 256" width="512" height="256">
+  <!-- Exponent Burbot: long mottled burbot with a small raised golden fin up and to the right, like an exponent. -->
+  <polygon points="70,128 22,106 14,142 22,176 70,154" fill="#4c3932" stroke="#241f1d" stroke-width="5" stroke-linejoin="round"/>
+  <polygon points="330,102 318,80 150,92 104,114" fill="#4c3932" stroke="#241f1d" stroke-width="5" stroke-linejoin="round"/>
+  <polygon points="320,170 308,192 150,186 104,160" fill="#4c3932" stroke="#241f1d" stroke-width="5" stroke-linejoin="round"/>
+  <polygon points="474,142 452,118 402,104 322,98 242,100 162,108 102,120 64,132 64,150 102,158 162,168 242,174 322,174 402,168 452,158" fill="#654831" stroke="#241f1d" stroke-width="5" stroke-linejoin="round"/>
+  <polygon points="474,142 474,142 452,158 402,168 322,174 242,174 162,168 102,158 64,150 64,142" fill="#b7a072" opacity="1.0"/>
+  <ellipse cx="150" cy="126" rx="10" ry="7" fill="#4c3932"/>
+  <ellipse cx="190" cy="116" rx="9" ry="6" fill="#4c3932"/>
+  <ellipse cx="230" cy="132" rx="11" ry="8" fill="#4c3932"/>
+  <ellipse cx="272" cy="118" rx="9" ry="6" fill="#4c3932"/>
+  <ellipse cx="318" cy="128" rx="10" ry="7" fill="#4c3932"/>
+  <ellipse cx="360" cy="116" rx="8" ry="6" fill="#4c3932"/>
+  <ellipse cx="206" cy="146" rx="8" ry="6" fill="#4c3932"/>
+  <ellipse cx="292" cy="144" rx="9" ry="6" fill="#4c3932"/>
+  <polygon points="402,104 428,56 446,106" fill="#f3d27a" stroke="#241f1d" stroke-width="4" stroke-linejoin="round"/>
+  <polygon points="474,142 452,118 402,104 322,98 242,100 162,108 102,120 64,132 64,150 102,158 162,168 242,174 322,174 402,168 452,158" fill="none" stroke="#241f1d" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M474 142 L446 148" stroke="#241f1d" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M458 156 Q462 176 452 190" stroke="#241f1d" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="432" cy="124" r="12" fill="#eee4cf" stroke="#241f1d" stroke-width="4"/>
+  <circle cx="434.16" cy="124" r="6.0" fill="#121413"/>
+  <circle cx="436.2" cy="121.0" r="2.16" fill="#fefefd"/>
+</svg>

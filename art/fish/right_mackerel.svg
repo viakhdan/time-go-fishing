@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 256" width="512" height="256">
+  <!-- Right-Angle Mackerel: sleek mackerel with right-angle stripes and a right-angle marker. -->
+  <polygon points="114,120 34,76 58,132 34,188 114,144" fill="#0f282e" stroke="#121413" stroke-width="5" stroke-linejoin="round"/>
+  <polygon points="220,100 236,72 262,98" fill="#0f282e" stroke="#121413" stroke-width="5" stroke-linejoin="round"/>
+  <polygon points="140,164 150,170 156,162" fill="#f3d27a" stroke="#241f1d" stroke-width="2.5" stroke-linejoin="round"/>
+  <polygon points="164,164 174,170 180,162" fill="#f3d27a" stroke="#241f1d" stroke-width="2.5" stroke-linejoin="round"/>
+  <polygon points="476,132 446,116 380,102 300,96 220,98 150,108 108,122 108,142 150,154 220,164 300,166 380,160 446,148" fill="#a3bdbe" stroke="#121413" stroke-width="5" stroke-linejoin="round"/>
+  <polygon points="108,122 150,108 220,98 300,96 380,102 446,116 456,122 108,126" fill="#3f5e6a" opacity="1.0"/>
+  <path d="M170 100 L170 122 L196 122" stroke="#0f282e" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M230 100 L230 122 L256 122" stroke="#0f282e" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M290 100 L290 122 L316 122" stroke="#0f282e" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M350 100 L350 122 L376 122" stroke="#0f282e" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M250 158 L250 136 L276 136" stroke="#0f282e" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="250" y="136" width="10" height="10" fill="none" stroke="#0f282e" stroke-width="3"/>
+  <polygon points="476,132 446,116 380,102 300,96 220,98 150,108 108,122 108,142 150,154 220,164 300,166 380,160 446,148" fill="none" stroke="#121413" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M476 132 L450 136" stroke="#121413" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="430" cy="122" r="13" fill="#eee4cf" stroke="#121413" stroke-width="4"/>
+  <circle cx="432.34" cy="122" r="6.5" fill="#121413"/>
+  <circle cx="434.55" cy="118.75" r="2.34" fill="#fefefd"/>
+</svg>

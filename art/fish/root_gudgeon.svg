@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 256" width="512" height="256">
+  <!-- Root Gudgeon: small bottom-dweller whose barbels branch like roots. -->
+  <polygon points="128,126 54,96 74,142 54,188 128,156" fill="#654831" stroke="#121413" stroke-width="5" stroke-linejoin="round"/>
+  <polygon points="236,112 258,80 292,110" fill="#654831" stroke="#121413" stroke-width="5" stroke-linejoin="round"/>
+  <polygon points="452,146 436,126 392,114 320,108 240,110 170,118 120,128 120,152 170,164 240,172 320,174 392,168 436,160" fill="#b7a072" stroke="#121413" stroke-width="5" stroke-linejoin="round"/>
+  <polygon points="452,146 452,146 436,160 392,168 320,174 240,172 170,164 120,152 120,146" fill="#d5c8af" opacity="1.0"/>
+  <circle cx="170" cy="138" r="7" fill="#654831"/>
+  <circle cx="212" cy="130" r="6" fill="#654831"/>
+  <circle cx="254" cy="142" r="7" fill="#654831"/>
+  <circle cx="296" cy="128" r="6" fill="#654831"/>
+  <circle cx="338" cy="140" r="7" fill="#654831"/>
+  <circle cx="380" cy="130" r="5" fill="#654831"/>
+  <polygon points="452,146 436,126 392,114 320,108 240,110 170,118 120,128 120,152 170,164 240,172 320,174 392,168 436,160" fill="none" stroke="#121413" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M440 156 L446 186 L430 212 M446 186 L464 206 M430 212 L420 230 M430 212 L444 234" stroke="#eee4cf" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M424 160 L420 190 L406 204" stroke="#eee4cf" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="412" cy="132" r="13" fill="#eee4cf" stroke="#121413" stroke-width="4"/>
+  <circle cx="414.34" cy="132" r="6.5" fill="#121413"/>
+  <circle cx="416.55" cy="128.75" r="2.34" fill="#fefefd"/>
+</svg>

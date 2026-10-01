@@ -9,6 +9,8 @@
 
 > **v2 changes:** the game now runs in fishing trips with a limited hold (inventory). You sell fish at the dock and spend coins on rig upgrades. The Fishdex becomes an Encyclopedia with math facts. The art style now comes from a reference image folder instead of a fixed spec.
 
+> **v3 changes (2026-09-30):** three zones with **10 species each** (3 common, 3 uncommon, 2 rare, 1 legendary, 1 boss) and a third zone, **Open Seas** (angles and triangles). **Bosses gate progress:** once a zone's other 9 species are caught, the player can challenge its boss: 3 hearts (each correct tier-3 answer takes one), 2 misses and it escapes (the solution is shown after every miss), then a reel with 3 attempts. Beating the boss opens the next zone. The Boat and Lantern upgrades are gone. The authoritative lists live in `data/*.json`; the tables below describe the original MVP and are kept for history. Balance is to be retuned (see `Docs/ECONOMY_REPORT.md`).
+
 ---
 
 ## 1. Success criteria

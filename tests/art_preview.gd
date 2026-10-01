@@ -5,6 +5,8 @@ extends Control
 
 const COLUMNS := 2
 const CELL := Vector2(900, 190)
+## Fish per sheet page (the window fits 5 rows of 2).
+const PER_PAGE := 10
 
 
 func _ready() -> void:
@@ -20,12 +22,19 @@ func _ready() -> void:
 	add_child(bg)
 
 	var ids: Array = GameData._fish.keys()
-	for i in ids.size():
-		var cell := Vector2(40 + (i % COLUMNS) * (CELL.x + 40), 30 + (i / COLUMNS) * (CELL.y + 20))
-		_add_fish(ids[i], cell)
-	await _capture(out + "/fish_sheet.png")
+	for page in ceili(ids.size() / float(PER_PAGE)):
+		for c in get_children():
+			if c != bg:
+				c.queue_free()
+		for j in PER_PAGE:
+			var i := page * PER_PAGE + j
+			if i >= ids.size():
+				break
+			var cell := Vector2(40 + (j % COLUMNS) * (CELL.x + 40), 30 + (j / COLUMNS) * (CELL.y + 20))
+			_add_fish(ids[i], cell)
+		await _capture("%s/fish_sheet_%d.png" % [out, page + 1])
 
-	for zone_id in ["lake", "river", "harbour"]:
+	for zone_id in ["lake", "river", "sea", "harbour"]:
 		bg.color = Palette.INK
 		for c in get_children():
 			if c != bg:

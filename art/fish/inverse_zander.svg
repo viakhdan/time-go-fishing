@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 256" width="512" height="256">
+  <!-- Inverse Zander: glassy-eyed zander covered in arrows pointing backwards. -->
+  <polygon points="124,118 44,78 66,134 44,190 124,150" fill="#344551" stroke="#121413" stroke-width="5" stroke-linejoin="round"/>
+  <polygon points="186,102 196,60 214,96 228,56 244,94 260,60 276,94" fill="#344551" stroke="#121413" stroke-width="5" stroke-linejoin="round"/>
+  <polygon points="296,92 316,70 366,96" fill="#344551" stroke="#121413" stroke-width="5" stroke-linejoin="round"/>
+  <polygon points="470,138 446,114 392,98 320,90 240,94 170,104 116,120 116,146 170,160 240,170 320,172 392,164 446,152" fill="#62878f" stroke="#121413" stroke-width="5" stroke-linejoin="round"/>
+  <polygon points="470,138 470,138 446,152 392,164 320,172 240,170 170,160 116,146 116,138" fill="#a3bdbe" opacity="1.0"/>
+  <polygon points="180,98 194,98 190,166 176,166" fill="#344551" opacity="0.8"/>
+  <polygon points="250,98 264,98 260,166 246,166" fill="#344551" opacity="0.8"/>
+  <polygon points="320,98 334,98 330,166 316,166" fill="#344551" opacity="0.8"/>
+  <path d="M230 116 L210 132 L230 148" stroke="#eee4cf" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M300 116 L280 132 L300 148" stroke="#eee4cf" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M370 116 L350 132 L370 148" stroke="#eee4cf" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <polygon points="470,138 446,114 392,98 320,90 240,94 170,104 116,120 116,146 170,160 240,170 320,172 392,164 446,152" fill="none" stroke="#121413" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M470 138 L444 144" stroke="#121413" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <polygon points="458,140 452,149 447,141" fill="#fefefd" stroke="#241f1d" stroke-width="0" stroke-linejoin="round"/>
+  <circle cx="424" cy="120" r="15" fill="#eee4cf" stroke="#121413" stroke-width="4"/>
+  <circle cx="426.25" cy="120" r="10.5" fill="#a3bdbe"/>
+  <circle cx="426.7" cy="120" r="7.5" fill="#121413"/>
+  <circle cx="429.25" cy="116.25" r="2.6999999999999997" fill="#fefefd"/>
+</svg>

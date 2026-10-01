@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 256" width="512" height="256">
+  <!-- Bracket Chub: chunky chub with round-bracket markings that hug the dots inside. -->
+  <polygon points="118,128 38,78 58,140 38,200 118,152" fill="#344551" stroke="#121413" stroke-width="5" stroke-linejoin="round"/>
+  <polygon points="210,84 234,48 276,78" fill="#344551" stroke="#121413" stroke-width="5" stroke-linejoin="round"/>
+  <polygon points="292,186 312,222 340,184" fill="#344551" stroke="#121413" stroke-width="5" stroke-linejoin="round"/>
+  <polygon points="444,140 422,108 382,86 320,74 250,76 180,90 130,110 110,130 110,150 140,168 200,184 280,190 360,182 416,164" fill="#3f5e6a" stroke="#121413" stroke-width="5" stroke-linejoin="round"/>
+  <polygon points="444,140 444,140 416,164 360,182 280,190 200,184 140,168 110,150 110,140" fill="#344551" opacity="1.0"/>
+  <polygon points="180,90 320,74 262,112" fill="#62878f" opacity="1.0"/>
+  <path d="M236 92 Q204 132 236 172" stroke="#eee4cf" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M330 92 Q362 132 330 172" stroke="#eee4cf" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="260" cy="132" r="9" fill="#a3bdbe"/>
+  <circle cx="283" cy="132" r="9" fill="#a3bdbe"/>
+  <circle cx="306" cy="132" r="9" fill="#a3bdbe"/>
+  <polygon points="444,140 422,108 382,86 320,74 250,76 180,90 130,110 110,130 110,150 140,168 200,184 280,190 360,182 416,164" fill="none" stroke="#121413" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M444 140 L420 147" stroke="#121413" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="400" cy="118" r="17" fill="#eee4cf" stroke="#121413" stroke-width="4"/>
+  <circle cx="403.06" cy="118" r="8.5" fill="#121413"/>
+  <circle cx="405.95" cy="113.75" r="3.06" fill="#fefefd"/>
+</svg>

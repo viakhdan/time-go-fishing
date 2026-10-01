@@ -4,6 +4,8 @@
 
 ## Summary
 
+> **Out of date since v3 (2026-09-30):** the Boat is gone and zones now open by beating bosses, so the tables below no longer match the game. Rerun `tests/EconomySim.tscn` (it models boss fights now; there's no `--strategy` option any more). A first 90-minute run showed the river opening around minute 37 (P90 ≈ 64), mostly because the lake's legendary fish must be caught before the boss appears.
+
 > **Applied (2026-09-30):** suggestions 1 and 2. The Boat now costs 80 and is listed first in the Workshop. The "Current data" tables below are the *before* numbers.
 
 - **The boat comes far too late for a typical player.** A player who always buys the cheapest affordable upgrade gets the boat at **minute 37 (52 catches)**. The §5.2 target is **5–8 minutes (10–12 catches)** so that every tester sees zone 2. Only a player who deliberately saves for the boat hits the target (minute 9, 12 catches).

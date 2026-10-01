@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 256" width="512" height="256">
+  <!-- The Angle Kraken (boss): a kraken whose three tentacles form a triangle, with glowing angle arcs. -->
+  <path d="M300 150 Q200 60 70 50" stroke="#121413" stroke-width="36" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M300 150 Q200 60 70 50" stroke="#5c2427" stroke-width="26" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M300 166 Q200 220 70 210" stroke="#121413" stroke-width="36" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M300 166 Q200 220 70 210" stroke="#5c2427" stroke-width="26" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M76 56 Q40 130 76 204" stroke="#121413" stroke-width="30" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M76 56 Q40 130 76 204" stroke="#3e211c" stroke-width="20" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="240" cy="108" r="4.5" fill="#eee4cf"/>
+  <circle cx="200" cy="88" r="4.5" fill="#eee4cf"/>
+  <circle cx="160" cy="72" r="4.5" fill="#eee4cf"/>
+  <circle cx="120" cy="62" r="4.5" fill="#eee4cf"/>
+  <circle cx="240" cy="196" r="4.5" fill="#eee4cf"/>
+  <circle cx="200" cy="208" r="4.5" fill="#eee4cf"/>
+  <circle cx="160" cy="214" r="4.5" fill="#eee4cf"/>
+  <circle cx="120" cy="214" r="4.5" fill="#eee4cf"/>
+  <circle cx="62" cy="110" r="4.5" fill="#eee4cf"/>
+  <circle cx="58" cy="150" r="4.5" fill="#eee4cf"/>
+  <path d="M110 60 A36 36 0 0 0 88 86" fill="none" stroke="#18a9a8" stroke-width="5"/>
+  <path d="M88 176 A36 36 0 0 0 110 200" fill="none" stroke="#18a9a8" stroke-width="5"/>
+  <path d="M262 128 A40 40 0 0 0 262 180" fill="none" stroke="#18a9a8" stroke-width="5"/>
+  <polygon points="500,128 476,60 420,22 350,22 300,60 282,110 282,150 300,196 350,230 420,232 476,196" fill="#5c2427" stroke="#121413" stroke-width="5" stroke-linejoin="round"/>
+  <polygon points="282,140 500,128 476,196 420,232 350,230 300,196" fill="#3e211c" opacity="1.0"/>
+  <polygon points="300,60 350,22 420,22 370,80" fill="#7d5230" opacity="1.0"/>
+  <circle cx="330" cy="170" r="6" fill="#18a9a8" opacity="0.7"/>
+  <circle cx="360" cy="198" r="6" fill="#18a9a8" opacity="0.7"/>
+  <circle cx="410" cy="206" r="6" fill="#18a9a8" opacity="0.7"/>
+  <circle cx="450" cy="180" r="6" fill="#18a9a8" opacity="0.7"/>
+  <circle cx="320" cy="90" r="6" fill="#18a9a8" opacity="0.7"/>
+  <circle cx="420" cy="100" r="24" fill="#eee4cf" stroke="#121413" stroke-width="4"/>
+  <circle cx="423.6" cy="100" r="16.799999999999997" fill="#f3d27a"/>
+  <circle cx="424.32" cy="100" r="12.0" fill="#121413"/>
+  <circle cx="428.4" cy="94.0" r="4.32" fill="#fefefd"/>
+  <circle cx="454" cy="144" r="16" fill="#eee4cf" stroke="#121413" stroke-width="4"/>
+  <circle cx="456.4" cy="144" r="11.2" fill="#f3d27a"/>
+  <circle cx="456.88" cy="144" r="8.0" fill="#121413"/>
+  <circle cx="459.6" cy="140.0" r="2.88" fill="#fefefd"/>
+  <path d="M394 66 L440 78" stroke="#121413" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

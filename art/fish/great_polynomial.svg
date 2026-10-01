@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 256" width="512" height="256">
+  <!-- The Great Polynomial (boss): a giant fish made of three segments (terms) joined by plus signs, wearing a crown. -->
+  <polygon points="92,130 18,84 36,136 18,188 92,146" fill="#4c3932" stroke="#241f1d" stroke-width="5" stroke-linejoin="round"/>
+  <ellipse cx="136" cy="138" rx="52" ry="46" fill="#7d5230" stroke="#241f1d" stroke-width="5"/>
+  <ellipse cx="236" cy="134" rx="70" ry="64" fill="#876446" stroke="#241f1d" stroke-width="5"/>
+  <polygon points="476,128 458,76 410,44 350,36 300,52 278,90 272,128 278,166 300,204 350,220 410,212 458,180" fill="#a68554" stroke="#241f1d" stroke-width="5" stroke-linejoin="round"/>
+  <polygon points="272,140 476,128 458,180 410,212 350,220 300,204 278,166" fill="#876446" opacity="1.0"/>
+  <polygon points="318,46 324,4 346,30 362,0 378,30 400,4 404,48" fill="#f3d27a" stroke="#241f1d" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M180 134 L204 134 M192 122 L192 146" stroke="#f3d27a" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M292 132 L316 132 M304 120 L304 144" stroke="#f3d27a" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="126" cy="130" r="5" fill="#eee4cf"/>
+  <circle cx="220" cy="118" r="5" fill="#eee4cf"/>
+  <circle cx="246" cy="146" r="5" fill="#eee4cf"/>
+  <circle cx="360" cy="170" r="5" fill="#eee4cf"/>
+  <circle cx="384" cy="184" r="5" fill="#eee4cf"/>
+  <path d="M476 128 L444 144 L420 140" stroke="#241f1d" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <polygon points="452,140 446,150 440,141" fill="#fefefd" stroke="#241f1d" stroke-width="0" stroke-linejoin="round"/>
+  <circle cx="402" cy="98" r="24" fill="#eee4cf" stroke="#241f1d" stroke-width="4"/>
+  <circle cx="405.6" cy="98" r="16.799999999999997" fill="#d8433c"/>
+  <circle cx="406.32" cy="98" r="12.0" fill="#121413"/>
+  <circle cx="410.4" cy="92.0" r="4.32" fill="#fefefd"/>
+  <path d="M378 70 L424 78" stroke="#241f1d" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

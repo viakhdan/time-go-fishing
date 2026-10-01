@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 256" width="512" height="256">
+  <!-- Isosceles Swordfish: its tall dorsal fin is an isosceles triangle with matching tick marks. -->
+  <polygon points="120,124 40,50 70,136 40,214 120,146" fill="#0a1426" stroke="#121413" stroke-width="5" stroke-linejoin="round"/>
+  <polygon points="420,128 508,132 420,140" fill="#62878f" stroke="#121413" stroke-width="4" stroke-linejoin="round"/>
+  <polygon points="220,100 270,10 320,98" fill="#0a1426" stroke="#121413" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M239 58 L251 52 M289 52 L301 58" stroke="#f3d27a" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M234 100 A20 20 0 0 1 238 88" fill="none" stroke="#f3d27a" stroke-width="3"/>
+  <path d="M306 100 A20 20 0 0 0 302 88" fill="none" stroke="#f3d27a" stroke-width="3"/>
+  <polygon points="300,164 316,196 336,166" fill="#0a1426" stroke="#121413" stroke-width="5" stroke-linejoin="round"/>
+  <polygon points="420,134 400,112 340,98 270,94 200,100 150,112 112,126 112,144 150,156 200,166 270,170 340,166 400,156" fill="#62878f" stroke="#121413" stroke-width="5" stroke-linejoin="round"/>
+  <polygon points="112,126 150,112 200,100 270,94 340,98 400,112 410,118 112,130" fill="#273244" opacity="1.0"/>
+  <polygon points="420,144 400,156 340,166 270,170 200,166 150,156 112,144 112,144" fill="#a3bdbe" opacity="1.0"/>
+  <polygon points="420,134 400,112 340,98 270,94 200,100 150,112 112,126 112,144 150,156 200,166 270,170 340,166 400,156" fill="none" stroke="#121413" stroke-width="5" stroke-linejoin="round"/>
+  <circle cx="390" cy="124" r="12" fill="#eee4cf" stroke="#121413" stroke-width="4"/>
+  <circle cx="392.16" cy="124" r="6.0" fill="#121413"/>
+  <circle cx="394.2" cy="121.0" r="2.16" fill="#fefefd"/>
+</svg>

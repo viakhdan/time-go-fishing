@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 256" width="512" height="256">
+  <!-- Coefficient Rudd: golden rudd with red fins; a number badge comes before the x, like 3x. -->
+  <polygon points="118,128 38,78 58,140 38,200 118,152" fill="#d8433c" stroke="#241f1d" stroke-width="5" stroke-linejoin="round"/>
+  <polygon points="210,84 232,46 276,76" fill="#d8433c" stroke="#241f1d" stroke-width="5" stroke-linejoin="round"/>
+  <polygon points="290,186 310,224 338,184" fill="#d8433c" stroke="#241f1d" stroke-width="5" stroke-linejoin="round"/>
+  <polygon points="196,182 184,212 226,186" fill="#d8433c" stroke="#241f1d" stroke-width="5" stroke-linejoin="round"/>
+  <polygon points="444,140 422,108 382,86 320,74 250,76 180,90 130,110 110,130 110,150 140,168 200,184 280,190 360,182 416,164" fill="#b7a072" stroke="#241f1d" stroke-width="5" stroke-linejoin="round"/>
+  <polygon points="444,140 444,140 416,164 360,182 280,190 200,184 140,168 110,150 110,140" fill="#a68554" opacity="1.0"/>
+  <polygon points="180,90 320,74 262,110" fill="#d5c8af" opacity="1.0"/>
+  <circle cx="250" cy="132" r="30" fill="#f3d27a" stroke="#241f1d" stroke-width="4"/>
+  <path d="M239 116 L261 116 L249 130 Q263 131 261 142 Q257 151 239 148" stroke="#241f1d" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M298 120 L322 146 M322 120 L298 146" stroke="#654831" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <polygon points="360,144 320,166 366,162" fill="#d8433c" opacity="1.0"/>
+  <polygon points="444,140 422,108 382,86 320,74 250,76 180,90 130,110 110,130 110,150 140,168 200,184 280,190 360,182 416,164" fill="none" stroke="#241f1d" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M444 140 L420 147" stroke="#241f1d" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="402" cy="116" r="16" fill="#eee4cf" stroke="#241f1d" stroke-width="4"/>
+  <circle cx="404.88" cy="116" r="8.0" fill="#121413"/>
+  <circle cx="407.6" cy="112.0" r="2.88" fill="#fefefd"/>
+</svg>

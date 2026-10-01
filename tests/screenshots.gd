@@ -21,6 +21,7 @@ func _ready() -> void:
 		GameState.set_locale(locale)
 		await _shoot_zone(locale)
 		await _shoot_meta(locale)
+		await _shoot_boss(locale)
 	DirAccess.remove_absolute(ProjectSettings.globalize_path(GameState.save_path))
 	get_tree().quit()
 
@@ -123,3 +124,50 @@ func _save(name: String) -> void:
 	await get_tree().process_frame
 	await RenderingServer.frame_post_draw
 	get_viewport().get_texture().get_image().save_png("%s/%s.png" % [_out, name])
+
+
+## Boss fight, boss catch card and the Open Seas zone (v3).
+func _shoot_boss(locale: String) -> void:
+	GameState.hold.clear()
+	GameState.bosses_defeated.clear()
+	for id in GameData.zone("lake").fish:
+		if not GameData.is_boss(id):
+			GameState.encyclopedia[id] = {"count": 1, "best_cm": 30, "best_value": 5}
+	GameState.current_zone = "lake"
+	var zone: Control = load("res://scenes/Zone.tscn").instantiate()
+	add_child(zone)
+	var loop: FishingLoop = zone.loop
+	loop.set_process(false)
+	loop.rng.seed = 5
+	await _save("%s_15_boss_ready" % locale)
+	zone.boss_button.pressed.emit()
+	zone.problem_panel.answered.emit(loop.problem.answer_index)
+	await _save("%s_16_boss_fight" % locale)
+	zone.problem_panel.answered.emit((loop.problem.answer_index + 1) % 4)
+	await _save("%s_17_boss_miss" % locale)
+	zone.problem_panel.continue_pressed.emit()
+	zone.problem_panel.answered.emit(loop.problem.answer_index)
+	zone.problem_panel.answered.emit(loop.problem.answer_index)
+	zone.reel.finished.emit(true)
+	await _save("%s_18_boss_caught" % locale)
+	zone.queue_free()
+
+	GameState.bosses_defeated.assign(["lake", "river"])
+	GameState.hold.clear()
+	GameState.current_zone = "sea"
+	zone = load("res://scenes/Zone.tscn").instantiate()
+	add_child(zone)
+	zone.loop.set_process(false)
+	zone.loop.rng.seed = 2
+	await _save("%s_19_sea" % locale)
+	zone.loop.cast()
+	zone.loop.advance(10.0)
+	zone.loop.advance(10.0)
+	await _save("%s_20_sea_problem" % locale)
+	zone.queue_free()
+
+	var map: Control = load("res://scenes/Map.tscn").instantiate()
+	add_child(map)
+	await _save("%s_21_map3" % locale)
+	map.queue_free()
+	await get_tree().process_frame

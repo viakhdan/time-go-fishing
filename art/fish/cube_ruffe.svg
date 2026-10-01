@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 256" width="512" height="256">
+  <!-- Cube Ruffe: stocky spiky ruffe with a cube on its side (3³). -->
+  <polygon points="150,126 70,82 88,140 70,198 150,154" fill="#654831" stroke="#241f1d" stroke-width="5" stroke-linejoin="round"/>
+  <polygon points="176,104 186,60 204,96 218,50 236,90 252,44 270,86 288,46 304,84 320,54 334,88" fill="#654831" stroke="#241f1d" stroke-width="5" stroke-linejoin="round"/>
+  <polygon points="290,188 306,222 332,186" fill="#654831" stroke="#241f1d" stroke-width="5" stroke-linejoin="round"/>
+  <polygon points="432,140 412,108 362,88 292,82 222,90 172,108 142,128 142,152 172,170 232,186 302,190 372,180 416,164" fill="#a68554" stroke="#241f1d" stroke-width="5" stroke-linejoin="round"/>
+  <polygon points="432,140 432,140 416,164 372,180 302,190 232,186 172,170 142,152 142,140" fill="#876446" opacity="1.0"/>
+  <polygon points="285,102 320,121 285,140 250,121" fill="#d5c8af" stroke="#241f1d" stroke-width="3" stroke-linejoin="round"/>
+  <polygon points="250,121 285,140 285,178 250,159" fill="#a68554" stroke="#241f1d" stroke-width="3" stroke-linejoin="round"/>
+  <polygon points="320,121 285,140 285,178 320,159" fill="#654831" stroke="#241f1d" stroke-width="3" stroke-linejoin="round"/>
+  <polygon points="432,140 412,108 362,88 292,82 222,90 172,108 142,128 142,152 172,170 232,186 302,190 372,180 416,164" fill="none" stroke="#241f1d" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M432 140 L410 146" stroke="#241f1d" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="392" cy="118" r="16" fill="#eee4cf" stroke="#241f1d" stroke-width="4"/>
+  <circle cx="394.88" cy="118" r="8.0" fill="#121413"/>
+  <circle cx="397.6" cy="114.0" r="2.88" fill="#fefefd"/>
+</svg>

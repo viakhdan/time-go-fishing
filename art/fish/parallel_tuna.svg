@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 256" width="512" height="256">
+  <!-- Parallel Tuna: torpedo tuna with two parallel stripes crossed by a transversal, and golden finlets. -->
+  <polygon points="138,126 60,60 88,134 60,208 138,142" fill="#0a1426" stroke="#121413" stroke-width="5" stroke-linejoin="round"/>
+  <polygon points="256,84 286,36 316,82" fill="#0a1426" stroke="#121413" stroke-width="5" stroke-linejoin="round"/>
+  <polygon points="256,182 286,226 316,184" fill="#0a1426" stroke="#121413" stroke-width="5" stroke-linejoin="round"/>
+  <polygon points="170,94 178,82 184,96" fill="#f3d27a" stroke="#241f1d" stroke-width="2" stroke-linejoin="round"/>
+  <polygon points="190,94 198,82 204,96" fill="#f3d27a" stroke="#241f1d" stroke-width="2" stroke-linejoin="round"/>
+  <polygon points="210,94 218,82 224,96" fill="#f3d27a" stroke="#241f1d" stroke-width="2" stroke-linejoin="round"/>
+  <polygon points="170,172 178,186 184,170" fill="#f3d27a" stroke="#241f1d" stroke-width="2" stroke-linejoin="round"/>
+  <polygon points="190,172 198,186 204,170" fill="#f3d27a" stroke="#241f1d" stroke-width="2" stroke-linejoin="round"/>
+  <polygon points="210,172 218,186 224,170" fill="#f3d27a" stroke="#241f1d" stroke-width="2" stroke-linejoin="round"/>
+  <polygon points="482,134 452,108 392,88 310,80 230,86 170,104 130,124 130,144 170,164 230,180 310,186 392,178 452,158" fill="#344551" stroke="#121413" stroke-width="5" stroke-linejoin="round"/>
+  <polygon points="130,124 170,104 230,86 310,80 392,88 452,108 462,116 130,128" fill="#0a1426" opacity="1.0"/>
+  <polygon points="482,144 452,158 392,178 310,186 230,180 170,164 130,144 130,144" fill="#a3bdbe" opacity="1.0"/>
+  <path d="M200 122 L420 122" stroke="#eee4cf" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M200 146 L420 146" stroke="#eee4cf" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M260 170 L340 98" stroke="#f3d27a" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M232 117 L240 127 M238 141 L246 151" stroke="#eee4cf" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <polygon points="482,134 452,108 392,88 310,80 230,86 170,104 130,124 130,144 170,164 230,180 310,186 392,178 452,158" fill="none" stroke="#121413" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M482 134 L454 140" stroke="#121413" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="432" cy="120" r="13" fill="#eee4cf" stroke="#121413" stroke-width="4"/>
+  <circle cx="434.34" cy="120" r="6.5" fill="#121413"/>
+  <circle cx="436.55" cy="116.75" r="2.34" fill="#fefefd"/>
+</svg>
