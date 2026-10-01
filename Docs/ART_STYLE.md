@@ -183,7 +183,9 @@ The references use a bold condensed sans for UI and a serif for book text. Cyril
 | Body, problems, answers | **PT Sans** | Very readable, Ukrainian-designed Cyrillic, has ², ³, −, · |
 | Encyclopedia titles and flavour | **PT Serif** | Matches the book style |
 
-Minimum size 20 px (DESIGN.md §10). Check that the chosen font renders `² ³ ⁴ ⁶ − · °` before committing to it.
+Minimum size 20 px (DESIGN.md §10).
+
+**Fallbacks (checked):** PT Sans and Oswald lack superscripts ⁴–⁹, ⁰ and →. Every theme font falls back to **Noto Sans** (superscripts) and then **Noto Sans Math** (→ √ ≤ ≥ ≠). No bundled font has 🪙, so show coins with a coin icon, not the emoji. Set up in `art/ui/theme.tres`.
 
 ## 11. Godot import settings
 

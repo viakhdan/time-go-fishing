@@ -1,6 +1,6 @@
 # Time Go Fishing
 
-Educational math fishing game for Ukrainian 7th graders. Godot 4.3, GDScript, GL Compatibility renderer.
+Educational math fishing game for Ukrainian 7th graders. Godot 4.7, GDScript, GL Compatibility renderer.
 
 - **Design:** `Docs/DESIGN.md` is the source of truth. Follow the prompt order in its §15.
 - **Art:** `Docs/ART_STYLE.md` is the style authority for every asset.
@@ -8,4 +8,7 @@ Educational math fishing game for Ukrainian 7th graders. Godot 4.3, GDScript, GL
 - The repo root is the Godot project root (`res://`). `Inspo/`, `Docs/` and `tools/` have `.gdignore` and are excluded from exports.
 - Every visible string goes through `tr()` / translation keys in `i18n/strings.csv` (`keys,uk,en`). Ukrainian is the default locale. Quote CSV values that contain commas.
 - Game balance numbers live in `data/*.json`, never in code.
+- Godot CLI (headless checks): `C:/Godot_v4.7.2-stable_win64.exe/Godot_v4.7.2-stable_win64_console.exe --headless --path . --import` (the `.exe` in that path is a folder). The user often has the editor open, so avoid rewriting `project.godot` wholesale.
+- `Inspo/` is gitignored (copyrighted Dredge reference art); it exists only locally.
+- Fonts: `art/ui/theme.tres` is the project theme. PT Sans (body) / Oswald (buttons, `TitleLabel`) / PT Serif (`SerifLabel`), with Noto Sans + Noto Sans Math fallbacks for superscripts ⁴–⁹ and → √ ≤ ≥ ≠. No font has 🪙, so use a coin icon instead of the emoji.
 - Python tools in `tools/` (Python 3.13, numpy, Pillow, scikit-learn available).
