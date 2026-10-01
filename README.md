@@ -68,7 +68,7 @@ unzip it and run the game. Nothing needs installing.
 
 | macOS | The app isn't notarized: right-click it and choose *Open* the first time. |
 
-| Linux | Make the file executable (`chmod +x TimeGoFishing.x86\_64`) and run it. |
+| Linux | Make the file executable (`chmod +x TimeGoFishing.x86_64`) and run it. |
 
 
 
@@ -104,7 +104,7 @@ Or build all four at once with Python 3 (on macOS/Linux, set `GODOT` to your God
 
 
 
-&#x20;   python tools/export\_all.py
+&#x20;   python tools/export_all.py
 
 
 
@@ -116,13 +116,13 @@ The zips appear in `build/itch/`.
 
 
 
-- Game data (fish, zones, upgrades, prices) lives in `data/\*.json`; problems in `data/problems/`.
+- Game data (fish, zones, upgrades, prices) lives in `data/*.json`; problems in `data/problems/`.
 
 - All text is in `i18n/strings.csv` (Ukrainian and English).
 
-- Checks: `python tools/validate\_problems.py` (computes every answer),
+- Checks: `python tools/validate_problems.py` (computes every answer),
 
-&#x20; `python tools/validate\_data.py`, `python tools/run\_tests.py` (needs `pip install -r tools/requirements.txt`).
+&#x20; `python tools/validate_data.py`, `python tools/run_tests.py` (needs `pip install -r tools/requirements.txt`).
 
 - Design notes: [Docs/DESIGN.md](Docs/DESIGN.md) · art style: [Docs/ART\_STYLE.md](Docs/ART\_STYLE.md)
 
