@@ -60,6 +60,26 @@ func add_coins(amount: int) -> void:
 	coins_changed.emit(coins)
 
 
+## Removes a fish from the hold (sold or released). Caller saves.
+func remove_fish(index: int) -> Dictionary:
+	var fish: Dictionary = hold.pop_at(index)
+	hold_changed.emit()
+	return fish
+
+
+## Releasing gives no coins (§4).
+func release_fish(index: int) -> void:
+	remove_fish(index)
+	save_game()
+
+
+func set_upgrade_level(id: String, level: int) -> void:
+	upgrades[id] = level
+	upgrades_changed.emit()
+	# A bigger hold changes the slot count shown everywhere.
+	hold_changed.emit()
+
+
 ## Called when a trip starts at the dock.
 func start_trip() -> void:
 	trip_second_chances = int(GameData.upgrade_effect("line", "second_chances"))

@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3]
+[gd_scene load_steps=7 format=3]
 
 [ext_resource type="Script" path="res://scripts/Zone.gd" id="1_zone"]
 [ext_resource type="Script" path="res://scripts/FishingLoop.gd" id="2_loop"]
 [ext_resource type="PackedScene" path="res://scenes/ProblemPanel.tscn" id="3_problem"]
 [ext_resource type="PackedScene" path="res://scenes/ReelMinigame.tscn" id="4_reel"]
 [ext_resource type="PackedScene" path="res://scenes/CatchCard.tscn" id="5_card"]
+[ext_resource type="PackedScene" path="res://scenes/HoldPanel.tscn" id="6_hold"]
 
 [node name="Zone" type="Control"]
 layout_mode = 3
@@ -104,9 +105,9 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -520.0
-offset_top = -260.0
+offset_top = -440.0
 offset_right = -40.0
-offset_bottom = -40.0
+offset_bottom = -168.0
 grow_horizontal = 0
 grow_vertical = 0
 alignment = 2
@@ -136,6 +137,60 @@ custom_minimum_size = Vector2(0, 88)
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "UI_RETURN_TO_DOCK"
+
+[node name="ReleaseButton" type="Button" parent="Actions/HoldFullBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 72)
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "UI_RELEASE_FISH"
+
+[node name="ReleaseBox" type="VBoxContainer" parent="Actions"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="ReleaseLabel" type="Label" parent="Actions/ReleaseBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "UI_RELEASE_PICK"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Buttons" type="HBoxContainer" parent="Actions/ReleaseBox"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="ConfirmReleaseButton" type="Button" parent="Actions/ReleaseBox/Buttons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 72)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 28
+disabled = true
+text = "UI_RELEASE"
+
+[node name="CancelReleaseButton" type="Button" parent="Actions/ReleaseBox/Buttons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 72)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 28
+text = "UI_CANCEL"
+
+[node name="HoldPanel" parent="." instance=ExtResource("6_hold")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = -136.0
+offset_right = 140.0
+offset_bottom = -40.0
+grow_vertical = 0
+slot_size = 88
 
 [node name="Modal" type="Control" parent="."]
 unique_name_in_owner = true

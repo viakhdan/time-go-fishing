@@ -1,38 +1,5 @@
-extends Node
-## Headless tests for the core loop (step 4). Run:
-##   Godot_console.exe --headless --path . res://tests/TestRunner.tscn
-## Exits with code 1 if anything fails. Uses its own save file.
-
-var _failures: Array[String] = []
-var _checks := 0
-var _rng := RandomNumberGenerator.new()
-
-
-func _ready() -> void:
-	GameState.save_path = "user://test_save.json"
-	_rng.seed = 12345
-	ProblemBank.rng.seed = 12345
-	for test in [
-		test_fish_table_weights, test_bait_multiplier, test_roll_size,
-		test_problem_bank_shuffle_bag, test_problem_bank_exclude, test_problem_options_shuffle,
-		test_sell_price, test_hold_capacity, test_record_catch,
-		test_loop_happy_path, test_loop_wrong_answer, test_loop_timer_and_rod,
-		test_loop_second_chance, test_loop_reel_escape, test_loop_hold_full,
-		test_zone_scene,
-	]:
-		GameState.reset()
-		await test.call()
-	DirAccess.remove_absolute(ProjectSettings.globalize_path(GameState.save_path))
-	for f in _failures:
-		print("  FAIL ", f)
-	print("%d checks, %d failed" % [_checks, _failures.size()])
-	get_tree().quit(1 if _failures else 0)
-
-
-func check(cond: bool, what: String) -> void:
-	_checks += 1
-	if not cond:
-		_failures.append(what)
+extends TestSuite
+## Core loop tests (step 4): fish table, problem bank, catches, FishingLoop, Zone.
 
 
 # --- FishTable --------------------------------------------------------------
@@ -40,7 +7,7 @@ func check(cond: bool, what: String) -> void:
 func _rarity_shares(zone_id: String, n: int) -> Dictionary:
 	var counts := {}
 	for i in n:
-		var r: String = GameData.fish(FishTable.roll(zone_id, _rng)).rarity
+		var r: String = GameData.fish(FishTable.roll(zone_id, rng)).rarity
 		counts[r] = counts.get(r, 0) + 1
 	for r in counts:
 		counts[r] = counts[r] / float(n)
@@ -57,7 +24,7 @@ func test_fish_table_weights() -> void:
 	# Two commons share the common weight rather than doubling it.
 	var perch := 0
 	for i in 10000:
-		if FishTable.roll("lake", _rng) == "zero_perch":
+		if FishTable.roll("lake", rng) == "zero_perch":
 			perch += 1
 	check(absf(perch / 10000.0 - 30.0 / 98) < 0.015, "zero_perch share %.3f" % (perch / 10000.0))
 
@@ -72,7 +39,7 @@ func test_bait_multiplier() -> void:
 
 func test_roll_size() -> void:
 	for i in 500:
-		var size := FishTable.roll_size("power_pike", _rng)
+		var size := FishTable.roll_size("power_pike", rng)
 		check(size >= 48 and size <= 112, "pike size %d outside 0.6–1.4 × 80" % size)
 
 
@@ -150,7 +117,7 @@ func test_record_catch() -> void:
 
 func _new_loop() -> FishingLoop:
 	var loop := FishingLoop.new()
-	loop.rng.seed = _rng.randi()
+	loop.rng.seed = rng.randi()
 	add_child(loop)
 	loop.set_process(false)  # tests drive time with advance()
 	return loop

@@ -52,10 +52,22 @@ UI_DISCOVERY_BONUS,Нове відкриття! +{n} 🪙,New discovery! +{n} �
 UI_ZONE_COMPLETE,Усіх риб зони знайдено! +{n} 🪙,Every fish in this zone found! +{n} 🪙
 UI_SIZE_CM,{n} см,{n} cm
 UI_TIMER_S,{n} с,{n} s
+UI_MENU,Меню,Menu
+UI_GO_FISHING,Рибалити,Go fishing
+UI_RELEASE,Відпустити,Release
+UI_RELEASE_PICK,"Обери рибу, яку відпустиш",Pick a fish to release
+UI_CANCEL,Скасувати,Cancel
+UI_HOLD_EMPTY,Трюм порожній. Час рибалити!,The hold is empty. Time to go fishing!
+UI_SELECT_FISH,"Обери рибу, щоб продати її окремо",Pick a fish to sell it on its own
+UI_REQUIRES,Потрібно: {upgrade},Requires: {upgrade}
 STAT_SLOTS,Місць,Slots
 STAT_TIMER,Таймер,Timer
 STAT_REEL_ZONE,Зелена зона,Green zone
 STAT_RARE_CHANCE,Рідкісні,Rare
+STAT_SECOND_CHANCES,Другі спроби,Second chances
+TOPIC_ANGLES_TRIANGLES,Кути й трикутники,Angles and triangles
+TOPIC_LINEAR_EQUATIONS,Лінійні рівняння,Linear equations
+TOPIC_POWERS_LIKE_TERMS,Степені й подібні доданки,Powers and like terms
 ZONE_LAKE,Тихе озеро,Still Lake
 ZONE_RIVER,Туманна річка,Misty River
 ZONE_BAY,Глибока затока,Deep Bay

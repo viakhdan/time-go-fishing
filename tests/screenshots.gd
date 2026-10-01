@@ -20,6 +20,7 @@ func _ready() -> void:
 	for locale in ["uk", "en"]:
 		GameState.set_locale(locale)
 		await _shoot_zone(locale)
+		await _shoot_meta(locale)
 	DirAccess.remove_absolute(ProjectSettings.globalize_path(GameState.save_path))
 	get_tree().quit()
 
@@ -57,6 +58,40 @@ func _shoot_zone(locale: String) -> void:
 	loop.submit_answer((loop.problem.answer_index + 1) % 4)
 	await _save("%s_6_miss" % locale)
 	zone.queue_free()
+	await get_tree().process_frame
+
+
+## Full hold + release, Map, Dock market and workshop (step 5).
+func _shoot_meta(locale: String) -> void:
+	GameState.coins = 85
+	GameState.upgrades.rod = 1
+	GameState.hold.clear()
+	for f in [["zero_perch", 31, 6], ["square_carp", 22, 4], ["mirror_bream", 52, 20],
+			["zero_perch", 18, 4], ["power_pike", 94, 47], ["square_carp", 35, 6]]:
+		GameState.hold.append({"species": f[0], "size_cm": f[1], "value": f[2]})
+
+	var zone: Control = load("res://scenes/Zone.tscn").instantiate()
+	add_child(zone)
+	zone.loop.set_process(false)
+	await _save("%s_7_hold_full" % locale)
+	zone.release_button.pressed.emit()
+	zone.hold_panel.get_child(1).button_pressed = true
+	await _save("%s_8_release" % locale)
+	zone.queue_free()
+
+	var map: Control = load("res://scenes/Map.tscn").instantiate()
+	add_child(map)
+	await _save("%s_9_map" % locale)
+	map.queue_free()
+
+	var dock: Control = load("res://scenes/Dock.tscn").instantiate()
+	add_child(dock)
+	await get_tree().process_frame
+	dock.hold_panel.get_child(4).button_pressed = true
+	await _save("%s_10_market" % locale)
+	dock.tabs.current_tab = 1
+	await _save("%s_11_workshop" % locale)
+	dock.queue_free()
 	await get_tree().process_frame
 
 

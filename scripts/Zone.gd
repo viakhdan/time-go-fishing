@@ -2,7 +2,6 @@ extends Control
 ## Shared zone scene, configured by GameState.current_zone (DESIGN.md §2, §10).
 ## Connects FishingLoop to the modal panels. Placeholder visuals until step 6.
 
-const MAIN_SCENE := "res://scenes/Main.tscn"
 const MAP_SCENE := "res://scenes/Map.tscn"
 const DOCK_SCENE := "res://scenes/Dock.tscn"
 const PLACEHOLDER_BG := {"lake": Color("#a68554"), "river": Color("#62878f"), "bay": Color("#0a1426")}
@@ -19,6 +18,11 @@ const MODAL_STATES := [FishingLoop.State.PROBLEM, FishingLoop.State.REEL, Fishin
 @onready var cast_button: Button = %CastButton
 @onready var hold_full_box: Control = %HoldFullBox
 @onready var return_button: Button = %ReturnButton
+@onready var release_button: Button = %ReleaseButton
+@onready var release_box: Control = %ReleaseBox
+@onready var confirm_release_button: Button = %ConfirmReleaseButton
+@onready var cancel_release_button: Button = %CancelReleaseButton
+@onready var hold_panel: HBoxContainer = %HoldPanel
 @onready var modal: Control = %Modal
 @onready var problem_panel: PanelContainer = %ProblemPanel
 @onready var reel: PanelContainer = %ReelMinigame
@@ -34,6 +38,10 @@ func _ready() -> void:
 	cast_button.pressed.connect(loop.cast)
 	map_button.pressed.connect(_leave.bind(MAP_SCENE))
 	return_button.pressed.connect(_leave.bind(DOCK_SCENE))
+	release_button.pressed.connect(_set_release_mode.bind(true))
+	cancel_release_button.pressed.connect(_set_release_mode.bind(false))
+	confirm_release_button.pressed.connect(_release_selected)
+	hold_panel.selection_changed.connect(func(i): confirm_release_button.disabled = i < 0)
 
 	loop.state_changed.connect(_on_state_changed)
 	loop.problem_started.connect(_on_problem_started)
@@ -64,8 +72,10 @@ func _notification(what: int) -> void:
 func _on_state_changed(state: FishingLoop.State) -> void:
 	var idle := state == FishingLoop.State.IDLE
 	var full := GameState.is_hold_full()
+	var releasing: bool = hold_panel.selectable
 	cast_button.visible = idle and not full
-	hold_full_box.visible = idle and full
+	hold_full_box.visible = idle and full and not releasing
+	release_box.visible = idle and releasing
 	map_button.disabled = not idle
 	status_label.text = STATUS_KEYS.get(state, "")
 	# Each panel is shown by its own signal handler; here we only hide stale ones.
@@ -89,12 +99,24 @@ func _on_escaped(reason: FishingLoop.Escape, _problem: Dictionary) -> void:
 		problem_panel.show_miss(reason)
 
 
+## Hold full: pick a slot to free it, with no coins (§4).
+func _set_release_mode(on: bool) -> void:
+	hold_panel.selectable = on
+	confirm_release_button.disabled = true
+	_on_state_changed(loop.state)
+
+
+func _release_selected() -> void:
+	if hold_panel.selected >= 0:
+		GameState.release_fish(hold_panel.selected)
+	_set_release_mode(false)
+
+
 func _update_hud() -> void:
 	coins_label.text = UIText.coins(GameState.coins)
 	hold_label.text = "%s %d/%d" % [tr("UI_HOLD"), GameState.hold.size(), GameState.hold_capacity()]
 
 
-## Map and Dock scenes arrive in step 5; until then both lead back to the menu.
 func _leave(scene: String) -> void:
 	GameState.save_game()
-	get_tree().change_scene_to_file(scene if ResourceLoader.exists(scene) else MAIN_SCENE)
+	get_tree().change_scene_to_file(scene)
