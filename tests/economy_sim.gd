@@ -6,10 +6,11 @@ extends Node
 ## Options:
 ##   --runs=300 --minutes=60 --accuracy=0.7 --seed=1
 ##   --tiered            accuracy by tier 0.85 / 0.70 / 0.55 instead of flat
-##   --strategy=cheapest|boat_first
+##   The player buys the cheapest affordable upgrade, fishes the newest open
+##   zone, and fights its boss (at most once per trip) once it appears.
 ##   --out=<file.md>     also write the markdown report there
 ##   --set=<path>=<value>  override game data for this run only (repeatable), e.g.
-##                       --set=upgrades.boat.levels.0.cost=80
+##                       --set=upgrades.hold.levels.0.cost=60
 ##                       --set=rarities.legendary.timer_s=40
 ## Never saves: GameState.saving_enabled is switched off.
 
@@ -33,7 +34,6 @@ var runs := 300
 var minutes := 60.0
 var accuracy := 0.7
 var tiered := false
-var strategy := "cheapest"
 var out_path := ""
 var overrides: Array[String] = []
 var rng := RandomNumberGenerator.new()
@@ -64,7 +64,6 @@ func _parse_args() -> void:
 			"minutes": minutes = float(value)
 			"accuracy": accuracy = float(value)
 			"tiered": tiered = true
-			"strategy": strategy = value
 			"seed": seed_value = int(value)
 			"out": out_path = value
 			"set": overrides.append(value)
@@ -73,7 +72,7 @@ func _parse_args() -> void:
 		_apply_override(o)
 
 
-## "upgrades.boat.levels.0.cost=80" → GameData._upgrades.boat.levels[0].cost = 80
+## "upgrades.hold.levels.0.cost=60" → GameData._upgrades.hold.levels[0].cost = 60
 func _apply_override(spec: String) -> void:
 	var parts := spec.split("=", true, 1)
 	var path := parts[0].split(".")
@@ -94,14 +93,19 @@ func _simulate_session() -> Dictionary:
 		"t": 0.0, "catches": 0, "attempts": 0, "correct": 0, "timeouts": 0,
 		"reel_losses": 0, "trips": 0, "earned": 0, "purchases": [],
 		"timed_attempts": {"rare": 0, "legendary": 0}, "timed_timeouts": {"rare": 0, "legendary": 0},
-		"rarity_catches": {},
+		"rarity_catches": {}, "bosses": [], "boss_attempts": 0,
 	}
 	var limit := minutes * 60.0
 	while s.t < limit:
 		GameState.start_trip()
 		s.trips += 1
-		var zone := "river" if GameData.is_zone_unlocked("river") else "lake"
+		var zone := _newest_open_zone()
+		var fought := false
 		while not GameState.is_hold_full() and s.t < limit:
+			if not fought and GameData.is_boss_available(zone) and zone not in GameState.bosses_defeated:
+				fought = true
+				_boss_fight(zone, s)
+				continue
 			_attempt(zone, s)
 		if s.t >= limit:
 			break
@@ -109,6 +113,48 @@ func _simulate_session() -> Dictionary:
 		s.earned += Economy.sell_all()
 		_shop(s)
 	return s
+
+
+func _newest_open_zone() -> String:
+	var newest := "lake"
+	for z in GameData.zones():
+		if GameData.is_zone_unlocked(z.id):
+			newest = z.id
+	return newest
+
+
+## Tier-3 problems until 3 hits (win) or 2 misses (escape), then the reel.
+func _boss_fight(zone: String, s: Dictionary) -> void:
+	s.boss_attempts += 1
+	var boss: String = GameData.zone(zone).boss
+	var rules := GameData.boss_fight
+	var hearts := int(rules.hearts)
+	var misses := 0
+	var limit: float = GameData.rarity("boss").timer_s + GameData.upgrade_effect("rod", "timer_bonus_s")
+	var p_correct: float = TIERED_ACCURACY[3] if tiered else accuracy
+	while hearts > 0:
+		var solve: float = SOLVE_S[3] * rng.randf_range(0.6, 1.5)
+		if solve > limit or rng.randf() >= p_correct:
+			s.t += minf(solve, limit) + MISS_FEEDBACK_S
+			misses += 1
+			if misses >= int(rules.max_misses):
+				return
+		else:
+			s.t += solve
+			hearts -= 1
+	var zone_fraction := minf(0.9, GameData.fishing.reel_zone * (1.0 + GameData.upgrade_effect("rod", "reel_zone_bonus")))
+	var p_hit := clampf(REEL_HIT_BASE + REEL_HIT_PER_ZONE * zone_fraction, 0.0, 0.95)
+	for i in int(rules.reel_attempts):
+		s.t += REEL_ATTEMPT_S
+		if rng.randf() < p_hit:
+			var size := FishTable.roll_size(boss, rng)
+			var coins_before := GameState.coins
+			GameState.record_catch(boss, size, Economy.sell_price(boss, size))
+			s.earned += GameState.coins - coins_before
+			s.catches += 1
+			s.bosses.append({"zone": zone, "t": s.t, "catches": s.catches})
+			s.t += CATCH_CARD_S
+			return
 
 
 func _attempt(zone: String, s: Dictionary) -> void:
@@ -162,8 +208,6 @@ func _attempt(zone: String, s: Dictionary) -> void:
 func _shop(s: Dictionary) -> void:
 	while true:
 		var options := GameData.upgrades().filter(func(u): return Economy.can_buy(u.id))
-		if strategy == "boat_first" and GameState.upgrade_level("boat") == 0:
-			options = options.filter(func(u): return u.id == "boat")
 		if options.is_empty():
 			return
 		options.sort_custom(func(a, b): return Economy.next_cost(a.id) < Economy.next_cost(b.id))
@@ -190,7 +234,7 @@ func _report(results: Array) -> String:
 	var acc := "tiered 85/70/55 %" if tiered else "%d %%" % roundi(accuracy * 100)
 	var lines: Array[String] = []
 	var changes := "" if overrides.is_empty() else ", with " + ", ".join(PackedStringArray(overrides.map(func(o): return "`%s`" % o)))
-	lines.append("## Simulation: %d × %d min, accuracy %s, strategy `%s`%s\n" % [runs, minutes, acc, strategy, changes])
+	lines.append("## Simulation: %d × %d min, accuracy %s%s\n" % [runs, minutes, acc, changes])
 
 	lines.append("| Purchase | Reached | Minute (P10 / median / P90) | Catches (median) |")
 	lines.append("|---|---|---|---|")
@@ -238,6 +282,19 @@ func _report(results: Array) -> String:
 		for k in r.rarity_catches:
 			rarity_totals[k] = rarity_totals.get(k, 0) + r.rarity_catches[k]
 
+	for zone in GameData.zones():
+		if zone.unlock == null:
+			continue
+		var times := []
+		var at_catches := []
+		for r in results:
+			for b in r.bosses:
+				if b.zone == zone.unlock.boss_of:
+					times.append(b.t / 60.0)
+					at_catches.append(b.catches)
+		lines.append("| **%s opens** (beat %s) | %d %% | %s / %s / %s | %s |" % [zone.id, GameData.zone(zone.unlock.boss_of).boss,
+			roundi(100.0 * times.size() / results.size()), _fmt(_pct(times, 0.1)), _fmt(_pct(times, 0.5)),
+			_fmt(_pct(times, 0.9)), _fmt(_pct(at_catches, 0.5), 0)])
 	lines.append("")
 	lines.append("| Metric | Median (P10–P90) |")
 	lines.append("|---|---|")
@@ -248,6 +305,10 @@ func _report(results: Array) -> String:
 	lines.append("| Seconds per cast (incl. misses, dock) | %s |" % _fmt(_pct(sec_per_attempt, 0.5)))
 	lines.append("| Casts that end in a catch | %s %% |" % _fmt(100.0 * _pct(success, 0.5), 0))
 	lines.append("| Trips (dock visits) | %s |" % _fmt(_pct(trips, 0.5), 0))
+	var attempts := []
+	for r in results:
+		attempts.append(r.boss_attempts)
+	lines.append("| Boss fights started | %s |" % _fmt(_pct(attempts, 0.5), 0))
 	lines.append("| Timeouts: rare / legendary | %s %% / %s %% |" % [_fmt(100.0 * timeout_rare[0] / maxi(1, timeout_rare[1]), 0), _fmt(100.0 * timeout_leg[0] / maxi(1, timeout_leg[1]), 0)])
 	var total_caught := 0
 	for k in rarity_totals:

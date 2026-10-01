@@ -51,5 +51,10 @@ func _refresh_text() -> void:
 		bonuses.append(UIText.rich("UI_DISCOVERY_BONUS", {"n": _result.discovery_bonus}))
 	if _result.zone_complete_bonus > 0:
 		bonuses.append(UIText.rich("UI_ZONE_COMPLETE", {"n": _result.zone_complete_bonus}))
+	if _result.get("boss_defeated", false):
+		var next: String = _result.unlocked_zone
+		bonuses.append(tr("UI_BOSS_DEFEATED").format({"zone": tr(GameData.zone(next).name_key)}) if next else tr("UI_BOSS_DEFEATED_LAST"))
+	if _result.get("boss_appeared", false):
+		bonuses.append(tr("UI_BOSS_APPEARS"))
 	bonus_label.text = "\n".join(bonuses)
 	bonus_label.visible = not bonuses.is_empty()

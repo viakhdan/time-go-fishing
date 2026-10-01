@@ -10,7 +10,8 @@ const SCENE_PATH := "res://scenes/Zone.tscn"
 ## Upgrades shown as rig levels in the HUD (§5.2, §10).
 const RIG := ["rod", "bait"]
 const STATUS_KEYS := {FishingLoop.State.WAITING: "UI_WAITING", FishingLoop.State.BITE: "UI_BITE"}
-const MODAL_STATES := [FishingLoop.State.PROBLEM, FishingLoop.State.REEL, FishingLoop.State.CAUGHT, FishingLoop.State.ESCAPED]
+const MODAL_STATES := [FishingLoop.State.PROBLEM, FishingLoop.State.REEL, FishingLoop.State.CAUGHT,
+	FishingLoop.State.ESCAPED, FishingLoop.State.BOSS_MISS]
 
 @onready var loop: FishingLoop = $FishingLoop
 @onready var background: ColorRect = $Background
@@ -24,6 +25,7 @@ const MODAL_STATES := [FishingLoop.State.PROBLEM, FishingLoop.State.REEL, Fishin
 @onready var encyclopedia_button: Button = %EncyclopediaButton
 @onready var status_label: Label = %StatusLabel
 @onready var cast_button: Button = %CastButton
+@onready var boss_button: Button = %BossButton
 @onready var hold_full_box: Control = %HoldFullBox
 @onready var return_button: Button = %ReturnButton
 @onready var release_button: Button = %ReleaseButton
@@ -50,6 +52,7 @@ func _ready() -> void:
 	_build_rig()
 
 	cast_button.pressed.connect(loop.cast)
+	boss_button.pressed.connect(loop.challenge_boss)
 	map_button.pressed.connect(_leave.bind(MAP_SCENE))
 	return_button.pressed.connect(_leave.bind(DOCK_SCENE))
 	encyclopedia_button.pressed.connect(_open_encyclopedia)
@@ -63,6 +66,8 @@ func _ready() -> void:
 	loop.reel_started.connect(func(zone_fraction, retry): reel.start(zone_fraction, retry, loop.rng))
 	loop.caught.connect(catch_card.show_catch)
 	loop.escaped.connect(_on_escaped)
+	loop.boss_updated.connect(problem_panel.set_boss)
+	loop.boss_missed.connect(func(reason, _p): problem_panel.show_miss(reason))
 	problem_panel.answered.connect(loop.submit_answer)
 	problem_panel.continue_pressed.connect(loop.acknowledge)
 	reel.finished.connect(loop.reel_result)
@@ -89,6 +94,9 @@ func _on_state_changed(state: FishingLoop.State) -> void:
 	var full := GameState.is_hold_full()
 	var releasing: bool = hold_panel.selectable
 	cast_button.visible = idle and not full
+	boss_button.visible = idle and not releasing and loop.can_challenge_boss()
+	if idle:
+		problem_panel.clear_boss()
 	hold_full_box.visible = idle and full and not releasing
 	release_box.visible = idle and releasing
 	# Leaving mid-catch would lose the fish, so the exits only work when idle.
@@ -96,7 +104,7 @@ func _on_state_changed(state: FishingLoop.State) -> void:
 	encyclopedia_button.disabled = not idle
 	status_label.text = STATUS_KEYS.get(state, "")
 	# Each panel is shown by its own signal handler; here we only hide stale ones.
-	if state not in [FishingLoop.State.PROBLEM, FishingLoop.State.ESCAPED]:
+	if state not in [FishingLoop.State.PROBLEM, FishingLoop.State.ESCAPED, FishingLoop.State.BOSS_MISS]:
 		problem_panel.hide()
 	if state != FishingLoop.State.REEL:
 		reel.hide()
@@ -110,6 +118,7 @@ func _on_problem_started(problem: Dictionary, time_limit: float, second_chance: 
 
 
 func _on_escaped(reason: FishingLoop.Escape, _problem: Dictionary) -> void:
+	problem_panel.clear_boss()
 	if reason == FishingLoop.Escape.REEL:
 		problem_panel.show_reel_escape()
 	else:

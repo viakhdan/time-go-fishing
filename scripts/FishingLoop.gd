@@ -3,8 +3,13 @@ extends Node
 ## Core loop state machine (DESIGN.md §3.1). Pure logic: the Zone scene listens
 ## to the signals and calls cast() / submit_answer() / reel_result() / acknowledge().
 ## Timers run in advance() so tests can drive the loop without waiting.
+##
+## Boss fight: challenge_boss() starts a run of tier-3 problems. Each correct
+## answer takes a heart; when the hearts run out the boss is reeled in. Each
+## miss shows the solution (BOSS_MISS) and the fight goes on until max_misses,
+## when the boss escapes. Rules come from fish.json "boss_fight".
 
-enum State { IDLE, WAITING, BITE, PROBLEM, REEL, CAUGHT, ESCAPED }
+enum State { IDLE, WAITING, BITE, PROBLEM, REEL, CAUGHT, ESCAPED, BOSS_MISS }
 enum Escape { WRONG, TIMEOUT, REEL }
 
 signal state_changed(state: State)
@@ -13,6 +18,10 @@ signal problem_started(problem: Dictionary, time_limit: float, second_chance: bo
 signal reel_started(zone_fraction: float, retry: bool)
 signal caught(result: Dictionary)
 signal escaped(reason: Escape, problem: Dictionary)
+## Boss status after the fight starts, after each hit (hit = true) and each miss.
+signal boss_updated(hearts: int, misses_left: int, hit: bool)
+## A miss that doesn't end the fight: show the solution, then acknowledge().
+signal boss_missed(reason: Escape, problem: Dictionary)
 
 var zone_id := "lake"
 var state := State.IDLE
@@ -22,6 +31,9 @@ var problem := {}
 var time_left := 0.0
 var time_limit := 0.0
 var rng := RandomNumberGenerator.new()
+var boss_fight := false
+var boss_hearts := 0
+var boss_misses := 0
 
 var _wait_left := 0.0
 var _reel_attempts_left := 0
@@ -47,6 +59,25 @@ func cast() -> void:
 	_set_state(State.WAITING)
 
 
+func can_challenge_boss() -> bool:
+	return state == State.IDLE and not GameState.is_hold_full() and GameData.is_boss_available(zone_id)
+
+
+func challenge_boss() -> void:
+	if not can_challenge_boss():
+		return
+	fish_id = GameData.zone(zone_id).boss
+	boss_fight = true
+	boss_hearts = int(GameData.boss_fight.hearts)
+	boss_misses = 0
+	boss_updated.emit(boss_hearts, boss_misses_left(), false)
+	_start_problem(false)
+
+
+func boss_misses_left() -> int:
+	return int(GameData.boss_fight.max_misses) - boss_misses
+
+
 func advance(delta: float) -> void:
 	match state:
 		State.WAITING:
@@ -67,12 +98,19 @@ func advance(delta: float) -> void:
 func submit_answer(index: int) -> void:
 	if state != State.PROBLEM:
 		return
-	if index == problem.answer_index:
-		_reel_attempts_left = int(GameData.fishing.reel_attempts)
-		_set_state(State.REEL)
-		reel_started.emit(reel_zone_fraction(), false)
-	else:
+	if index != problem.answer_index:
 		_fail(Escape.WRONG)
+		return
+	if boss_fight:
+		boss_hearts -= 1
+		boss_updated.emit(boss_hearts, boss_misses_left(), true)
+		if boss_hearts > 0:
+			_start_problem(false)
+			return
+	var attempts: int = GameData.boss_fight.reel_attempts if boss_fight else GameData.fishing.reel_attempts
+	_reel_attempts_left = attempts
+	_set_state(State.REEL)
+	reel_started.emit(reel_zone_fraction(), false)
 
 
 ## Green zone width as a fraction of the bar, widened by the rod (§5.2).
@@ -94,9 +132,12 @@ func reel_result(hit: bool) -> void:
 		_escape(Escape.REEL)
 
 
-## Closes the catch card or escape message and returns to IDLE.
+## Closes the catch card or escape message and returns to IDLE; after a boss
+## miss it moves on to the next problem of the fight.
 func acknowledge() -> void:
-	if state in [State.CAUGHT, State.ESCAPED]:
+	if state == State.BOSS_MISS:
+		_start_problem(false)
+	elif state in [State.CAUGHT, State.ESCAPED]:
 		_set_state(State.IDLE)
 
 
@@ -119,7 +160,9 @@ func _start_problem(second_chance: bool) -> void:
 
 
 func _fail(reason: Escape) -> void:
-	if GameState.trip_second_chances > 0:
+	if boss_fight:
+		_boss_miss(reason)
+	elif GameState.trip_second_chances > 0:
 		GameState.trip_second_chances -= 1
 		GameState.save_game()
 		_start_problem(true)
@@ -127,7 +170,18 @@ func _fail(reason: Escape) -> void:
 		_escape(reason)
 
 
+func _boss_miss(reason: Escape) -> void:
+	boss_misses += 1
+	if boss_misses_left() <= 0:
+		_escape(reason)
+		return
+	boss_updated.emit(boss_hearts, boss_misses_left(), false)
+	_set_state(State.BOSS_MISS)
+	boss_missed.emit(reason, problem)
+
+
 func _escape(reason: Escape) -> void:
+	boss_fight = false
 	_set_state(State.ESCAPED)
 	escaped.emit(reason, problem)
 
@@ -135,6 +189,7 @@ func _escape(reason: Escape) -> void:
 func _catch() -> void:
 	var size := FishTable.roll_size(fish_id, rng)
 	var result := GameState.record_catch(fish_id, size, Economy.sell_price(fish_id, size))
+	boss_fight = false
 	_set_state(State.CAUGHT)
 	caught.emit(result)
 

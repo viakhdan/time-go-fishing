@@ -15,18 +15,19 @@ func _rarity_shares(zone_id: String, n: int) -> Dictionary:
 
 
 func test_fish_table_weights() -> void:
-	# Lake has no legendary: 60/28/10 renormalized over 98.
+	# 60/28/10/2; the boss (weight 0) never bites on its own.
 	var s := _rarity_shares("lake", 20000)
-	check(absf(s.common - 60.0 / 98) < 0.015, "lake common share %.3f" % s.common)
-	check(absf(s.uncommon - 28.0 / 98) < 0.015, "lake uncommon share %.3f" % s.uncommon)
-	check(absf(s.rare - 10.0 / 98) < 0.01, "lake rare share %.3f" % s.rare)
-	check("legendary" not in s, "lake rolled a legendary")
-	# Two commons share the common weight rather than doubling it.
+	check(absf(s.common - 0.60) < 0.015, "lake common share %.3f" % s.common)
+	check(absf(s.uncommon - 0.28) < 0.015, "lake uncommon share %.3f" % s.uncommon)
+	check(absf(s.rare - 0.10) < 0.01, "lake rare share %.3f" % s.rare)
+	check(absf(s.get("legendary", 0.0) - 0.02) < 0.005, "lake legendary share %.3f" % s.get("legendary", 0.0))
+	check("boss" not in s, "a boss was rolled at random")
+	# Three commons share the common weight rather than tripling it.
 	var perch := 0
 	for i in 10000:
 		if FishTable.roll("lake", rng) == "zero_perch":
 			perch += 1
-	check(absf(perch / 10000.0 - 30.0 / 98) < 0.015, "zero_perch share %.3f" % (perch / 10000.0))
+	check(absf(perch / 10000.0 - 0.20) < 0.015, "zero_perch share %.3f" % (perch / 10000.0))
 
 
 func test_bait_multiplier() -> void:
@@ -103,13 +104,15 @@ func test_record_catch() -> void:
 	r = GameState.record_catch("zero_perch", 30, 6)
 	check(not r.is_new and r.new_record and r.discovery_bonus == 0, "second, bigger catch is a record")
 	check(GameState.encyclopedia.zero_perch == {"count": 2, "best_cm": 30, "best_value": 6}, "encyclopedia entry")
-	GameState.record_catch("square_carp", 30, 5)
-	GameState.record_catch("mirror_bream", 40, 15)
-	r = GameState.record_catch("power_pike", 80, 40)
-	check(r.zone_complete_bonus == 50, "last lake species gives +50")
-	check(GameState.coins == 40 + 50, "coins after 4 discoveries + completion: %d" % GameState.coins)
-	check(GameState.hold.size() == 5, "all catches in the hold")
-	r = GameState.record_catch("power_pike", 90, 45)
+	for id in GameData.zone("lake").fish:
+		if id != "zero_perch" and not GameData.is_boss(id):
+			r = GameState.record_catch(id, 30, 5)
+	check(r.zone_complete_bonus == 0, "no completion without the boss")
+	r = GameState.record_catch("great_polynomial", 250, 150)
+	check(r.zone_complete_bonus == 50, "the boss, last lake species, gives +50")
+	check(GameState.coins == 10 * 10 + 50, "coins after 10 discoveries + completion: %d" % GameState.coins)
+	check(GameState.hold.size() == 11, "all catches in the hold")
+	r = GameState.record_catch("great_polynomial", 260, 160)
 	check(r.zone_complete_bonus == 0, "completion bonus is one-time")
 
 

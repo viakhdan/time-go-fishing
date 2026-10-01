@@ -12,6 +12,8 @@ static func rarity_weights(zone_id: String) -> Dictionary:
 	for fish_id in GameData.zone(zone_id).fish:
 		var rarity_id: String = GameData.fish(fish_id).rarity
 		var w: float = GameData.rarity(rarity_id).weight
+		if w <= 0.0:
+			continue  # Bosses never bite on their own; they are challenged.
 		weights[rarity_id] = w * bait if rarity_id in BAIT_RARITIES else w
 	return weights
 

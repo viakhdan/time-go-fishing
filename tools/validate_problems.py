@@ -39,6 +39,7 @@ SUPERSCRIPT_RUN = re.compile("[⁰¹²³⁴⁵⁶⁷⁸⁹]+")
 CYRILLIC = re.compile("[Ѐ-ӿ]")
 # ASCII look-alikes that must be typographic in player-facing text.
 FORBIDDEN_ASCII = {"-": "use − (U+2212)", "*": "use · (U+00B7)", "^": "use superscripts"}
+WORD_HYPHEN = re.compile(r"(?<=[^\W\d_]{2})-(?=[^\W\d_]{2})")
 ID_PATTERN = re.compile(r"^[a-z]+_t([123])_\d{3}$")
 SYMBOLS = {c: sp.Symbol(c) for c in "abcmnxy"}
 TRANSFORMS = standard_transformations + (implicit_multiplication_application,)
@@ -47,7 +48,7 @@ X = SYMBOLS["x"]
 
 def to_sympy(text):
     """Parse player-facing math (2x², −3, a⁸ : a², 7/3, 1 000 000) into sympy."""
-    s = text.replace("−", "-").replace("·", "*").replace(":", "/").replace(" ", "")
+    s = text.replace("−", "-").replace("·", "*").replace(":", "/").replace("°", "").replace(" ", "")
     s = SUPERSCRIPT_RUN.sub(lambda m: "**" + m.group().translate(SUPERSCRIPTS), s)
     return parse_expr(s, local_dict=SYMBOLS, transformations=TRANSFORMS)
 
@@ -124,8 +125,10 @@ def validate_problem(p, topic, errors):
 
     player_text = [*options, *p["question"].values(), *p["solution"].values()]
     for text in player_text:
+        # A hyphen inside a word ("co-interior") is fine; anywhere else it's a math minus.
+        math_text = WORD_HYPHEN.sub("", text)
         for ch, fix in FORBIDDEN_ASCII.items():
-            if ch in text:
+            if ch in math_text:
                 err(f"ASCII {ch!r} in {text!r}: {fix}")
 
     # Math.

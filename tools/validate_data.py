@@ -15,6 +15,7 @@ import sys
 DATA = "data"
 STRINGS = "i18n/strings.csv"
 LOCALES = ("uk", "en")
+FISH_PER_ZONE = 10
 FISH_TEXT_KEYS = ("name_key", "flavor_key", "fact_key", "try_q_key", "try_a_key", "deep_fact_key")
 PLACEHOLDER = re.compile(r"\{(\w+)\}")
 
@@ -88,6 +89,7 @@ def main():
                 err(f"upgrade {u['id']} L{i}: effect fields {sorted(set(lv) - {'cost'})} don't match base {sorted(u['base'])}")
 
     # Zones.
+    zone_ids_all = {z["id"] for z in zones}
     zone_ids = set()
     for z in zones:
         zid = z["id"]
@@ -110,14 +112,13 @@ def main():
         if not os.path.exists(os.path.join(DATA, "problems", z["topic"] + ".json")):
             err(f"zone {zid}: enabled but problem pool {z['topic']}.json is missing")
         unlock = z["unlock"]
-        if unlock:
-            u = upg_by_id.get(unlock["upgrade"])
-            if not u:
-                err(f"zone {zid}: unlock upgrade {unlock['upgrade']} doesn't exist")
-            elif not u["enabled"]:
-                err(f"zone {zid}: enabled, but its unlock upgrade {u['id']} is disabled")
-            elif not 1 <= unlock["level"] <= len(u["levels"]):
-                err(f"zone {zid}: unlock level {unlock['level']} out of range")
+        if unlock and unlock.get("boss_of") not in zone_ids_all:
+            err(f"zone {zid}: unlock boss_of {unlock.get('boss_of')!r} is not a zone")
+        if len(z["fish"]) != FISH_PER_ZONE:
+            err(f"zone {zid}: has {len(z['fish'])} fish, needs {FISH_PER_ZONE}")
+        bosses = [fid for fid in z["fish"] if fid in fish_by_id and fish_by_id[fid]["rarity"] == "boss"]
+        if bosses != [z.get("boss")]:
+            err(f"zone {zid}: boss field {z.get('boss')!r} but boss-rarity fish are {bosses}")
     for fid, f_ in fish_by_id.items():
         if f_["zone"] not in zone_ids:
             err(f"fish {fid}: unknown zone {f_['zone']}")
@@ -139,7 +140,7 @@ def print_economy(fish_data, zones, upgrades):
     for z in zones:
         if not z["enabled"]:
             continue
-        present = {by_id[fid]["rarity"] for fid in z["fish"]}
+        present = {by_id[fid]["rarity"] for fid in z["fish"] if rarities[by_id[fid]["rarity"]]["weight"] > 0}
         total_w = sum(rarities[r]["weight"] for r in present)
         ev = sum(rarities[r]["weight"] * rarities[r]["base_price"] for r in present) / total_w
         print(f"  {z['id']:6} ≈ {ev:.1f} coins per catch")

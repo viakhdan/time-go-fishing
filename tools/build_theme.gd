@@ -4,7 +4,7 @@ extends SceneTree
 ##   <godot_console> --headless --path . -s <absolute path to this file>
 ##
 ## Theme type variations it defines (set `theme_type_variation` on a node):
-##   Buttons:  PrimaryButton, AnswerButton, HoldSlot, PaperTile, IconButton
+##   Buttons:  PrimaryButton, BossButton, AnswerButton, HoldSlot, PaperTile, IconButton
 ##   Panels:   ModalPanel, Card, HudBar, Banner, PaperPanel, PaperInset
 ##   Labels:   TitleLabel, OverlayLabel, SerifLabel, PaperLabel, PaperTitle,
 ##             PaperHeading, FlavorLabel, MutedLabel, WarningLabel
@@ -153,6 +153,15 @@ func _buttons() -> void:
 		box(Palette.KELP.darkened(0.3), Palette.PAPER_LIGHT, 3, 24, 8),
 		box(Palette.INK_SOFT, Palette.WOOD_DARK, 2, 24, 8))
 	_button_colors("PrimaryButton", Palette.WHITE, Palette.STONE)
+
+	# Challenging a boss: maroon with an alarm-red frame, clearly not a normal cast.
+	_variation("BossButton", "Button")
+	_button_styles("BossButton",
+		box(Palette.MAROON, Palette.ALARM, 3, 24, 8),
+		box(Palette.MAROON.lightened(0.15), Palette.LANTERN, 3, 24, 8),
+		box(Palette.MAROON_DARK, Palette.PAPER_LIGHT, 3, 24, 8),
+		box(Palette.INK_SOFT, Palette.WOOD_DARK, 2, 24, 8))
+	_button_colors("BossButton", Palette.WHITE, Palette.STONE)
 
 	# Math answers: readable body font on a cool slate panel.
 	_variation("AnswerButton", "Button")

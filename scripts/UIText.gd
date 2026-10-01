@@ -43,7 +43,7 @@ static func upgrade_effects(id: String, from_level: int, to_level: int) -> Array
 	for key in u.base:
 		lines.append(_effect_line(key, before.get(key, u.base[key]), after[key]))
 	for z in GameData.zones():
-		if z.unlock != null and z.unlock.upgrade == id and int(z.unlock.level) == to_level:
+		if z.unlock != null and z.unlock.get("upgrade") == id and int(z.unlock.get("level", 0)) == to_level:
 			lines.append(_t("UI_UNLOCKS").format({"zone": _t(z.name_key)}))
 	return lines
 

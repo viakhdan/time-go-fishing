@@ -2,13 +2,16 @@
   { "id": "lake", "name_key": "ZONE_LAKE", "topic": "powers_like_terms", "enabled": true,
     "background": "res://art/backgrounds/lake.svg",
     "unlock": null,
-    "fish": ["zero_perch", "square_carp", "mirror_bream", "power_pike"] },
+    "boss": "great_polynomial",
+    "fish": ["zero_perch", "square_carp", "like_roach", "mirror_bream", "cube_ruffe", "coefficient_rudd", "power_pike", "exponent_burbot", "golden_googol", "great_polynomial"] },
   { "id": "river", "name_key": "ZONE_RIVER", "topic": "linear_equations", "enabled": true,
     "background": "res://art/backgrounds/river.svg",
-    "unlock": { "upgrade": "boat", "level": 1 },
-    "fish": ["fog_catfish", "x_eel", "balanced_sturgeon", "great_null"] },
-  { "id": "bay", "name_key": "ZONE_BAY", "topic": "angles_triangles", "enabled": false,
-    "background": "res://art/backgrounds/bay.svg",
-    "unlock": { "upgrade": "lantern", "level": 1 },
-    "fish": ["anglejaw", "triangle_ray"] }
+    "unlock": { "boss_of": "lake" },
+    "boss": "old_man_x",
+    "fish": ["fog_catfish", "root_gudgeon", "opposite_minnow", "x_eel", "bracket_chub", "inverse_zander", "balanced_sturgeon", "linear_salmon", "great_null", "old_man_x"] },
+  { "id": "sea", "name_key": "ZONE_SEA", "topic": "angles_triangles", "enabled": true,
+    "background": "res://art/backgrounds/sea.svg",
+    "unlock": { "boss_of": "river" },
+    "boss": "angle_kraken",
+    "fish": ["right_mackerel", "straight_herring", "vertical_flounder", "anglejaw", "bisector_barracuda", "parallel_tuna", "triangle_ray", "isosceles_swordfish", "protractor_sunfish", "angle_kraken"] }
 ]

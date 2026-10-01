@@ -161,6 +161,15 @@ grow_vertical = 0
 theme_override_constants/separation = 12
 alignment = 2
 
+[node name="BossButton" type="Button" parent="Actions"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(0, 88)
+layout_mode = 2
+theme_type_variation = &"BossButton"
+theme_override_font_sizes/font_size = 34
+text = "UI_CHALLENGE_BOSS"
+
 [node name="CastButton" type="Button" parent="Actions"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 112)

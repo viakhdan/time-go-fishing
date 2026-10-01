@@ -45,5 +45,5 @@ const ALARM := Color("#d8433c")
 const WHITE := Color("#fefefd")
 
 ## Placeholder zone colours until the background art exists.
-const ZONE_BG := {"lake": OCHRE, "river": MIST, "bay": NIGHT}
-const ZONE_WATER := {"lake": SEA, "river": STEEL, "bay": DEEP_TEAL}
+const ZONE_BG := {"lake": OCHRE, "river": MIST, "sea": STEEL}
+const ZONE_WATER := {"lake": SEA, "river": STEEL, "sea": DEEP_TEAL}

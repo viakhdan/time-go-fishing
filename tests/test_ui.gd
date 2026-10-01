@@ -52,8 +52,8 @@ func test_lang_toggle() -> void:
 func test_encyclopedia_empty() -> void:
 	var enc := _open("res://scenes/Encyclopedia.tscn")
 	await get_tree().process_frame
-	check(enc.discovered_label.text.ends_with("0 / 8"), "0 / 8 discovered: %s" % enc.discovered_label.text)
-	check(enc._tiles.size() == 8, "8 MVP species listed (stretch zone hidden)")
+	check(enc.discovered_label.text.ends_with("0 / 30"), "0 / 30 discovered: %s" % enc.discovered_label.text)
+	check(enc._tiles.size() == 30, "30 species listed")
 	check(enc.selected == "zero_perch", "first fish selected")
 	check(enc.name_label.text == tr("UI_UNKNOWN") and enc.locked_label.visible and not enc.known_box.visible, "uncaught fish is ???")
 	check(not enc._tiles.zero_perch.picture.known, "tile shows a silhouette")
@@ -65,7 +65,7 @@ func test_encyclopedia_entry() -> void:
 	var enc := _open("res://scenes/Encyclopedia.tscn")
 	await get_tree().process_frame
 	check(enc.selected == "x_eel", "opens on the first caught fish")
-	check(enc.discovered_label.text.ends_with("1 / 8"), "1 / 8 discovered")
+	check(enc.discovered_label.text.ends_with("1 / 30"), "1 / 30 discovered")
 	check(enc.name_label.text == tr("FISH_X_EEL") and enc.known_box.visible, "caught fish page")
 	check(enc.records.text.contains("[b]3[/b]") and enc.records.text.contains("84"), "records: %s" % enc.records.text)
 	check(enc.flavor_label.text == "«%s»" % tr("FISH_X_EEL_FLAVOR"), "Ukrainian quotes around flavour")

@@ -3,6 +3,8 @@ extends Node
 ## Balance numbers live in the JSON files, never in code.
 
 var fishing: Dictionary
+## Boss fight rules (hearts, misses before it escapes, reel attempts).
+var boss_fight: Dictionary
 var size_range: Array
 var discovery_bonus: int
 var zone_complete_bonus: int
@@ -18,6 +20,7 @@ var _upgrade_order: Array[String] = []
 func _ready() -> void:
 	var fish_data: Dictionary = _load_json("res://data/fish.json")
 	fishing = fish_data.fishing
+	boss_fight = fish_data.boss_fight
 	size_range = fish_data.size_range
 	discovery_bonus = int(fish_data.discovery_bonus)
 	zone_complete_bonus = int(fish_data.zone_complete_bonus)
@@ -69,13 +72,35 @@ func zones() -> Array[Dictionary]:
 	return out
 
 
+## A zone opens when the previous zone's boss has been beaten.
 func is_zone_unlocked(id: String) -> bool:
 	var z: Dictionary = _zones[id]
 	if not z.enabled:
 		return false
 	if z.unlock == null:
 		return true
-	return GameState.upgrade_level(z.unlock.upgrade) >= int(z.unlock.level)
+	return z.unlock.boss_of in GameState.bosses_defeated
+
+
+## The zone that beating this zone's boss opens, or "" for the last one.
+func zone_after(id: String) -> String:
+	for z in zones():
+		if z.unlock != null and z.unlock.boss_of == id:
+			return z.id
+	return ""
+
+
+func is_boss(fish_id: String) -> bool:
+	return _fish[fish_id].rarity == "boss"
+
+
+## The boss can be challenged once every other species of its zone is caught.
+func is_boss_available(zone_id: String) -> bool:
+	var z: Dictionary = _zones[zone_id]
+	for fish_id in z.fish:
+		if fish_id != z.boss and fish_id not in GameState.encyclopedia:
+			return false
+	return true
 
 
 func upgrade(id: String) -> Dictionary:

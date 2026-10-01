@@ -23,6 +23,8 @@ var upgrades := _default_upgrades()
 ## species id -> { "count": int, "best_cm": int, "best_value": int }
 var encyclopedia := {}
 var zone_complete_rewarded: Array[String] = []
+## Zone ids whose boss has been beaten; each one opens the next zone.
+var bosses_defeated: Array[String] = []
 var trophy = null
 ## Strong-line second chances left this trip (§5.2). Refilled by start_trip().
 var trip_second_chances := 0
@@ -95,6 +97,8 @@ func start_trip() -> void:
 func record_catch(species: String, size_cm: int, value: int) -> Dictionary:
 	hold.append({"species": species, "size_cm": size_cm, "value": value})
 
+	var zone_id: String = GameData.fish(species).zone
+	var boss_was_available := GameData.is_boss_available(zone_id)
 	var is_new := species not in encyclopedia
 	var entry: Dictionary = encyclopedia.get_or_add(species, {"count": 0, "best_cm": 0, "best_value": 0})
 	var new_record: bool = not is_new and size_cm > entry.best_cm
@@ -104,11 +108,16 @@ func record_catch(species: String, size_cm: int, value: int) -> Dictionary:
 
 	var discovery := GameData.discovery_bonus if is_new else 0
 	var zone_bonus := 0
-	var zone_id: String = GameData.fish(species).zone
 	if is_new and zone_id not in zone_complete_rewarded \
 			and GameData.zone(zone_id).fish.all(func(id): return id in encyclopedia):
 		zone_complete_rewarded.append(zone_id)
 		zone_bonus = GameData.zone_complete_bonus
+
+	# Boss: the first win opens the next zone; the 9th species makes the boss appear.
+	var boss_defeated := GameData.is_boss(species) and zone_id not in bosses_defeated
+	if boss_defeated:
+		bosses_defeated.append(zone_id)
+	var boss_appeared := not boss_was_available and GameData.is_boss_available(zone_id) 			and zone_id not in bosses_defeated
 
 	hold_changed.emit()
 	if discovery + zone_bonus > 0:
@@ -118,6 +127,9 @@ func record_catch(species: String, size_cm: int, value: int) -> Dictionary:
 		"species": species, "size_cm": size_cm, "value": value,
 		"is_new": is_new, "new_record": new_record,
 		"discovery_bonus": discovery, "zone_complete_bonus": zone_bonus,
+		"boss_defeated": boss_defeated,
+		"unlocked_zone": GameData.zone_after(zone_id) if boss_defeated else "",
+		"boss_appeared": boss_appeared,
 	}
 
 
@@ -127,6 +139,7 @@ func reset() -> void:
 	upgrades = _default_upgrades()
 	encyclopedia.clear()
 	zone_complete_rewarded.clear()
+	bosses_defeated.clear()
 	trophy = null
 	trip_second_chances = 0
 	save_game()
@@ -148,6 +161,7 @@ func save_game() -> void:
 		"upgrades": upgrades,
 		"encyclopedia": encyclopedia,
 		"zone_complete_rewarded": zone_complete_rewarded,
+		"bosses_defeated": bosses_defeated,
 		"trophy": trophy,
 		"trip_second_chances": trip_second_chances,
 	}
@@ -224,9 +238,13 @@ func _apply_save(data: Dictionary) -> void:
 	for id in data.get("zone_complete_rewarded", []):
 		if GameData.has_zone(str(id)):
 			zone_complete_rewarded.append(str(id))
+	bosses_defeated.clear()
+	for id in data.get("bosses_defeated", []):
+		if GameData.has_zone(str(id)):
+			bosses_defeated.append(str(id))
 	trophy = data.get("trophy")
 	trip_second_chances = int(data.get("trip_second_chances", 0))
 
 
 static func _default_upgrades() -> Dictionary:
-	return {"hold": 0, "rod": 0, "bait": 0, "boat": 0, "line": 0, "lantern": 0}
+	return {"hold": 0, "rod": 0, "bait": 0, "line": 0}

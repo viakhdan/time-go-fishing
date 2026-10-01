@@ -59,12 +59,20 @@ UI_RELEASE_PICK,"Обери рибу, яку відпустиш",Pick a fish to 
 UI_CANCEL,Скасувати,Cancel
 UI_HOLD_EMPTY,Трюм порожній. Час рибалити!,The hold is empty. Time to go fishing!
 UI_SELECT_FISH,"Обери рибу, щоб продати її окремо",Pick a fish to sell it on its own
-UI_REQUIRES,Потрібно: {upgrade},Requires: {upgrade}
 UI_CATCH_TO_UNLOCK,"Спіймай цю рибу, щоб дізнатися про неї більше.",Catch this fish to learn more about it.
 UI_ZONE_BADGE,Усіх риб знайдено!,Every fish found!
 UI_RESET,Скинути прогрес,Reset progress
 UI_RESET_CONFIRM,"Усі монети, риби, покращення й записи в енциклопедії зникнуть. Почати спочатку?","All coins, fish, upgrades and encyclopedia entries will be lost. Start over?"
 UI_RESET_OK,"Так, скинути","Yes, reset"
+UI_CHALLENGE_BOSS,Кинути виклик босу!,Challenge the boss!
+UI_BOSS_FIGHT,Битва з босом!,Boss fight!
+UI_BOSS_HIT,Влучно! Бос слабшає.,A hit! The boss is weakening.
+UI_BOSS_MISSES_LEFT,Помилок до втечі боса: {n},Misses before the boss escapes: {n}
+UI_BOSS_STILL_HERE,Бос іще на гачку! Помилок до втечі: {n},The boss is still on the hook! Misses left: {n}
+UI_BOSS_DEFEATED,Боса переможено! Відкрито: {zone},Boss defeated! Unlocked: {zone}
+UI_BOSS_DEFEATED_LAST,Боса переможено! Усі води підкорено!,Boss defeated! You've conquered every water!
+UI_BOSS_APPEARS,З глибини піднімається бос…,The boss rises from the deep…
+UI_REQUIRES_BOSS,Переможи боса: {zone},Defeat the boss: {zone}
 STAT_SLOTS,Місць,Slots
 STAT_TIMER,Таймер,Timer
 STAT_REEL_ZONE,Зелена зона,Green zone
@@ -75,23 +83,20 @@ TOPIC_LINEAR_EQUATIONS,Лінійні рівняння,Linear equations
 TOPIC_POWERS_LIKE_TERMS,Степені й подібні доданки,Powers and like terms
 ZONE_LAKE,Тихе озеро,Still Lake
 ZONE_RIVER,Туманна річка,Misty River
-ZONE_BAY,Глибока затока,Deep Bay
+ZONE_SEA,Відкрите море,Open Seas
 RARITY_COMMON,Звичайна,Common
 RARITY_UNCOMMON,Незвичайна,Uncommon
 RARITY_RARE,Рідкісна,Rare
 RARITY_LEGENDARY,Легендарна,Legendary
+RARITY_BOSS,Бос,Boss
 UPG_HOLD,Трюм,Hold
 UPG_HOLD_DESC,Більше місця для риби.,More room for fish.
 UPG_ROD,Вудка,Rod
 UPG_ROD_DESC,Більше часу на задачу і ширша зелена зона.,More time per problem and a wider green zone.
 UPG_BAIT,Наживка,Bait
 UPG_BAIT_DESC,Рідкісні й легендарні риби клюють частіше.,Rare and legendary fish bite more often.
-UPG_BOAT,Човен,Boat
-UPG_BOAT_DESC,Можна дістатися Туманної річки.,Lets you reach the Misty River.
 UPG_LINE,Міцна волосінь,Strong line
 UPG_LINE_DESC,Друга спроба з новою задачею. Риба не зривається.,A second attempt with a new problem. The fish stays on.
-UPG_LANTERN,Ліхтар,Lantern
-UPG_LANTERN_DESC,Можна рибалити в Глибокій затоці.,Lets you fish in Deep Bay.
 FISH_ZERO_PERCH,Окунь-Нулик,Zero Perch
 FISH_SQUARE_CARP,Квадратний карась,Square Carp
 FISH_MIRROR_BREAM,Дзеркальний лящ,Mirror Bream
@@ -152,3 +157,123 @@ FISH_TRIANGLE_RAY_FACT,"На площині сума кутів трикутни
 FISH_TRIANGLE_RAY_TRY_Q,60° + 70° + ? = 180°,60° + 70° + ? = 180°
 FISH_TRIANGLE_RAY_TRY_A,50°,50°
 FISH_TRIANGLE_RAY_DEEP,На глобусі можна намалювати трикутник навіть із трьома кутами по 90°.,A globe triangle can even have three 90° angles.
+FISH_LIKE_ROACH,Подібна плітка,Like-Term Roach
+FISH_LIKE_ROACH_FLAVOR,"Пливе лише з такими, як сама: та сама літера, той самий степінь.","Only swims with its own kind: same letter, same power."
+FISH_LIKE_ROACH_FACT,"Подібні доданки мають однакову буквену частину. 3a² і 5a² подібні, а 3a² і 3a — ні.",Like terms have exactly the same letters and powers. 3a² and 5a² are like terms; 3a² and 3a are not.
+FISH_LIKE_ROACH_TRY_Q,2x + 7x = ?,2x + 7x = ?
+FISH_LIKE_ROACH_TRY_A,9x,9x
+FISH_LIKE_ROACH_DEEP,"Зводячи подібні доданки, додаємо лише коефіцієнти, а буквена частина не змінюється: 4ab + 2ab = 6ab.","When combining like terms, add only the coefficients; the letter part stays the same: 4ab + 2ab = 6ab."
+FISH_CUBE_RUFFE,Кубічний йорж,Cube Ruffe
+FISH_CUBE_RUFFE_FLAVOR,Колючий з усіх шести боків.,Prickly on all six sides.
+FISH_CUBE_RUFFE_FACT,"Куби натуральних чисел: 1, 8, 27, 64, 125… Число 3³ = 27 — це кількість маленьких кубиків у кубі 3 × 3 × 3.","Cube numbers go 1, 8, 27, 64, 125… 3³ = 27 is the number of small cubes in a 3 × 3 × 3 cube."
+FISH_CUBE_RUFFE_TRY_Q,4³ = ?,4³ = ?
+FISH_CUBE_RUFFE_TRY_A,64,64
+FISH_CUBE_RUFFE_DEEP,Тому x³ читають «ікс у кубі»: це об'єм куба з ребром x.,That's why x³ is read “x cubed”: it's the volume of a cube with edge x.
+FISH_COEFFICIENT_RUDD,Краснопірка-Коефіцієнт,Coefficient Rudd
+FISH_COEFFICIENT_RUDD_FLAVOR,"Завжди пливе першою, попереду всіх літер.","Always swims first, in front of all the letters."
+FISH_COEFFICIENT_RUDD_FACT,"Коефіцієнт — це число перед буквеною частиною. У 7xy коефіцієнт 7, а в x він дорівнює 1, хоч його й не пишуть.","A coefficient is the number in front of the letters. In 7xy it's 7; in x it's 1, even though nobody writes it."
+FISH_COEFFICIENT_RUDD_TRY_Q,Який коефіцієнт у виразі −a²?,What is the coefficient of −a²?
+FISH_COEFFICIENT_RUDD_TRY_A,−1,−1
+FISH_COEFFICIENT_RUDD_DEEP,"Слово «коефіцієнт» (від латинського coefficiens — «той, що співдіє») увів французький математик Франсуа Вієт у XVI столітті.","The word “coefficient” (Latin coefficiens, “working together”) was introduced by the French mathematician François Viète in the 16th century."
+FISH_EXPONENT_BURBOT,Показникова минь,Exponent Burbot
+FISH_EXPONENT_BURBOT_FLAVOR,"Ховається вгорі праворуч. Маленька, але все вирішує.","Hides up and to the right: small, but it decides everything."
+FISH_EXPONENT_BURBOT_FACT,"Показник степеня показує, скільки разів основу множать саму на себе: 5⁴ = 5 · 5 · 5 · 5.",The exponent tells how many times the base is multiplied by itself: 5⁴ = 5 · 5 · 5 · 5.
+FISH_EXPONENT_BURBOT_TRY_Q,7¹ = ?,7¹ = ?
+FISH_EXPONENT_BURBOT_TRY_A,7,7
+FISH_EXPONENT_BURBOT_DEEP,Запис степеня з маленьким числом угорі поширив Рене Декарт у XVII столітті.,Writing powers with a small raised number was popularized by René Descartes in the 17th century.
+FISH_GOLDEN_GOOGOL,Золотий Гугол,Golden Googol
+FISH_GOLDEN_GOOGOL_FLAVOR,"Кажуть, луски в нього більше, ніж атомів у Всесвіті. Ніхто не перераховував.",They say it has more scales than there are atoms in the universe. Nobody has counted.
+FISH_GOLDEN_GOOGOL_FACT,"Гугол — це 10¹⁰⁰, одиниця зі ста нулями. Назву близько 1920 року вигадав дев'ятирічний Мілтон Сіротта, племінник математика Едварда Каснера.","A googol is 10¹⁰⁰: a 1 followed by 100 zeros. The name was invented around 1920 by nine-year-old Milton Sirotta, the nephew of mathematician Edward Kasner."
+FISH_GOLDEN_GOOGOL_TRY_Q,Скільки нулів у записі числа 10⁶?,How many zeros does 10⁶ have?
+FISH_GOLDEN_GOOGOL_TRY_A,6,6
+FISH_GOLDEN_GOOGOL_DEEP,Гугол більший за кількість атомів у видимому Всесвіті: їх приблизно 10⁸⁰.,"A googol is bigger than the number of atoms in the observable universe, which is about 10⁸⁰."
+FISH_GREAT_POLYNOMIAL,Великий Многочлен,The Great Polynomial
+FISH_GREAT_POLYNOMIAL_FLAVOR,"Складається з кількох одночленів, і кожен вважає себе головним.","Made of several monomials, and each one thinks it's in charge."
+FISH_GREAT_POLYNOMIAL_FACT,"Многочлен — це сума одночленів, наприклад 3x² + 2x − 7. Грецьке «полі» означає «багато».","A polynomial is a sum of monomials, like 3x² + 2x − 7. The Greek “poly” means “many”."
+FISH_GREAT_POLYNOMIAL_TRY_Q,Скільки членів у многочлені 3x² + 2x − 7?,How many terms does 3x² + 2x − 7 have?
+FISH_GREAT_POLYNOMIAL_TRY_A,3,3
+FISH_GREAT_POLYNOMIAL_DEEP,Степінь многочлена — найбільший зі степенів його членів. У 3x² + 2x − 7 він дорівнює 2.,A polynomial's degree is the highest degree of its terms. For 3x² + 2x − 7 it's 2.
+FISH_ROOT_GUDGEON,Пічкур-Корінь,Root Gudgeon
+FISH_ROOT_GUDGEON_FLAVOR,"Сидить на дні, як корінь. Знайди його, і рівняння розв'язано.","Sits on the bottom like a root. Find it, and the equation is solved."
+FISH_ROOT_GUDGEON_FACT,Розв'язок рівняння називають його коренем. Ще аль-Хорезмі в IX столітті називав невідоме «джизр» — «корінь».,"The solution of an equation is also called its root. In the 9th century, al-Khwarizmi called the unknown jidhr, meaning “root”."
+FISH_ROOT_GUDGEON_TRY_Q,Чи є число 4 коренем рівняння 2x = 8?,Is 4 a root of 2x = 8?
+FISH_ROOT_GUDGEON_TRY_A,Так: 2 · 4 = 8,Yes: 2 · 4 = 8
+FISH_ROOT_GUDGEON_DEEP,"Щоб перевірити корінь, підстав його в рівняння. Якщо вийшла правильна рівність, корінь знайдено правильно.","To check a root, substitute it into the equation. If you get a true equality, the root is right."
+FISH_OPPOSITE_MINNOW,Протилежний гольян,Opposite Minnow
+FISH_OPPOSITE_MINNOW_FLAVOR,"Щойно перепливе на інший бік, як одразу змінює знак.","The moment it swims to the other side, it changes its sign."
+FISH_OPPOSITE_MINNOW_FACT,"Доданок можна перенести в іншу частину рівняння, змінивши його знак на протилежний: x + 3 = 7 → x = 7 − 3.",A term can move to the other side of an equation if you flip its sign: x + 3 = 7 → x = 7 − 3.
+FISH_OPPOSITE_MINNOW_TRY_Q,x − 5 = 2. Чому дорівнює x?,x − 5 = 2. What is x?
+FISH_OPPOSITE_MINNOW_TRY_A,x = 7,x = 7
+FISH_OPPOSITE_MINNOW_DEEP,Це правило — лише скорочення: насправді ми додаємо або віднімаємо те саме число в обох частинах.,This rule is a shortcut: really we add or subtract the same number on both sides.
+FISH_BRACKET_CHUB,Головень-Дужка,Bracket Chub
+FISH_BRACKET_CHUB_FLAVOR,"Обіймає все, що всередині, і ділиться цим з кожним.",Hugs everything inside and shares it with everyone.
+FISH_BRACKET_CHUB_FACT,"Щоб розкрити дужки, множимо число перед ними на кожен доданок усередині: 3(x + 2) = 3x + 6.","To open brackets, multiply the number in front by every term inside: 3(x + 2) = 3x + 6."
+FISH_BRACKET_CHUB_TRY_Q,2(x + 5) = ?,2(x + 5) = ?
+FISH_BRACKET_CHUB_TRY_A,2x + 10,2x + 10
+FISH_BRACKET_CHUB_DEEP,"Круглі дужки з'явилися в математиці в XVI столітті, а загальноприйнятими стали лише у XVIII, завдяки Лейбніцу та Ейлеру.","Round brackets appeared in mathematics in the 16th century but only became standard in the 18th, thanks to Leibniz and Euler."
+FISH_INVERSE_ZANDER,Судак-Навпаки,Inverse Zander
+FISH_INVERSE_ZANDER_FLAVOR,"Усе робить навпаки: дає задній хід, щоб вирватися вперед.",Does everything backwards: reverses to get ahead.
+FISH_INVERSE_ZANDER_FACT,"Кожна дія має обернену: додавання — віднімання, множення — ділення. Ними й «звільняють» x у рівнянні.","Every operation has an inverse: addition and subtraction, multiplication and division. That's how you free x in an equation."
+FISH_INVERSE_ZANDER_TRY_Q,x : 4 = 3. Чому дорівнює x?,x : 4 = 3. What is x?
+FISH_INVERSE_ZANDER_TRY_A,x = 12,x = 12
+FISH_INVERSE_ZANDER_DEEP,Лише одну дію не можна скасувати: множення на 0. Тому на нуль і не можна ділити.,Only one step can't be undone: multiplying by 0. That's why you can't divide by zero.
+FISH_LINEAR_SALMON,Лінійний лосось,Linear Salmon
+FISH_LINEAR_SALMON_FLAVOR,Пливе лише по прямій. Навіть проти течії.,Only swims in a straight line. Even upstream.
+FISH_LINEAR_SALMON_FACT,"Графік лінійної функції y = kx + b — пряма. Щоб її накреслити, досить двох точок.",The graph of a linear function y = kx + b is a straight line. Two points are enough to draw it.
+FISH_LINEAR_SALMON_TRY_Q,"y = 2x + 1. Чому дорівнює y, якщо x = 3?",y = 2x + 1. What is y when x = 3?
+FISH_LINEAR_SALMON_TRY_A,7,7
+FISH_LINEAR_SALMON_DEEP,"Число k показує нахил прямої: за додатного k що воно більше, то крутіше пряма піднімається.","The number k is the slope: for positive k, the bigger it is, the steeper the line climbs."
+FISH_OLD_MAN_X,Старий Ікс,Old Man X
+FISH_OLD_MAN_X_FLAVOR,Століттями на нього полюють усі рибалки. Він досі невідомий.,Anglers have hunted him for centuries. He's still unknown.
+FISH_OLD_MAN_X_FACT,Давньогрецький математик Діофант (III ст.) одним із перших позначав невідоме особливим знаком. Його часто називають «батьком алгебри».,The ancient Greek mathematician Diophantus (3rd century) was one of the first to use a special symbol for the unknown. He is often called the “father of algebra”.
+FISH_OLD_MAN_X_TRY_Q,Половина числа плюс 4 дорівнює 10. Яке це число?,Half of a number plus 4 equals 10. What is the number?
+FISH_OLD_MAN_X_TRY_A,12,12
+FISH_OLD_MAN_X_DEEP,"За легендою, на гробниці Діофанта була загадка, що насправді є рівнянням. Розв'язавши її, дізнаємося: він прожив 84 роки.",Legend says Diophantus's tomb carried a riddle that is really an equation. Solving it shows he lived 84 years.
+FISH_RIGHT_MACKEREL,Скумбрія-Прямокут,Right-Angle Mackerel
+FISH_RIGHT_MACKEREL_FLAVOR,Повертає лише під прямим кутом. Навігатор з неї нікудишній.,Only turns at right angles. A terrible navigator.
+FISH_RIGHT_MACKEREL_FACT,Прямий кут дорівнює 90°. На кресленні його позначають маленьким квадратиком.,A right angle is 90°. On drawings it's marked with a small square.
+FISH_RIGHT_MACKEREL_TRY_Q,90° − 35° = ?,90° − 35° = ?
+FISH_RIGHT_MACKEREL_TRY_A,55°,55°
+FISH_RIGHT_MACKEREL_DEEP,Прямий кут — це чверть повного оберту: 360° : 4 = 90°.,A right angle is a quarter of a full turn: 360° : 4 = 90°.
+FISH_STRAIGHT_HERRING,Оселедець-Розгорнутий,Straight Herring
+FISH_STRAIGHT_HERRING_FLAVOR,Лежить рівно-рівно: від носа до хвоста рівно 180°.,Lies perfectly flat: exactly 180° from nose to tail.
+FISH_STRAIGHT_HERRING_FACT,Розгорнутий кут дорівнює 180°: його сторони лежать на одній прямій.,A straight angle is 180°: its sides lie on one straight line.
+FISH_STRAIGHT_HERRING_TRY_Q,"Чому дорівнює кут, суміжний із кутом 130°?",What is the angle adjacent to 130°?
+FISH_STRAIGHT_HERRING_TRY_A,50°,50°
+FISH_STRAIGHT_HERRING_DEEP,Тому сума суміжних кутів завжди 180°: разом вони утворюють розгорнутий кут.,That's why adjacent angles always add up to 180°: together they make a straight angle.
+FISH_VERTICAL_FLOUNDER,Вертикальна камбала,Vertical Flounder
+FISH_VERTICAL_FLOUNDER_FLAVOR,"Обидва ока на одному боці, а дивиться завжди навхрест.","Both eyes on one side, yet it always looks crosswise."
+FISH_VERTICAL_FLOUNDER_FACT,"Коли дві прямі перетинаються, протилежні кути рівні. Їх називають вертикальними.","When two lines cross, the opposite angles are equal. They're called vertical angles."
+FISH_VERTICAL_FLOUNDER_TRY_Q,"Чому дорівнює кут, вертикальний до кута 40°?",What is the vertical angle to 40°?
+FISH_VERTICAL_FLOUNDER_TRY_A,40°,40°
+FISH_VERTICAL_FLOUNDER_DEEP,Чому вони рівні? Кожен із них разом з одним і тим самим кутом дає 180°.,Why are they equal? Each one adds up to 180° with the same angle between them.
+FISH_BISECTOR_BARRACUDA,Баракуда-Бісектриса,Bisector Barracuda
+FISH_BISECTOR_BARRACUDA_FLAVOR,Ділить здобич рівно навпіл. Суперечок не буває.,"Splits every catch exactly in half. No arguments, ever."
+FISH_BISECTOR_BARRACUDA_FACT,"Бісектриса — промінь, що ділить кут навпіл. Слово латинське: bis — «двічі», sectrix — «та, що розтинає».","A bisector is a ray that splits an angle in half. The word is Latin: bis, “twice”, and sectrix, “the one that cuts”."
+FISH_BISECTOR_BARRACUDA_TRY_Q,Бісектриса ділить кут 70° на два кути. Чому дорівнює кожен?,A bisector splits a 70° angle in two. What is each part?
+FISH_BISECTOR_BARRACUDA_TRY_A,35°,35°
+FISH_BISECTOR_BARRACUDA_DEEP,Три бісектриси будь-якого трикутника перетинаються в одній точці.,The three bisectors of any triangle meet at a single point.
+FISH_PARALLEL_TUNA,Паралельний тунець,Parallel Tuna
+FISH_PARALLEL_TUNA_FLAVOR,Пливе поруч зі своїм двійником. Вони ніколи не зустрічаються.,Swims beside its twin forever. They never meet.
+FISH_PARALLEL_TUNA_FACT,Паралельні прямі лежать в одній площині й ніколи не перетинаються. Записують так: a ∥ b.,Parallel lines lie in one plane and never meet. We write a ∥ b.
+FISH_PARALLEL_TUNA_TRY_Q,Пряма перетинає дві паралельні прямі. Один із відповідних кутів 65°. Чому дорівнює другий?,A line crosses two parallel lines. One corresponding angle is 65°. What is the other?
+FISH_PARALLEL_TUNA_TRY_A,65°,65°
+FISH_PARALLEL_TUNA_DEEP,"Понад 2000 років математики намагалися довести п'ятий постулат Евкліда про паралельні. У XIX столітті Лобачевський, Бойяї та Гаусс показали, що існують геометрії, де він не діє.","For over 2000 years mathematicians tried to prove Euclid's fifth postulate about parallels. In the 19th century Lobachevsky, Bolyai and Gauss showed there are geometries where it doesn't hold."
+FISH_ISOSCELES_SWORDFISH,Рівнобедрена риба-меч,Isosceles Swordfish
+FISH_ISOSCELES_SWORDFISH_FLAVOR,Дві однакові сторони й одне дуже гостре вістря.,Two equal sides and one very sharp point.
+FISH_ISOSCELES_SWORDFISH_FACT,У рівнобедреному трикутнику кути при основі рівні.,"In an isosceles triangle, the base angles are equal."
+FISH_ISOSCELES_SWORDFISH_TRY_Q,Кут при вершині рівнобедреного трикутника 40°. Чому дорівнює кут при основі?,The top angle of an isosceles triangle is 40°. What is each base angle?
+FISH_ISOSCELES_SWORDFISH_TRY_A,70°,70°
+FISH_ISOSCELES_SWORDFISH_DEEP,"У середньовіччі цю теорему прозвали «віслючим містком» (pons asinorum): кажуть, на ній спотикалися учні.","In the Middle Ages this theorem was nicknamed the “bridge of asses” (pons asinorum), supposedly because students stumbled on it."
+FISH_PROTRACTOR_SUNFISH,Риба-місяць Транспортир,Protractor Sunfish
+FISH_PROTRACTOR_SUNFISH_FLAVOR,"Величезна, кругла й уся в поділках. Міряє кути власним тілом.","Huge, round and covered in markings. Measures angles with its own body."
+FISH_PROTRACTOR_SUNFISH_FACT,"Градус ділиться на 60 кутових мінут, а мінута — на 60 секунд, як на годиннику. Це теж спадок вавилонської шістдесяткової системи.","A degree splits into 60 minutes and a minute into 60 seconds, like a clock. That's another gift of the Babylonian base-60 system."
+FISH_PROTRACTOR_SUNFISH_TRY_Q,Скільки градусів у половині розгорнутого кута?,How many degrees are in half of a straight angle?
+FISH_PROTRACTOR_SUNFISH_TRY_A,90°,90°
+FISH_PROTRACTOR_SUNFISH_DEEP,"Число 360 ділиться на 2, 3, 4, 5, 6, 8, 9, 10, 12 і ще багато чисел. Тому повний оберт так зручно ділити на частини.","360 divides by 2, 3, 4, 5, 6, 8, 9, 10, 12 and more. That makes a full turn easy to split into parts."
+FISH_ANGLE_KRAKEN,Кутовий Кракен,The Angle Kraken
+FISH_ANGLE_KRAKEN_FLAVOR,"Три щупальця, три кути й один дуже поганий характер.","Three tentacles, three angles, one very bad temper."
+FISH_ANGLE_KRAKEN_FACT,"Зовнішній кут трикутника дорівнює сумі двох внутрішніх кутів, не суміжних із ним.",An exterior angle of a triangle equals the sum of the two interior angles not next to it.
+FISH_ANGLE_KRAKEN_TRY_Q,Два кути трикутника 50° і 60°. Чому дорівнює зовнішній кут при третій вершині?,Two angles of a triangle are 50° and 60°. What is the exterior angle at the third vertex?
+FISH_ANGLE_KRAKEN_TRY_A,110°,110°
+FISH_ANGLE_KRAKEN_DEEP,"Якщо взяти по одному зовнішньому куту при кожній вершині, їхня сума завжди 360°.",Take one exterior angle at each vertex: they always add up to 360°.

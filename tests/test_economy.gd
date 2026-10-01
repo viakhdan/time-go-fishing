@@ -51,19 +51,24 @@ func test_buy_upgrades() -> void:
 
 func test_disabled_upgrades_cannot_be_bought() -> void:
 	GameState.coins = 10000
-	check(not Economy.buy("line") and not Economy.buy("lantern"), "stretch upgrades are off")
-	check(GameData.upgrades().map(func(u): return u.id) == ["boat", "hold", "rod", "bait"], "workshop lists MVP upgrades, boat first")
+	check(not Economy.buy("line"), "stretch upgrade is off")
+	check(GameData.upgrades().map(func(u): return u.id) == ["hold", "rod", "bait"], "workshop lists Hold, Rod, Bait")
 
 
-func test_boat_unlocks_river() -> void:
+func test_bosses_unlock_zones() -> void:
 	check(GameData.is_zone_unlocked("lake") and not GameData.is_zone_unlocked("river"), "river starts locked")
-	GameState.coins = 79
-	check(not Economy.buy("boat"), "boat costs 80")
-	GameState.coins = 80
-	check(Economy.buy("boat"), "buy the boat")
-	check(GameData.is_zone_unlocked("river"), "boat unlocks the river")
-	check(not GameData.is_zone_unlocked("bay"), "bay stays off (stretch)")
-	check(GameData.zones().size() == 2, "only enabled zones are listed")
+	check(not GameData.is_zone_unlocked("sea"), "sea starts locked")
+	check(not GameData.has_upgrade("boat") and not GameData.has_upgrade("lantern"), "no vessel upgrades any more")
+	var r := GameState.record_catch("great_polynomial", 250, 150)
+	check(r.boss_defeated and r.unlocked_zone == "river", "lake boss opens the river")
+	check(GameData.is_zone_unlocked("river") and not GameData.is_zone_unlocked("sea"), "river open, sea still locked")
+	r = GameState.record_catch("old_man_x", 300, 150)
+	check(r.unlocked_zone == "sea" and GameData.is_zone_unlocked("sea"), "river boss opens the sea")
+	r = GameState.record_catch("angle_kraken", 900, 150)
+	check(r.boss_defeated and r.unlocked_zone == "", "the last boss opens nothing")
+	r = GameState.record_catch("angle_kraken", 900, 150)
+	check(not r.boss_defeated, "a rematch win is not a new defeat")
+	check(GameData.zones().size() == 3, "three zones")
 
 
 func test_all_upgrades_cost() -> void:
@@ -73,7 +78,7 @@ func test_all_upgrades_cost() -> void:
 			total += Economy.next_cost(u.id)
 			GameState.coins = Economy.next_cost(u.id)
 			Economy.buy(u.id)
-	check(total == 1350, "all MVP upgrades cost %d, design says 1350" % total)
+	check(total == 1270, "all upgrades cost %d, expected 1270" % total)
 
 
 # --- Upgrade effect text (§5.2 "before → after") --------------------------------
@@ -83,7 +88,6 @@ func test_effect_lines() -> void:
 	check(UIText.upgrade_effects("hold", 0, 1) == ["Місць: 6 → 8"], "hold uk %s" % [UIText.upgrade_effects("hold", 0, 1)])
 	check(UIText.upgrade_effects("rod", 0, 1) == ["Таймер: 45 с → 55 с", "Зелена зона: +0% → +15%"], "rod uk %s" % [UIText.upgrade_effects("rod", 0, 1)])
 	check(UIText.upgrade_effects("bait", 0, 1) == ["Рідкісні: ×1 → ×1,5"], "bait uk uses a decimal comma")
-	check(UIText.upgrade_effects("boat", 0, 1) == ["Відкриває: Туманна річка"], "boat uk %s" % [UIText.upgrade_effects("boat", 0, 1)])
 	GameState.set_locale("en")
 	check(UIText.upgrade_effects("bait", 1, 2) == ["Rare: ×1.5 → ×2"], "bait en %s" % [UIText.upgrade_effects("bait", 1, 2)])
 	check(UIText.upgrade_effects("hold", 2, 3) == ["Slots: 11 → 15"], "hold en L2→L3")
@@ -129,7 +133,7 @@ func test_dock_workshop() -> void:
 	check(GameState.upgrade_level("hold") == 1 and GameState.coins == 10, "bought through the Workshop")
 	check(hold_row.level.text.contains("1 → 2") and hold_row.effects.text.contains("8 → 11"), "row shows next level")
 	check(dock.hold_panel.get_child_count() == 8, "market hold grew to 8 slots")
-	check(dock._rows.size() == 4, "4 upgrade rows")
+	check(dock._rows.size() == 3, "3 upgrade rows")
 	dock.queue_free()
 
 
@@ -138,13 +142,14 @@ func test_map_locks() -> void:
 	add_child(map)
 	await get_tree().process_frame
 	check(not map._cards.lake.button.disabled, "lake open")
-	check(map._cards.river.button.disabled and map._cards.river.button.text.contains(tr("UPG_BOAT")), "river names the boat")
+	check(map._cards.river.button.disabled and map._cards.river.button.text.contains(tr("ZONE_LAKE")), "river says to beat the lake boss")
+	check(map._cards.sea.button.disabled, "sea locked")
 	map.queue_free()
-	GameState.upgrades.boat = 1
+	GameState.bosses_defeated.assign(["lake"])
 	map = load("res://scenes/Map.tscn").instantiate()
 	add_child(map)
 	await get_tree().process_frame
-	check(not map._cards.river.button.disabled, "river open with the boat")
+	check(not map._cards.river.button.disabled, "river open after the lake boss")
 	map.queue_free()
 
 

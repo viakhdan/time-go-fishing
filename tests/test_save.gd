@@ -13,7 +13,7 @@ func _set_up_progress() -> void:
 	GameState.coins = 123
 	GameState.hold.assign([{"species": "x_eel", "size_cm": 84, "value": 18}, {"species": "zero_perch", "size_cm": 20, "value": 4}])
 	GameState.upgrades.rod = 2
-	GameState.upgrades.boat = 1
+	GameState.upgrades.bait = 1
 	GameState.encyclopedia["x_eel"] = {"count": 3, "best_cm": 84, "best_value": 19}
 	GameState.zone_complete_rewarded.assign(["lake"])
 	GameState.set_locale("en")
@@ -33,7 +33,7 @@ func test_round_trip() -> void:
 	GameState.load_game()
 	check(GameState.coins == 123, "coins")
 	check(GameState.hold == [{"species": "x_eel", "size_cm": 84, "value": 18}, {"species": "zero_perch", "size_cm": 20, "value": 4}], "hold (ints, order)")
-	check(GameState.upgrades.rod == 2 and GameState.upgrades.boat == 1, "upgrades")
+	check(GameState.upgrades.rod == 2 and GameState.upgrades.bait == 1, "upgrades")
 	check(GameState.encyclopedia.x_eel == {"count": 3, "best_cm": 84, "best_value": 19}, "encyclopedia")
 	check(GameState.zone_complete_rewarded == ["lake"], "completion rewards")
 	check(GameState.locale == "en", "language")
@@ -111,11 +111,16 @@ func test_map_badge() -> void:
 
 
 func test_completion_through_play() -> void:
-	for id in ["zero_perch", "square_carp", "mirror_bream"]:
-		GameState.record_catch(id, 30, 5)
-	check("lake" not in GameState.zone_complete_rewarded, "not complete with 3 of 4")
-	var r := GameState.record_catch("power_pike", 80, 40)
-	check(r.zone_complete_bonus == 50 and "lake" in GameState.zone_complete_rewarded, "4th species completes the lake")
+	for id in GameData.zone("lake").fish:
+		if not GameData.is_boss(id):
+			GameState.record_catch(id, 30, 5)
+	check("lake" not in GameState.zone_complete_rewarded, "not complete with 9 of 10")
+	var r := GameState.record_catch("great_polynomial", 250, 150)
+	check(r.zone_complete_bonus == 50 and "lake" in GameState.zone_complete_rewarded, "the boss completes the lake")
+	GameState.save_game()
+	GameState.bosses_defeated.clear()
+	GameState.load_game()
+	check(GameState.bosses_defeated == ["lake"], "defeated bosses are saved")
 
 
 func test_reset_from_menu() -> void:

@@ -121,8 +121,8 @@ func _refresh() -> void:
 		var button: Button = card.button
 		button.disabled = not GameData.is_zone_unlocked(zone.id)
 		if button.disabled:
-			var upgrade_name := tr(GameData.upgrade(zone.unlock.upgrade).name_key)
-			button.text = "%s · %s" % [tr("UI_LOCKED"), tr("UI_REQUIRES").format({"upgrade": upgrade_name})]
+			var prev_zone := tr(GameData.zone(zone.unlock.boss_of).name_key)
+			button.text = "%s · %s" % [tr("UI_LOCKED"), tr("UI_REQUIRES_BOSS").format({"zone": prev_zone})]
 		else:
 			button.text = tr("UI_GO_FISHING")
 
