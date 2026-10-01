@@ -1,0 +1,8 @@
+.godot/
+/build/
+*.translation
+__pycache__/
+tools/palette_swatch.png
+
+# Third-party reference art (copyrighted, style reference only)
+/Inspo/

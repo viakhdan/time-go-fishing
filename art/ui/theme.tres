@@ -1,0 +1,31 @@
+[gd_resource type="Theme" load_steps=9 format=3]
+
+[ext_resource type="FontFile" path="res://art/fonts/PT_Sans-Web-Regular.ttf" id="1_body"]
+[ext_resource type="FontFile" path="res://art/fonts/Oswald[wght].ttf" id="2_heading"]
+[ext_resource type="FontFile" path="res://art/fonts/PT_Serif-Web-Regular.ttf" id="3_serif"]
+[ext_resource type="FontFile" path="res://art/fonts/NotoSans[wdth,wght].ttf" id="4_noto"]
+[ext_resource type="FontFile" path="res://art/fonts/NotoSansMath-Regular.ttf" id="5_math"]
+
+[sub_resource type="FontVariation" id="FontVariation_body"]
+fallbacks = Array[Font]([ExtResource("4_noto"), ExtResource("5_math")])
+base_font = ExtResource("1_body")
+
+[sub_resource type="FontVariation" id="FontVariation_heading"]
+fallbacks = Array[Font]([ExtResource("4_noto"), ExtResource("5_math")])
+base_font = ExtResource("2_heading")
+variation_opentype = {
+2003265652: 600
+}
+
+[sub_resource type="FontVariation" id="FontVariation_serif"]
+fallbacks = Array[Font]([ExtResource("4_noto"), ExtResource("5_math")])
+base_font = ExtResource("3_serif")
+
+[resource]
+default_font = SubResource("FontVariation_body")
+default_font_size = 24
+Button/fonts/font = SubResource("FontVariation_heading")
+SerifLabel/base_type = &"Label"
+SerifLabel/fonts/font = SubResource("FontVariation_serif")
+TitleLabel/base_type = &"Label"
+TitleLabel/fonts/font = SubResource("FontVariation_heading")

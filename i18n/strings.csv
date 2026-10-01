@@ -1,0 +1,86 @@
+keys,uk,en
+UI_TITLE,Час на риболовлю,Time Go Fishing
+UI_SUBTITLE,Математична риболовля,A math fishing trip
+UI_PLAY,Грати,Play
+UI_ENCYCLOPEDIA,Енциклопедія,Encyclopedia
+UI_LANGUAGE,Мова,Language
+UI_BACK,Назад,Back
+UI_MAP,Мапа,Map
+UI_DOCK,Причал,Dock
+UI_CAST,Закинути,Cast
+UI_WAITING,Чекаємо на клювання…,Waiting for a bite…
+UI_BITE,Клює!,Bite!
+UI_HOLD,Трюм,Hold
+UI_HOLD_FULL,Трюм повний,Hold full
+UI_RETURN_TO_DOCK,Повернутися на причал,Return to dock
+UI_RELEASE_FISH,Відпустити рибу,Release a fish
+UI_TO_HOLD,У трюм,To hold
+UI_NEW,Нова!,New!
+UI_NEW_RECORD,Новий рекорд!,New record!
+UI_CORRECT,Правильно!,Correct!
+UI_WRONG,Не зовсім…,Not quite…
+UI_TIME_UP,Час вийшов!,Time's up!
+UI_ESCAPED,Риба втекла!,The fish got away!
+UI_CORRECT_ANSWER,Правильна відповідь,Correct answer
+UI_SOLUTION,Розв'язання,Solution
+UI_REEL,Тягни!,Reel it in!
+UI_REEL_HINT,"Натисни, коли позначка в зеленій зоні",Press when the marker is in the green zone
+UI_REEL_RETRY,Ще одна спроба!,One more try!
+UI_SECOND_CHANCE,Друга спроба: нова задача,Second chance: a new problem
+UI_MARKET,Ринок,Market
+UI_WORKSHOP,Майстерня,Workshop
+UI_SELL,Продати,Sell
+UI_SELL_ALL,Продати все,Sell all
+UI_BUY,Купити,Buy
+UI_MAX_LEVEL,Макс. рівень,Max level
+UI_LEVEL,Рів.,Lv
+UI_NEED_MORE,"Бракує {n} 🪙","Need {n} more 🪙"
+UI_LOCKED,Закрито,Locked
+UI_UNLOCKS,Відкриває: {zone},Unlocks: {zone}
+UI_DISCOVERED,Відкрито: {n} / {total},Discovered: {n} / {total}
+UI_CAUGHT,Спіймано,Caught
+UI_BIGGEST,Найбільша,Biggest
+UI_BEST_PRICE,Найкраща ціна,Best price
+UI_MATH_FACT,Цікавий факт,Math fact
+UI_TRY_IT,Спробуй,Try it
+UI_SHOW_ANSWER,Показати відповідь,Show answer
+UI_DEEP_FACT,Глибший факт,Deeper fact
+UI_DEEP_FACT_LOCKED,Спіймай {n} (зараз {have}/{n}),Catch {n} ({have}/{n})
+UI_UNKNOWN,???,???
+UI_DISCOVERY_BONUS,Нове відкриття! +{n} 🪙,New discovery! +{n} 🪙
+UI_ZONE_COMPLETE,Усіх риб зони знайдено! +{n} 🪙,Every fish in this zone found! +{n} 🪙
+UI_SIZE_CM,{n} см,{n} cm
+UI_TIMER_S,{n} с,{n} s
+STAT_SLOTS,Місць,Slots
+STAT_TIMER,Таймер,Timer
+STAT_REEL_ZONE,Зелена зона,Green zone
+STAT_RARE_CHANCE,Рідкісні,Rare
+ZONE_LAKE,Тихе озеро,Still Lake
+ZONE_RIVER,Туманна річка,Misty River
+ZONE_BAY,Глибока затока,Deep Bay
+RARITY_COMMON,Звичайна,Common
+RARITY_UNCOMMON,Незвичайна,Uncommon
+RARITY_RARE,Рідкісна,Rare
+RARITY_LEGENDARY,Легендарна,Legendary
+UPG_HOLD,Трюм,Hold
+UPG_HOLD_DESC,Більше місця для риби.,More room for fish.
+UPG_ROD,Вудка,Rod
+UPG_ROD_DESC,Більше часу на задачу і ширша зелена зона.,More time per problem and a wider green zone.
+UPG_BAIT,Наживка,Bait
+UPG_BAIT_DESC,Рідкісні й легендарні риби клюють частіше.,Rare and legendary fish bite more often.
+UPG_BOAT,Човен,Boat
+UPG_BOAT_DESC,Можна дістатися Туманної річки.,Lets you reach the Misty River.
+UPG_LINE,Міцна волосінь,Strong line
+UPG_LINE_DESC,Друга спроба з новою задачею. Риба не зривається.,A second attempt with a new problem. The fish stays on.
+UPG_LANTERN,Ліхтар,Lantern
+UPG_LANTERN_DESC,Можна рибалити в Глибокій затоці.,Lets you fish in Deep Bay.
+FISH_ZERO_PERCH,Окунь-Нулик,Zero Perch
+FISH_SQUARE_CARP,Квадратний карась,Square Carp
+FISH_MIRROR_BREAM,Дзеркальний лящ,Mirror Bream
+FISH_POWER_PIKE,Степенева щука,Power Pike
+FISH_FOG_CATFISH,Туманний сом,Fog Catfish
+FISH_X_EEL,Ікс-вугор,X-Eel
+FISH_BALANCED_STURGEON,Врівноважений осетер,Balanced Sturgeon
+FISH_GREAT_NULL,Велика Нуль-Сомиха,The Great Null
+FISH_ANGLEJAW,Кутозуб,Anglejaw
+FISH_TRIANGLE_RAY,Трикутний скат,Triangle Ray
