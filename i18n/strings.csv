@@ -64,6 +64,11 @@ UI_ZONE_BADGE,Усіх риб знайдено!,Every fish found!
 UI_RESET,Скинути прогрес,Reset progress
 UI_RESET_CONFIRM,"Усі монети, риби, покращення й записи в енциклопедії зникнуть. Почати спочатку?","All coins, fish, upgrades and encyclopedia entries will be lost. Start over?"
 UI_RESET_OK,"Так, скинути","Yes, reset"
+UI_RESTORE,Відновити прогрес,Restore progress
+UI_RESTORE_INFO,"Загубився збережений прогрес? Познач зони як пройдені: усі їхні риби з'являться в енциклопедії, а боси — переможеними, тож наступні зони відкриються. Монети, трюм і покращення не зміняться.","Lost your saved progress? Mark zones as completed: all their fish appear in the encyclopedia and their bosses count as defeated, so the next zones open. Coins, hold and upgrades stay as they are."
+UI_RESTORE_ZONE_1,Зона 1,Zone 1
+UI_RESTORE_ZONES,Зони 1–{n},Zones 1–{n}
+UI_RESTORE_DONE,Готово! Пройдених зон: {n}.,Done! Zones completed: {n}.
 UI_CHALLENGE_BOSS,Кинути виклик босу!,Challenge the boss!
 UI_BOSS_FIGHT,Битва з босом!,Boss fight!
 UI_BOSS_HIT,Влучно! Бос слабшає.,A hit! The boss is weakening.

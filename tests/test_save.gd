@@ -138,3 +138,38 @@ func test_reset_from_menu() -> void:
 	check(GameState.upgrade_level("rod") == 0 and GameState.zone_complete_rewarded.is_empty(), "upgrades and badges reset")
 	check(GameState.locale == "uk", "language is kept")
 	main.queue_free()
+
+
+func test_restore_progress() -> void:
+	GameState.coins = 77
+	GameState.upgrades.rod = 2
+	GameState.encyclopedia["zero_perch"] = {"count": 9, "best_cm": 40, "best_value": 8}
+	GameState.complete_zones_through("river")
+	var lake_river: Array = GameData.zone("lake").fish + GameData.zone("river").fish
+	check(lake_river.all(func(id): return id in GameState.encyclopedia), "all lake and river species recorded")
+	check(GameData.zone("sea").fish.all(func(id): return id not in GameState.encyclopedia), "sea species untouched")
+	check(GameState.encyclopedia.zero_perch.count == 9 and GameState.encyclopedia.zero_perch.best_cm == 40, "existing records kept")
+	check(GameState.bosses_defeated == ["lake", "river"], "lake and river bosses defeated")
+	check(GameData.is_zone_unlocked("river") and GameData.is_zone_unlocked("sea"), "river and sea open")
+	check(GameState.zone_complete_rewarded == ["lake", "river"], "completion badges shown")
+	check(GameState.coins == 77 and GameState.upgrades.rod == 2, "coins and upgrades unchanged")
+	GameState.complete_zones_through("sea")
+	check(GameState.encyclopedia.size() == 30 and GameState.bosses_defeated.size() == 3, "all three zones")
+	var saved: Dictionary = JSON.parse_string(FileAccess.get_file_as_string(GameState.save_path))
+	check(saved.bosses_defeated.size() == 3 and saved.encyclopedia.size() == 30, "restore is saved")
+
+
+func test_restore_from_menu() -> void:
+	var main: Control = load("res://scenes/Main.tscn").instantiate()
+	add_child(main)
+	await get_tree().process_frame
+	main.restore_button.pressed.emit()
+	check(main.restore_dialog.visible and main._restore_buttons.size() == 3, "dialog with one button per zone")
+	check(main._restore_buttons[1].text == tr("UI_RESTORE_ZONES").format({"n": 2}), "second button says zones 1-2")
+	main.restore_button.pressed.emit()
+	check(main._restore_buttons.size() == 3, "reopening does not duplicate buttons")
+	main.restore_dialog.custom_action.emit(&"lake")
+	check(not main.restore_dialog.visible and main.restore_done_dialog.visible, "done message shown")
+	check(GameState.bosses_defeated == ["lake"] and GameData.is_zone_unlocked("river"), "zone 1 completed from the menu")
+	check(not GameData.is_zone_unlocked("sea"), "sea still locked")
+	main.queue_free()

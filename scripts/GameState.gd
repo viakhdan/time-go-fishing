@@ -148,6 +148,26 @@ func reset() -> void:
 	upgrades_changed.emit()
 
 
+## Restoring a lost save: marks every zone up to and including `last_zone_id`
+## as completed. All its species go into the encyclopedia (once, at average
+## size), its boss counts as defeated (opening the next zone) and its badge is
+## shown, without paying the completion bonus. Existing records are kept;
+## coins, hold and upgrades are untouched.
+func complete_zones_through(last_zone_id: String) -> void:
+	for zone in GameData.zones():
+		for species in zone.fish:
+			if species not in encyclopedia:
+				var size: int = GameData.fish(species).avg_size_cm
+				encyclopedia[species] = {"count": 1, "best_cm": size, "best_value": Economy.sell_price(species, size)}
+		if zone.id not in bosses_defeated:
+			bosses_defeated.append(zone.id)
+		if zone.id not in zone_complete_rewarded:
+			zone_complete_rewarded.append(zone.id)
+		if zone.id == last_zone_id:
+			break
+	save_game()
+
+
 ## Writes to a temp file first and then swaps it in, so a crash mid-write
 ## can't leave a half-written save behind.
 func save_game() -> void:

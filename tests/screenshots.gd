@@ -101,6 +101,9 @@ func _shoot_meta(locale: String) -> void:
 	main.reset_button.pressed.emit()
 	await _save("%s_0b_reset_dialog" % locale)
 	main.reset_dialog.hide()
+	main.restore_button.pressed.emit()
+	await _save("%s_0c_restore_dialog" % locale)
+	main.restore_dialog.hide()
 	main.queue_free()
 
 	GameState.encyclopedia.x_eel = {"count": 3, "best_cm": 84, "best_value": 19}
